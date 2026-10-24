@@ -1,0 +1,32 @@
+Dual License Notice: GPL-2.0-or-later OR MIT
+================================================================================
+Dandelion OS ("Heimat-Agora") is dual-licensed under the GNU General Public
+License v2.0 or later (GPL-2.0-or-later, for seamless Linux kernel, PREEMPT_RT,
+and sched_ext eBPF integration) AND the MIT License (for user-space C99,
+Shingari, Grimm's Law, and 1.58-bit ternary .tnpt libraries). You may choose
+either license when forking, distributing, or modifying this software.
+
+Copyright (c) 2026 Justin D. Grimm (K-Lani 13 Actual / @leadpiperl1,
+ORCID: 0009-0000-5299-0243) and the Dandelion Substrate Research Group.
+Ontological Anchor: Die Gedanken sind frei / GODISLOVE:LOVEISGOD {3,2,4}
+================================================================================
+
+MIT License
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

@@ -16,7 +16,8 @@ VERSION="v2.7.0"
 BUILD_DIR="${PWD}/build_whiteroom_${VERSION}"
 ROOTFS_DIR="${BUILD_DIR}/rootfs"
 ISO_DIR="${BUILD_DIR}/iso_stage"
-SRC_C="dandelion_os_grimm_fbw_v2.4.0.c"
+SRC_C="dandelion_os_grimm_fbw_v2.7.0.c"
+if [ ! -f "${SRC_C}" ]; then SRC_C="dandelion_os_grimm_fbw_v2.4.0.c"; fi
 
 echo "=============================================================================="
 echo " [DANDELION OS ${VERSION}] Switchblade AI-Pen Dual-Mode USB & Initramfs Builder"
@@ -145,7 +146,7 @@ if command -v wild >/dev/null 2>&1; then
 fi
 
 # 5. Compile C99 Dandelion OS v2.7.0 Engine into RootFS and copy v2.7.0 source
-cp "${SRC_C}" "dandelion_os_grimm_fbw_v2.7.0.c"
+if [ "${SRC_C}" != "dandelion_os_grimm_fbw_v2.7.0.c" ]; then cp "${SRC_C}" "dandelion_os_grimm_fbw_v2.7.0.c"; fi
 gcc -std=c99 -O3 -Wall -Wextra ${LINKER_FLAGS} \
     -o "${ROOTFS_DIR}/opt/dandelion/bin/dandelion_os_grimm_fbw_v2.7.0" \
     "${SRC_C}" -lm -lpthread
