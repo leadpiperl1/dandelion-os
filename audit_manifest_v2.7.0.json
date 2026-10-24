@@ -1,0 +1,77 @@
+{
+  "artifact_id": "DOS-PEARL-v2.7.0",
+  "title": "Dandelion OS v2.7.0 ('Heimat-Agora'): Dandelion Day Open-Source Linux 6.12+ PREEMPT_RT + sched_ext Distribution with 1.58-Bit Ternary AI, 9-Bite Universal Grimm's Law, BUZOA & 10-Project AAIF Bus",
+  "version": "v2.7.0",
+  "release_date": "2026-10-24",
+  "github_account": "https://github.com/leadpiperl1",
+  "orcid": "0009-0000-5299-0243",
+  "seed": 42,
+  "verification_runtime_seconds": 1.1583,
+  "budget_seconds": 60.0,
+  "status": "PASS",
+  "c99_100k_benchmark": {
+    "tnpt_mmap_footprint_bytes": 577,
+    "sharded_quorum_descriptor_bytes": 64,
+    "mean_grimm_9bite_parse_us": 0.7851,
+    "mean_vbst_twas_forward_us": 0.0863,
+    "combined_loop_us": 0.8714,
+    "preempt_rt_ceiling_us": 50.0,
+    "human_reaction_baseline_ms": 86.5,
+    "speedup_over_human_reaction": 99265.5,
+    "initramfs_cpio_gz_bytes": 13536
+  },
+  "six_aar_improves_verified": {
+    "improve_1_9bite_grimm_rosetta": {
+      "macro_inode": 1505,
+      "unique_q_inodes": [
+        1282,
+        1781,
+        1328,
+        967,
+        712,
+        57,
+        1410,
+        1621,
+        1945
+      ]
+    },
+    "improve_2_fail_closed_siphash": {
+      "corrupted_byte_253_dropped": true,
+      "preauth_siphash24_active": true
+    },
+    "improve_3_privileged_axes_buzoa_twas": {
+      "khosla_native_axis_alignment": 1.0,
+      "hesse_temporal_multiplex_hz": 15.0,
+      "buzoa_teleport_escape_code": 247,
+      "twas_bidirectional_sign_parity": "100% PASS"
+    },
+    "improve_4_switchblade_dual_mode": {
+      "mode_1_bare_metal_live_os": true,
+      "mode_2_ai_sidecar_fx_json": true
+    },
+    "improve_5_aaif_10_projects_and_wild_wasm": [
+      "Agent Router",
+      "Agent Skills",
+      "Agent2Agent (A2A)",
+      "AGENTS.md",
+      "agentgateway",
+      "Goose",
+      "Model Context Protocol (MCP)",
+      "Open Responses",
+      "OpenEnv",
+      "OpenSandbox"
+    ],
+    "improve_6_linux_612_kernel_stack": [
+      "CONFIG_PREEMPT_RT=y",
+      "CONFIG_SCHED_CLASS_EXT=y (sched_ext)",
+      "CONFIG_IO_URING=y",
+      "CONFIG_F2FS_FS=y",
+      "Wild 0.11 Linker",
+      "Wasmtime"
+    ]
+  },
+  "haiku_seed_crystal": {
+    "tier_a_english": "Nine bites steer the wing / Wild links spark the live thumb drive / Dandelion blooms free",
+    "tier_b_agora": "\u03a6\u03c9\u03bd\u03ae shifts in nine / Der, die, das on sched_ext / \u1f08\u03b3\u03ac\u03c0\u03b7 pushes main"
+  }
+}

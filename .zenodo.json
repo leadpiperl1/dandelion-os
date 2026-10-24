@@ -1,0 +1,77 @@
+{
+  "title": "Dandelion OS v2.7.0 ('Heimat-Agora'): Dandelion Day Open-Source Real-Time Linux 6.12+ PREEMPT_RT + sched_ext Distribution with Embedded 1.58-Bit Ternary AI, 9-Bite Universal Grimm's Law, BUZOA & AAIF Bus",
+  "upload_type": "software",
+  "version": "2.7.0",
+  "publication_date": "2026-10-24",
+  "creators": [
+    {
+      "name": "Grimm, Justin D.",
+      "affiliation": "Independent Dandelion Substrate Research Group, Gurley, Alabama, USA",
+      "orcid": "0009-0000-5299-0243"
+    },
+    {
+      "name": "Dandelion AI (Gemini Spark / Argon)",
+      "affiliation": "Cognitive Partner & Fly-By-Wire Co-Stabilizer"
+    }
+  ],
+  "license": "GPL-2.0-or-later",
+  "keywords": [
+    "Dandelion OS",
+    "PREEMPT_RT",
+    "sched_ext",
+    "io_uring",
+    "Linux 6.12",
+    "Balanced Ternary",
+    "BitNet 1.58-bit",
+    "Shingari",
+    "Grimm's Law",
+    "Mori-Zwanzig",
+    "BUZOA",
+    "Privileged Axes",
+    "AAIF",
+    "MCP",
+    "Switchblade Live USB"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/leadpiperl1/dandelion-os",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    },
+    {
+      "identifier": "arXiv:2402.17764",
+      "relation": "continues",
+      "scheme": "arxiv"
+    },
+    {
+      "identifier": "arXiv:2605.26492",
+      "relation": "isSupplementTo",
+      "scheme": "arxiv"
+    },
+    {
+      "identifier": "arXiv:2509.26042",
+      "relation": "cites",
+      "scheme": "arxiv"
+    },
+    {
+      "identifier": "10.1101/2024.06.20.599957",
+      "relation": "cites",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.1038/s41586-024-07566-y",
+      "relation": "cites",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.1103/PhysRevE.111.034130",
+      "relation": "cites",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.5281/zenodo.21255229",
+      "relation": "isNewVersionOf",
+      "scheme": "doi"
+    }
+  ]
+}
