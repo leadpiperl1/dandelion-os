@@ -13,7 +13,7 @@
 >   * **`[ 0 GREEN]` Real-Time Linux OS:** Deterministic `< 50.0 µs` kernel syscalls, `sched_ext` BPF core pinning, and zero-copy `io_uring` pipes.
 >   * **`[+1 RED]` Embedded 1.58-Bit Ternary AI:** Multiplication-free Virtual Bit-Slice Transform (`VBST`) co-processor that trims manifold shear in **`< 2.0 µs`** while preventing generative mode collapse (`Byte 254`).
 > * **Total Build Time:** `30 seconds` (Quick Start) · `5 minutes` (Live USB / Custom Fork)
-> * **Total Bricks in Box:** `16 Canonical Files` (Zero external C dependencies)
+> * **Total Bricks in Box:** `18 Canonical Files` (Zero external C dependencies; includes closed-loop Drive-to-GitHub bridge)
 
 ![Dandelion OS v2.7.2 Architecture & Telemetry Blueprint](https://raw.githubusercontent.com/leadpiperl1/dandelion-os/main/dandelion_os_grimm_whiteroom_state_map_v2.7.0.png)
 
@@ -198,7 +198,7 @@ Using Mori-Zwanzig Dual Projection, Dandelion OS separates **Shared Cross-Lingui
 3. Edit `dandelion_os_grimm_fbw_v2.7.0.c` (for example, add a new Bite rule in `parse_grimm_rosetta_fbw()` or customize a Shingari root in `SHINGARI_ROOTS[]`).
 4. Run `make check` to verify your build passes the 60-second verification contract, then commit and push to your fork!
 
-## 5. Complete Bill of Materials (BOM — All 16 Bricks in the Box)
+## 5. Complete Bill of Materials (BOM — All 18 Bricks in the Box)
 
 | Element ID | Filename | Layer Color | Qty | Part Description |
 | :--- | :--- | :--- | :--- | :--- |
@@ -218,6 +218,8 @@ Using Mori-Zwanzig Dual Projection, Dandelion OS separates **Shared Cross-Lingui
 | `BRICK-14` | `dandelion_os_grimm_whiteroom_v2.7.0.tex` | `[GOLD]` | `1x` | LaTeX source for the 3-page IEEE-style technical manual |
 | `BRICK-15` | `dandelion_os_grimm_whiteroom_v2.7.0.pdf` | `[GOLD]` | `1x` | Compiled 3-page technical manual & falsification contract |
 | `BRICK-16` | `dandelion_os_grimm_whiteroom_state_map_v2.7.0.png` | `[GOLD]` | `1x` | 300 DPI 4-panel architecture & telemetry state map |
+| `BRICK-17` | `dandelion_drive_to_github_bridge_v2.0.0.gs` | `[+1 RED]` | `1x` | Closed-loop Google Drive <-> GitHub Apps Script daemon |
+| `BRICK-18` | `dandy_gdrive_sync_v1.0.0.sh` | `[0 GREEN]` | `1x` | Zero-download Fedora Google Drive mount -> GitHub CLI sync |
 
 ## 6. Citation, Credits & Founding Ethos
 
