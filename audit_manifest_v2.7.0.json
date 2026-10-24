@@ -6,18 +6,18 @@
   "github_account": "https://github.com/leadpiperl1",
   "orcid": "0009-0000-5299-0243",
   "seed": 42,
-  "verification_runtime_seconds": 1.1583,
+  "verification_runtime_seconds": 1.14,
   "budget_seconds": 60.0,
   "status": "PASS",
   "c99_100k_benchmark": {
     "tnpt_mmap_footprint_bytes": 577,
     "sharded_quorum_descriptor_bytes": 64,
-    "mean_grimm_9bite_parse_us": 0.7851,
-    "mean_vbst_twas_forward_us": 0.0863,
-    "combined_loop_us": 0.8714,
+    "mean_grimm_9bite_parse_us": 0.7935,
+    "mean_vbst_twas_forward_us": 0.0876,
+    "combined_loop_us": 0.8811,
     "preempt_rt_ceiling_us": 50.0,
     "human_reaction_baseline_ms": 86.5,
-    "speedup_over_human_reaction": 99265.5,
+    "speedup_over_human_reaction": 98172.7,
     "initramfs_cpio_gz_bytes": 13536
   },
   "six_aar_improves_verified": {
