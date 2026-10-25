@@ -11,14 +11,21 @@ SRC     := dandelion_os_grimm_fbw_v2.7.0.c
 USB_SH  := ./mk_switchblade_usb_v2.7.0.sh
 VERIFY  := verify_dandelion_os_v2.7.0.py
 INITRD  := initramfs_dandelion_v2.7.0.cpio.gz
+VENV_DIR ?= .venv
 
-.PHONY: all build check verify shell json initramfs qemu clean help
+.PHONY: all build check verify shell json initramfs qemu clean help install-deps venv
 
 all: build
 
-build: $(TARGET)
+venv:
+	$(PYTHON) -m venv $(VENV_DIR)
+
+install-deps: venv
+	. $(VENV_DIR)/bin/activate && python -m pip install --upgrade pip && python -m pip install -r requirements.txt
+
+build: $(TARGET) $(USB_SH)
 	@chmod +x $(USB_SH)
-	@$(USB_SH)
+	@bash $(USB_SH)
 
 $(TARGET): $(SRC)
 	$(CC) $(CFLAGS) -o $(TARGET) $(SRC) $(LDFLAGS)
@@ -48,6 +55,7 @@ clean:
 
 help:
 	@echo "Dandelion OS v2.7.0 ('Heimat-Agora') Build Targets:"
+	@echo "  make install-deps - Create a local virtualenv and install Python build dependencies"
 	@echo "  make          - Compile C99 FBW daemon and stage Switchblade Live USB RootFS"
 	@echo "  make check    - Run 15-vector 9-Bite Grimm's Law audit & 100k benchmark (<=60s)"
 	@echo "  make shell    - Launch interactive F-16 Fly-By-Wire shell"

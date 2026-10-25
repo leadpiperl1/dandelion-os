@@ -2,5 +2,6 @@
 *.log
 *.out
 __pycache__/
+.venv/
 build_whiteroom_v2.4.0/
 build_whiteroom_v2.7.0/
