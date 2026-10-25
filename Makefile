@@ -7,8 +7,8 @@ LDFLAGS ?= -lm -lpthread
 PYTHON  ?= python3
 
 TARGET  := dandelion_os_grimm_fbw_v2.7.0
-SRC     := https://www.google.com/search?q=dandelion\_os\_grimm\_fbw\_v2.7.0.c
-USB_SH  := ./https://www.google.com/search?q=mk\_switchblade\_usb\_v2.7.0.sh
+SRC     := dandelion_os_grimm_fbw_v2.7.0.c
+USB_SH  := ./mk_switchblade_usb_v2.7.0.sh
 VERIFY  := verify_dandelion_os_v2.7.0.py
 INITRD  := initramfs_dandelion_v2.7.0.cpio.gz
 
@@ -16,7 +16,7 @@ INITRD  := initramfs_dandelion_v2.7.0.cpio.gz
 
 all: build
 
-build:
+build: $(TARGET)
 	@chmod +x $(USB_SH)
 	@$(USB_SH)
 
