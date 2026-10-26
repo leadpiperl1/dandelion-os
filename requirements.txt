@@ -5,5 +5,5 @@
 #        dependencies beyond a standard ISO C99 compiler (gcc >= 9 or clang >= 11)
 #        and POSIX libm / libpthread.
 # ==============================================================================
-numpy>=1.24.0,<3.0.0
+numpy>=2.5.4,<3.0.0
 matplotlib>=3.7.0,<4.0.0
