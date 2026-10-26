@@ -1,72 +1,63 @@
 {
-  "artifact_id": "DOS-PEARL-v2.8.0",
-  "title": "Dandelion OS v2.8.0 ('Sovereign Desktop & Embedded AI Release'): Open-Source Linux 6.12+ PREEMPT_RT + sched_ext Distribution with 1.58-Bit Ternary VBST AI, Topological Dirac Synchronization, larchanka/skills Automation & 9-Bite Universal Grimm's Law",
+  "artifact": "Dandelion OS Sovereign Desktop & Embedded AI Release",
   "version": "v2.8.0",
+  "semver": "2.8.0",
   "codename": "Sovereign Desktop & Embedded AI Release",
   "release_date": "2026-10-26",
-  "github_account": "https://github.com/leadpiperl1/dandelion-os",
+  "author": "Justin D. Grimm (K-Lani 13 Actual)",
   "orcid": "0009-0000-5299-0243",
-  "seed": 42,
-  "verification_runtime_seconds": 8.6509,
-  "budget_seconds": 60.0,
-  "status": "PASS",
-  "unit_tests_and_semver": {
-    "ternary_logic_gates": {
-      "ternary_gates_verified": 81,
-      "fowler_bijection_states": 243,
-      "fail_closed_trap_codes": 13,
-      "status": "PASS"
-    },
-    "semver_compliance": {
-      "semver": "v2.8.0",
-      "magic_header": "TNPT280",
-      "zenodo_version": "2.8.0",
-      "duplicate_files_found": 0,
-      "status": "PASS"
-    }
+  "concept_doi": "10.5281/zenodo.21255229",
+  "repository": "https://github.com/leadpiperl1/dandelion-os",
+  "verification_mode": "strict",
+  "runtime_environment": {
+    "os_system": "Linux",
+    "kernel_release": "4.19.0-gvisor",
+    "architecture": "x86_64",
+    "is_linux": true,
+    "is_preempt_rt_kernel": false,
+    "python_version": "3.11.2"
   },
-  "c99_100k_benchmark": {
-    "tnpt_mmap_footprint_bytes": 577,
-    "sharded_quorum_descriptor_bytes": 64,
-    "layerfs_point_v2_bytes": 6,
-    "mean_grimm_9bite_parse_us": 2.9217,
-    "mean_vbst_dirac_forward_us": 0.4735,
-    "core_vbst_jitter_sigma_us": 0.4025,
-    "jitter_ceiling_us": 1.0,
-    "combined_loop_us": 3.3952,
+  "verification_runtime_sec": 5.3023,
+  "c99_static_analysis_flags": "-std=c99 -O3 -Wall -Wextra -Wpedantic -Wshadow -Wformat=2 -Wconversion -Wundef -Werror",
+  "compiler_warnings": 0,
+  "copilot_10point_audit_resolved": true,
+  "ternary_logic_gates": {
+    "ternary_gates_verified": 81,
+    "fowler_bijection_states": 243,
+    "fail_closed_trap_codes": 13,
+    "status": "PASS"
+  },
+  "semver_compliance": {
+    "semver_version": "v2.8.0",
+    "header_checked": true,
+    "makefile_checked": true,
+    "readme_checked": true,
+    "version_log_checked": true,
+    "zenodo_json_checked": true,
+    "citation_cff_checked": true,
+    "zero_duplicate_clutter": true
+  },
+  "telemetry": {
+    "mean_grimm_rosetta_parse_us": 1.2666,
+    "mean_vbst_dirac_us": 0.2447,
+    "vbst_jitter_sigma_us": 0.0745,
+    "combined_kernel_loop_us": 1.5113,
     "preempt_rt_ceiling_us": 50.0,
-    "human_reaction_baseline_ms": 86.5,
-    "speedup_over_human_reaction": 25477.1,
-    "initramfs_cpio_gz_bytes": 15276,
-    "thermal_envelope_watts": 18.52
+    "jitter_threshold_us": 1.0,
+    "dirac_cluster_sync_r": 0.9948,
+    "khosla_privileged_axis_r": 1.0,
+    "thermal_power_watts": 18.52,
+    "tnpt_bytes": 577,
+    "initramfs_bytes": 15776,
+    "layerfs_point_v2_bytes": 6,
+    "l1d_quorum_entry_bytes": 64
   },
-  "v280_architectural_integrations": {
-    "larchanka_skills_modules": [
-      "agent-loop",
-      "code-review (5 pillars: Correctness, Readability, Architecture, Security, Performance)",
-      "codebase-context-generator (Tree-sitter AST -> AGENTS.md)",
-      "manual-automation (Chrome DevTools MCP)"
-    ],
-    "f16_fbw_control_laws": {
-      "blue_human_pilot_cores": "0-2",
-      "green_os_mediator_cores": "3-4",
-      "red_ai_copilot_cores": "5-7",
-      "v_keyhole_duty": 0.6667,
-      "wu_chiral_bias": 0.0127,
-      "hesse_temporal_multiplex_hz": 15.0
-    },
-    "topological_dirac_cluster_sync": {
-      "operator": "Neuberger Overlap D_ov = (1/a)(1 + gamma_5 sgn(H_w))",
-      "spectral_mapping": "{-1: Dirac Sea, 0: Zero-Mode Kernel, +1: Physical Vacuum}",
-      "sync_order_parameter_r": 0.9948,
-      "krylov_bandwidth_reduction_pct": 20.75
-    },
-    "vbst_and_layerfs": {
-      "fowler_packing": "5 trits/byte (3^5 = 243 <= 256, 94.92% density)",
-      "fail_closed_byte_253_drop": true,
-      "uds_socket_path_sanitized": true,
-      "json_escape_hardened": true,
-      "strtol_shell_bounds_checked": true
-    }
-  }
+  "sha256": {
+    "dandelion_os_grimm_fbw_v2.8.0.c": "263bd5d6a8cd5bbbdccb63408466add3e4cf9debe4886d6d15597fbba9ad9309",
+    "dandelion_os_v2.8.0.h": "0aae1fd99e77bc909fe4262eba1d8ee301551f1cd852069fd76de3194070d281",
+    "dandelion_b158_v2.8.0.tnpt": "22746ae36d8f8614d81b78dd806e7550c4f7a67b9b018a42b285d6a70ae8331d",
+    "initramfs_dandelion_v2.8.0.cpio.gz": "5d112137ddc5c53935069ef19695ac69b71a06b17ac5def24125a308b04e74eb",
+    "dandelion_os_grimm_whiteroom_state_map_v2.8.0.png": "26dff0faf8805bb5e66e8515897c3f0b10f9bcbd4992fea8c839cd85be1b004c"
+  },
+  "status": "ALL_6_GATES_PASSED"
 }
