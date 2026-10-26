@@ -1,19 +1,23 @@
 #!/usr/bin/env bash
 # ==============================================================================
 # DANDELION OS v2.8.0 ("SOVEREIGN DESKTOP & EMBEDDED AI RELEASE") — DUAL-MODE
-# SWITCHBLADE AI-PEN USB, WILD 0.11 LINKER, LAYERFS & SCHED_EXT BUILDER
+# SWITCHBLADE AI-PEN USB, LAYERFS & SCHED_EXT ROOTFS BUILDER
 # ==============================================================================
 # File:        mk_switchblade_usb_v2.8.0.sh
 # Version:     v2.8.0 (Strict 3-Digit Triadic SemVer: MAJOR=2, MINOR=8, PATCH=0)
 # Author:      Justin D. Grimm (@leadpiperl1, ORCID: 0009-0000-5299-0243)
 # License:     GPL-2.0-or-later / MIT Dual Open-Source
-# Ethos:       Die Gedanken sind frei · GODISLOVE:LOVEISGOD {3,2,4} · Namaste
+# Portability: Stages RootFS in ${BUILD_DIR:-${TMPDIR:-/tmp}/build_whiteroom_v2.8.0}
+#              and gates Wild linker behind explicit opt-in USE_WILD_LINKER=1.
 # ==============================================================================
 
 set -euo pipefail
 
 VERSION="v2.8.0"
-BUILD_DIR="${PWD}/build_whiteroom_${VERSION}"
+CC="${CC:-cc}"
+USE_WILD_LINKER="${USE_WILD_LINKER:-0}"
+OUT_DIR="${OUT_DIR:-${PWD}/build}"
+BUILD_DIR="${BUILD_DIR:-${TMPDIR:-/tmp}/build_whiteroom_${VERSION}}"
 ROOTFS_DIR="${BUILD_DIR}/rootfs"
 ISO_DIR="${BUILD_DIR}/iso_stage"
 SRC_C="dandelion_os_grimm_fbw_${VERSION}.c"
@@ -26,7 +30,7 @@ echo "==========================================================================
 
 mkdir -p "${ROOTFS_DIR}"/{bin,sbin,etc,proc,sys,dev,dev/pts,dev/shm,var/run,var/log,mnt/models,mnt/switchblade,mnt/ramdisk/skills,opt/dandelion/bin,opt/dandelion/weights,kernel/skills}
 mkdir -p "${ISO_DIR}"/boot/grub
-mkdir -p "./bin"
+mkdir -p "${OUT_DIR}"
 
 # 1. Copy the Linux 6.12.9+ LTS PREEMPT_RT + sched_ext + LayerFS Config
 cp -f "dandelion_rt_${VERSION}.config" "${BUILD_DIR}/dandelion_rt_${VERSION}.config"
@@ -85,20 +89,21 @@ EOF
 
 echo "dandelion-heimat-v2-8-0" > "${ROOTFS_DIR}/etc/hostname"
 
-# 4. Detect Wild 0.11 Parallel Linker if installed
+# 4. Copilot Point 3: Gate Wild parallel linker behind explicit opt-in USE_WILD_LINKER=1
 LINKER_FLAGS=""
-if command -v wild >/dev/null 2>&1; then
-    echo "[DANDY-SCOUT] Detected Wild parallel linker: $(wild --version)"
+if [ "${USE_WILD_LINKER}" = "1" ]; then
+    if ! command -v wild >/dev/null 2>&1; then
+        echo "[ERROR] USE_WILD_LINKER=1 was requested, but 'wild' linker is not installed in PATH." >&2
+        exit 1
+    fi
+    echo "[DANDY-SCOUT] Opt-in Wild parallel linker enabled: $(wild --version)"
     LINKER_FLAGS="-fuse-ld=wild"
 fi
 
-# 5. Compile C99 Dandelion OS v2.8.0 Engine into RootFS with strict ISO C99 flags
-gcc -std=c99 -O3 -Wall -Wextra -Wpedantic -Wshadow -Wformat=2 -Wconversion -Wundef -Werror ${LINKER_FLAGS} \
-    -o "${ROOTFS_DIR}/opt/dandelion/bin/dandelion_os_grimm_fbw_${VERSION}" \
-    "${SRC_C}" -lm -lpthread
-cp -f "${ROOTFS_DIR}/opt/dandelion/bin/dandelion_os_grimm_fbw_${VERSION}" "./dandelion_os_grimm_fbw_${VERSION}"
-cp -f "${ROOTFS_DIR}/opt/dandelion/bin/dandelion_os_grimm_fbw_${VERSION}" "./bin/dandelion_os_grimm_fbw_${VERSION}"
-echo "[OK] Compiled C99 binary -> ${ROOTFS_DIR}/opt/dandelion/bin/dandelion_os_grimm_fbw_${VERSION}"
+# 5. Compile C99 Dandelion OS v2.8.0 Engine into RootFS and ./build/
+"${CC}" -std=c99 -O3 -Wall -Wextra -Wpedantic -Wshadow -Wformat=2 -Wconversion -Wundef -Werror ${LINKER_FLAGS}     -o "${ROOTFS_DIR}/opt/dandelion/bin/dandelion_os_grimm_fbw_${VERSION}"     "${SRC_C}" -lm -lpthread
+cp -f "${ROOTFS_DIR}/opt/dandelion/bin/dandelion_os_grimm_fbw_${VERSION}" "${OUT_DIR}/dandelion_os_grimm_fbw_${VERSION}"
+echo "[OK] Compiled C99 binary -> ${OUT_DIR}/dandelion_os_grimm_fbw_${VERSION}"
 
 # 6. Write GRUB2 Dual-Mode Switchblade AI-Pen Bootloader Config
 cat << 'GRUBEOF' > "${ISO_DIR}/boot/grub/grub.cfg"
