@@ -1,11 +1,11 @@
 cff-version: 1.2.0
-message: "If you use Dandelion OS v2.8.0 ('Sovereign Desktop & Embedded AI Release'), please cite this software release."
-title: "Dandelion OS v2.8.0 ('Sovereign Desktop & Embedded AI Release'): Open-Source Real-Time Linux 6.12+ PREEMPT_RT + sched_ext Operating System with Embedded 1.58-Bit Ternary VBST AI, Topological Dirac Synchronization & larchanka/skills Automation"
-version: 2.8.0
+message: "If you use Dandelion OS v3.0.0 ('Sovereign Argon Frontier & Embedded AI Release'), please cite this software release."
+title: "Dandelion OS v3.0.0 ('Sovereign Argon Frontier & Embedded AI Release'): Open-Source Real-Time Linux 6.12+ PREEMPT_RT + sched_ext Operating System with Embedded 1.58-Bit Ternary VBST AI, LayerFS SQLite WAL, ESP-SDR 80 MSa/s Recon & Stigmergic BLE Mesh"
+version: 3.0.0
 date-released: 2026-10-26
 license: GPL-2.0-or-later
 repository-code: "https://github.com/leadpiperl1/dandelion-os"
-url: "https://github.com/leadpiperl1/dandelion-os/releases/tag/v2.8.0"
+url: "https://github.com/leadpiperl1/dandelion-os/releases/tag/v3.0.0"
 identifiers:
   - type: doi
     value: "10.5281/zenodo.21255229"
