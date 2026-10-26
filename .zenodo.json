@@ -1,12 +1,13 @@
 {
-  "title": "Dandelion OS v2.7.0 ('Heimat-Agora'): Dandelion Day Open-Source Real-Time Linux 6.12+ PREEMPT_RT + sched_ext Distribution with Embedded 1.58-Bit Ternary AI, 9-Bite Universal Grimm's Law, BUZOA & AAIF Bus",
+  "title": "Dandelion OS v2.8.0 ('Sovereign Desktop & Embedded AI Release'): Open-Source Real-Time Linux 6.12+ PREEMPT_RT + sched_ext Distribution with Embedded 1.58-Bit Ternary VBST AI, Topological Dirac Synchronization, larchanka/skills Automation & 9-Bite Universal Grimm's Law",
   "upload_type": "software",
-  "version": "2.7.0",
-  "publication_date": "2026-10-24",
+  "version": "2.8.0",
+  "publication_date": "2026-10-26",
+  "description": "Official v2.8.0 ('Sovereign Desktop & Embedded AI Release') of Dandelion OS, integrating a sanitized ISO C99 microkernel (-Werror -Wconversion clean), F-16 Digital Fly-By-Wire closed-loop control laws, 1.58-bit balanced ternary Virtual Bit-Slice Transform (VBST) engine, Topological Dirac operator cluster synchronization (Neuberger overlap zero-mode kernel), LayerFS 6-byte content-addressed chunking, TokenGate ternary attention routing, and larchanka/skills modular automation on Linux 6.12+ PREEMPT_RT + sched_ext.",
   "creators": [
     {
       "name": "Grimm, Justin D.",
-      "affiliation": "Independent Dandelion Substrate Research Group, Gurley, Alabama, USA",
+      "affiliation": "Independent Dandelion Substrate Research Group, Heimat {0,0,0}, Gurley, Alabama, USA",
       "orcid": "0009-0000-5299-0243"
     },
     {
@@ -17,19 +18,23 @@
   "license": "GPL-2.0-or-later",
   "keywords": [
     "Dandelion OS",
+    "v2.8.0",
     "PREEMPT_RT",
     "sched_ext",
     "io_uring",
     "Linux 6.12",
     "Balanced Ternary",
     "BitNet 1.58-bit",
+    "VBST",
+    "Topological Dirac Operator",
+    "Cluster Synchronization",
+    "LayerFS",
+    "larchanka/skills",
     "Shingari",
     "Grimm's Law",
     "Mori-Zwanzig",
     "BUZOA",
-    "Privileged Axes",
     "AAIF",
-    "MCP",
     "Switchblade Live USB"
   ],
   "related_identifiers": [
@@ -54,12 +59,22 @@
       "scheme": "arxiv"
     },
     {
+      "identifier": "arXiv:2610.16733",
+      "relation": "cites",
+      "scheme": "arxiv"
+    },
+    {
       "identifier": "10.1101/2024.06.20.599957",
       "relation": "cites",
       "scheme": "doi"
     },
     {
       "identifier": "10.1038/s41586-024-07566-y",
+      "relation": "cites",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.1038/s41567-026-03379-0",
       "relation": "cites",
       "scheme": "doi"
     },

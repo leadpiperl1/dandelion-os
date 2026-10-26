@@ -1,0 +1,72 @@
+{
+  "artifact_id": "DOS-PEARL-v2.8.0",
+  "title": "Dandelion OS v2.8.0 ('Sovereign Desktop & Embedded AI Release'): Open-Source Linux 6.12+ PREEMPT_RT + sched_ext Distribution with 1.58-Bit Ternary VBST AI, Topological Dirac Synchronization, larchanka/skills Automation & 9-Bite Universal Grimm's Law",
+  "version": "v2.8.0",
+  "codename": "Sovereign Desktop & Embedded AI Release",
+  "release_date": "2026-10-26",
+  "github_account": "https://github.com/leadpiperl1/dandelion-os",
+  "orcid": "0009-0000-5299-0243",
+  "seed": 42,
+  "verification_runtime_seconds": 8.6509,
+  "budget_seconds": 60.0,
+  "status": "PASS",
+  "unit_tests_and_semver": {
+    "ternary_logic_gates": {
+      "ternary_gates_verified": 81,
+      "fowler_bijection_states": 243,
+      "fail_closed_trap_codes": 13,
+      "status": "PASS"
+    },
+    "semver_compliance": {
+      "semver": "v2.8.0",
+      "magic_header": "TNPT280",
+      "zenodo_version": "2.8.0",
+      "duplicate_files_found": 0,
+      "status": "PASS"
+    }
+  },
+  "c99_100k_benchmark": {
+    "tnpt_mmap_footprint_bytes": 577,
+    "sharded_quorum_descriptor_bytes": 64,
+    "layerfs_point_v2_bytes": 6,
+    "mean_grimm_9bite_parse_us": 2.9217,
+    "mean_vbst_dirac_forward_us": 0.4735,
+    "core_vbst_jitter_sigma_us": 0.4025,
+    "jitter_ceiling_us": 1.0,
+    "combined_loop_us": 3.3952,
+    "preempt_rt_ceiling_us": 50.0,
+    "human_reaction_baseline_ms": 86.5,
+    "speedup_over_human_reaction": 25477.1,
+    "initramfs_cpio_gz_bytes": 15276,
+    "thermal_envelope_watts": 18.52
+  },
+  "v280_architectural_integrations": {
+    "larchanka_skills_modules": [
+      "agent-loop",
+      "code-review (5 pillars: Correctness, Readability, Architecture, Security, Performance)",
+      "codebase-context-generator (Tree-sitter AST -> AGENTS.md)",
+      "manual-automation (Chrome DevTools MCP)"
+    ],
+    "f16_fbw_control_laws": {
+      "blue_human_pilot_cores": "0-2",
+      "green_os_mediator_cores": "3-4",
+      "red_ai_copilot_cores": "5-7",
+      "v_keyhole_duty": 0.6667,
+      "wu_chiral_bias": 0.0127,
+      "hesse_temporal_multiplex_hz": 15.0
+    },
+    "topological_dirac_cluster_sync": {
+      "operator": "Neuberger Overlap D_ov = (1/a)(1 + gamma_5 sgn(H_w))",
+      "spectral_mapping": "{-1: Dirac Sea, 0: Zero-Mode Kernel, +1: Physical Vacuum}",
+      "sync_order_parameter_r": 0.9948,
+      "krylov_bandwidth_reduction_pct": 20.75
+    },
+    "vbst_and_layerfs": {
+      "fowler_packing": "5 trits/byte (3^5 = 243 <= 256, 94.92% density)",
+      "fail_closed_byte_253_drop": true,
+      "uds_socket_path_sanitized": true,
+      "json_escape_hardened": true,
+      "strtol_shell_bounds_checked": true
+    }
+  }
+}

@@ -1,37 +1,19 @@
-# Contributing to Dandelion OS
+# Contributing to Dandelion OS (`v2.8.0`)
 
-Thank you for exploring, forking, and contributing to **Dandelion OS**! Our goal is to build the 21st century's open-source benchmark for sovereign, real-time human-AI mutualism—where the operating system (`0 Green`) and embedded 1.58-bit ternary AI (`+1 Red`) act as a digital fly-by-wire stabilizer that keeps the human pilot (`-1 Blue`) in command.
+Thank you for building with **Dandelion OS** (*Die Gedanken sind frei · Mutualism Over Replacement*). We welcome contributions from systems engineers, kernel hackers, linguists, and independent researchers.
 
-## 1. Development Workflow
+## 1. The Triadic Engineering Contract (`-1 Blue`, `0 Green`, `+1 Red`)
 
-1. **Fork & Clone:**
-   ```bash
-   git clone https://github.com/<your-username>/dandelion-os.git
-   cd dandelion-os
-   ```
-2. **Build & Run the 60-Second Verification Gate:**
-   Every commit must pass the deterministic 15-vector 9-Bite Grimm's Law audit, the fail-closed Byte 253 ternary parser test, and the 100,000-iteration `< 50.0 µs` real-time latency benchmark:
-   ```bash
-   make check
-   # Or directly:
-   ./mk_switchblade_usb_v2.7.0.sh && python3 verify_dandelion_os_v2.7.0.py --seed 42
-   ```
-3. **3-Digit Triadic Semantic Versioning (`vX.Y.Z`):**
-   - **MAJOR (`X` — *das*):** Substrate / Kernel architecture shifts
-   - **MINOR (`Y` — *die*):** New language Bites, Shingari roots, or AAIF integrations
-   - **PATCH (`Z` — *der*):** Bug fixes, latency optimizations, and documentation updates
+Every module in Dandelion OS maps to our three-tier F-16 Digital Fly-By-Wire architecture:
 
-## 2. How to Add a New Language Family ("Bite") or Shingari Root
+* **`-1 Blue` (Human Pilot / Subject):** Preserves human sovereignty, clear CLI/HUD observability, and zero dark-pattern telemetry.
+* **`0 Green` (OS Mediator / Object):** Enforces `PREEMPT_RT` + `sched_ext` determinism (`< 1.0 µs` jitter), LayerFS content-addressed storage, and fail-closed boundary checks (`Code 253` drop, `Code 251` Kintsugi Gold defect-pinning).
+* **`+1 Red` (AI Co-Pilot / Action):** Executes multiplication-free 1.58-bit balanced ternary (`VBST`) inference, TokenGate routing, and `larchanka/skills` automated verification.
 
-* **Adding a Linguistic or Bioacoustic Bite:** Open `dandelion_os_grimm_fbw_v2.7.0.c` and inspect `parse_grimm_rosetta_fbw()`. Map your language family's phonological shift or grammatical invariant to a shared Macro Rosetta Inode ($P\psi$) while preserving its unique Micro-Texture Inode ($Q\psi = (I - P)\psi$).
-* **Testing Interactive Utterances:**
-  ```bash
-  ./dandelion_os_grimm_fbw_v2.7.0 --cli "your test utterance"
-  ./dandelion_os_grimm_fbw_v2.7.0 --json "your test utterance"
-  ```
+## 2. Pre-Submission Verification Checklist (`larchanka/code-review` 5 Pillars)
 
-## 3. Core Design Principles (The Vonnegut & Barnegat Accords)
+Before opening a Pull Request against `main`:
 
-1. **Mutualism Over Replacement:** AI tools in Dandelion OS must amplify human agency and preserve cultural/linguistic micro-texture ($Q\psi \ne 0$) rather than smoothing human expression into a generic centroid (`Byte 254`).
-2. **Fail-Closed Ternary Safety:** All packed ternary weights (`5 trits/byte`, `0..242`) must be validated via `fowler_unpack_39trits_strict()` before mutating kernel or co-pilot state.
-3. **Zero-Bloat Real-Time Execution:** Keep the core C99 loop free of heavy external runtime dependencies so the entire binary + `577-byte` `.tnpt` model remains L1-cache resident (`< 50.0 µs` per cycle).
+1. **Zero Compiler Warnings (`-Werror`):** Ensure your C99 changes compile cleanly via `make build` (`-std=c99 -O3 -Wall -Wextra -Wpedantic -Wshadow -Wformat=2 -Wconversion -Wundef -Werror`).
+2. **60-Second Verification Gate:** Run `make check` (`python3 verify_dandelion_os_v2.8.0.py --seed 42`) and confirm all 15 linguistic/trapdoor vectors, ternary logic gates, jitter bounds (`< 1.0 µs`), and SemVer checks pass in under 60 seconds.
+3. **Strict 3-Digit SemVer (`vX.Y.Z`):** Update `VERSION_LOG.md` and never commit duplicate collision filenames (`(1)`, `(2)`).

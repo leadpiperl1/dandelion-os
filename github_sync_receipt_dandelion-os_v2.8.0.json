@@ -1,0 +1,105 @@
+{
+  "status": "APPROVED_FOR_DRIVE_TO_GITHUB_PUSH",
+  "human_approved": true,
+  "synced_at_utc": "2026-10-26T15:56:10.000Z",
+  "repository": "leadpiperl1/dandelion-os",
+  "html_url": "https://github.com/leadpiperl1/dandelion-os",
+  "branch": "main",
+  "version": "v2.8.0",
+  "codename": "Sovereign Desktop & Embedded AI Release",
+  "previous_synced_version": "v2.7.2",
+  "previous_commit_sha": "6430cd123db5064e3db48a918eaabb3efda0a5ac",
+  "staged_local_commit_sha": "29dfbb18e5d9afe6b73ebc0268eb9cdbb2f17995",
+  "release_url": "https://github.com/leadpiperl1/dandelion-os/releases/tag/v2.8.0",
+  "orcid": "0009-0000-5299-0243",
+  "zenodo_concept_doi": "10.5281/zenodo.21255229",
+  "canonical_file_count": 18,
+  "pruned_legacy_file_count": 20,
+  "stargazers_count": 0,
+  "forks_count": 0,
+  "open_issues_count": 0,
+  "open_issues_and_prs": [],
+  "security_and_copilot_fixes_verified": [
+    "C99 -Wconversion integer promotion fixed in fowler_pack_39trits()",
+    "Unsigned char casting enforced for <ctype.h> tolower() LUT generation",
+    "Fail-closed NULL-pointer and array bounds checks across all kernel APIs",
+    "Unsafe atoi() replaced with strtol() + errno validation in interactive shell",
+    "JSON string escaping (escape_json_string) added to --json / --sidecar stream",
+    "Fail-closed Unix Domain Socket path sanitization (validate_uds_socket_path)",
+    "Hardcoded container path removed from verify_dandelion_os_v2.8.0.py"
+  ],
+  "canonical_files_manifest": {
+    "README.md": {
+      "size_bytes": 12491,
+      "sha256": "87f52383e199e40d293de01c404fb5a441642370f5288f71c40edfc82b8a09e1"
+    },
+    "VERSION_LOG.md": {
+      "size_bytes": 4216,
+      "sha256": "e71ce94dbc27a86fd5572fb427f6623843490c0e3fecc60abda6d37b593a1bc9"
+    },
+    "AGENTS.md": {
+      "size_bytes": 2185,
+      "sha256": "152f8a4f0c731f274df63f6820223a70109ee47934f9bd0089cbe071a16aa9c0"
+    },
+    "CONTRIBUTING.md": {
+      "size_bytes": 1662,
+      "sha256": "3a5b5335c1cb668021510a31e2a2932b3fcb69b9e22d36c6ff2997eeb05919d0"
+    },
+    "LICENSE": {
+      "size_bytes": 1621,
+      "sha256": "0475b83c7c689bc1580ef58816dd94b28ea8d1e2643f5a1646f9b81f3ce49f58"
+    },
+    "Makefile": {
+      "size_bytes": 2781,
+      "sha256": "25eb89c2e5093e57f50b6987f9418a85380b48d6a94051e4ed99381199877bef"
+    },
+    ".zenodo.json": {
+      "size_bytes": 2850,
+      "sha256": "aaed86b00b06dc8d49b8a2eb51c6cfdbe27e8b1ffb9d060c0fdccb7bf21e2c1e"
+    },
+    "CITATION.cff": {
+      "size_bytes": 975,
+      "sha256": "310caf7e1b99db25b7ca1b2a3a5fac462d3e69294b8cd359996910b6cfbc35bb"
+    },
+    "dandelion_os_v2.8.0.h": {
+      "size_bytes": 11190,
+      "sha256": "3446b69fa1cc6e72bec271755906432887fa3b647c535ab44600f9950c887e67"
+    },
+    "dandelion_os_grimm_fbw_v2.8.0.c": {
+      "size_bytes": 37912,
+      "sha256": "4ea0ba9cfee07134b49527a3e849612a2caf1739bf4bea087d6c143a70be66e7"
+    },
+    "dandelion_rt_v2.8.0.config": {
+      "size_bytes": 1406,
+      "sha256": "0a42356ca855379c89ec4ced4efcd47a44264cb63186c818811e82b59d4091e0"
+    },
+    "mk_switchblade_usb_v2.8.0.sh": {
+      "size_bytes": 5629,
+      "sha256": "62221adf0db24c194b6ede122d798180aa2948c67b16d78134e07a97f343cc94"
+    },
+    "verify_dandelion_os_v2.8.0.py": {
+      "size_bytes": 25531,
+      "sha256": "31af720b2140dc0fa4720054b26fecde618036c76f616cf92463d1e1b63c8a61"
+    },
+    "push_dandelion_day_github_v2.8.0.sh": {
+      "size_bytes": 6159,
+      "sha256": "5b806a4523a95cdaa7aad7fb40789369fbfd156dec8c8142e5be7bc5b3e146cf"
+    },
+    "dandelion_b158_v2.8.0.tnpt": {
+      "size_bytes": 577,
+      "sha256": "22746ae36d8f8614d81b78dd806e7550c4f7a67b9b018a42b285d6a70ae8331d"
+    },
+    "initramfs_dandelion_v2.8.0.cpio.gz": {
+      "size_bytes": 15276,
+      "sha256": "6aa96ff692c1b549a4c32efcb886ce75ba3c1d8dbd3c2511f6ed3a996de4b13b"
+    },
+    "dandelion_os_grimm_whiteroom_state_map_v2.8.0.png": {
+      "size_bytes": 988891,
+      "sha256": "e9bd2d01a25b00dad3ad1739bce04344c3dc2f69e33b4de346f172f163c34911"
+    },
+    "audit_manifest_v2.8.0.json": {
+      "size_bytes": 2663,
+      "sha256": "7ac1df23bf84ef0826a5c319141d148e61f78311888c74ea1630638afdba9bae"
+    }
+  }
+}
