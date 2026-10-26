@@ -784,6 +784,11 @@ int run_verification_suite(bool json_mode) {
         fprintf(stderr, "[FAIL] 2-Bit VBST dot product kernel mismatch: got %d, expected 20!\n", (int)vbst_dot);
         return 1;
     }
+    int32_t tmac_dot = dandelion_tmac_lut4_dot_row(mag_test, sign_test, xq_test, 1U);
+    if (tmac_dot != vbst_dot) {
+        fprintf(stderr, "[FAIL] T-MAC LUT4 vs VBST dot product mismatch: got %d vs %d!\n", (int)tmac_dot, (int)vbst_dot);
+        return 1;
+    }
 
     /* Run 100,000-Iteration Real-Time Latency & Jitter Stress Test */
     const int N_ITER = BENCHMARK_DEFAULT_ITERS;
