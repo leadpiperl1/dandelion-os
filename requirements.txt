@@ -1,5 +1,5 @@
 # ==============================================================================
-# Dandelion OS v2.8.0 — Reproducible Python Verification & Plotting Dependencies
+# Dandelion OS v3.0.0 — Reproducible Python Verification & Plotting Dependencies
 # Usage: python3 -m pip install -r requirements.txt
 # Note:  The C99 microkernel itself (`make build`) has ZERO external library
 #        dependencies beyond a standard ISO C99 compiler (gcc >= 9 or clang >= 11)
