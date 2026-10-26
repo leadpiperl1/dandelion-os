@@ -9,6 +9,24 @@
 
 ![Dandelion OS v2.8.0 Blueprint & Telemetry State Map](https://raw.githubusercontent.com/leadpiperl1/dandelion-os/main/dandelion_os_grimm_whiteroom_state_map_v2.8.0.png)
 
+## Why Dandelion exists
+
+Dandelion OS is built around a simple doctrine:
+
+- Occam: keep the system as simple as possible
+- Landauer: respect the energetic cost of computation
+- Grand Nagus: keep governance, intent, and human control central
+
+The project is designed to favor:
+- deterministic behavior
+- fail-closed safety
+- explainable AI assistance
+- verifiable engineering
+- sovereign human oversight
+
+We do not build chaos for the sake of novelty.
+We build clarity under control.
+
 ## Model Box Briefing (LEGO Technical Manual Standard)
 
 * **Set ID:** `DANDELION-OS-V2.8.0` (**Codename:** *Sovereign Desktop & Embedded AI Release*)
