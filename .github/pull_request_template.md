@@ -1,17 +1,10 @@
-## Summary
-Describe the change and the problem it solves.
+## Summary of Changes (`vX.Y.Z`)
 
-## Why this change
-Explain the design rationale.
+- **Semantic Version Target:** `v3.0.0`
+- **Subsystem Updated:** 
 
-## Validation
-- [ ] Local build passes
-- [ ] `make check` passes
-- [ ] `make check-strict` passes if relevant
-- [ ] No unwanted artifact churn
-
-## Safety / governance
-- [ ] Human control is preserved
-- [ ] AI behavior is bounded and explainable
-- [ ] No hidden state is introduced without documentation
-- [ ] Any new runtime assumptions are clearly described
+## Pre-Flight Verification Checklist (`<= 60s`)
+- [ ] `make check-strict` passes all 9 gates with zero compiler warnings (`-Wall -Wextra -Werror -pedantic`).
+- [ ] Zero dynamic heap allocations (`malloc`/`calloc`/`realloc`/`free` = 0) in C99 kernel paths.
+- [ ] Accessibility invariants in `ACCESSIBILITY.md` (including Bite 10 Morse-to-Ternary `dit=-1, space=0, dah=+1` and `--json` screen-reader output) remain intact.
+- [ ] `VERSION_LOG.md` and `manifest_v3.0.0.json` SHA-256 hashes are synchronized.
