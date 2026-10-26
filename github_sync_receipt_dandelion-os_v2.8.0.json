@@ -1,45 +1,57 @@
 {
-  "status": "APPROVED_FOR_DRIVE_TO_GITHUB_PUSH",
-  "human_approved": true,
-  "synced_at_utc": "2026-10-26T15:56:10.000Z",
+  "schema_version": "1.1.0",
+  "protocol": "user:github-drive-loop v1.1.0 (Human-Pilot-Gated GitHub Sync Receipt)",
   "repository": "leadpiperl1/dandelion-os",
-  "html_url": "https://github.com/leadpiperl1/dandelion-os",
-  "branch": "main",
+  "repository_url": "https://github.com/leadpiperl1/dandelion-os",
+  "target_branch": "main",
   "version": "v2.8.0",
+  "semver": "2.8.0",
   "codename": "Sovereign Desktop & Embedded AI Release",
-  "previous_synced_version": "v2.7.2",
-  "previous_commit_sha": "6430cd123db5064e3db48a918eaabb3efda0a5ac",
-  "staged_local_commit_sha": "29dfbb18e5d9afe6b73ebc0268eb9cdbb2f17995",
-  "release_url": "https://github.com/leadpiperl1/dandelion-os/releases/tag/v2.8.0",
-  "orcid": "0009-0000-5299-0243",
-  "zenodo_concept_doi": "10.5281/zenodo.21255229",
-  "canonical_file_count": 18,
-  "pruned_legacy_file_count": 20,
-  "stargazers_count": 0,
-  "forks_count": 0,
-  "open_issues_count": 0,
-  "open_issues_and_prs": [],
-  "security_and_copilot_fixes_verified": [
-    "C99 -Wconversion integer promotion fixed in fowler_pack_39trits()",
-    "Unsigned char casting enforced for <ctype.h> tolower() LUT generation",
-    "Fail-closed NULL-pointer and array bounds checks across all kernel APIs",
-    "Unsafe atoi() replaced with strtol() + errno validation in interactive shell",
-    "JSON string escaping (escape_json_string) added to --json / --sidecar stream",
-    "Fail-closed Unix Domain Socket path sanitization (validate_uds_socket_path)",
-    "Hardcoded container path removed from verify_dandelion_os_v2.8.0.py"
+  "release_date_utc": "2026-10-26T16:25:00Z",
+  "author": {
+    "name": "Justin D. Grimm (K-Lani 13 Actual)",
+    "email": "leadpiperl1@gmail.com",
+    "github": "leadpiperl1",
+    "orcid": "0009-0000-5299-0243"
+  },
+  "concept_doi": "10.5281/zenodo.21255229",
+  "local_git_commit_sha": "21ae63bce941cb1cf1dcc002e2742ac28bdcaa0c",
+  "status": "APPROVED_FOR_RELEASE",
+  "human_approved": true,
+  "human_pilot_signoff_timestamp_utc": "2026-10-26T16:25:00Z",
+  "copilot_10point_fixes_incorporated": [
+    "1. Added .github/workflows/ci.yml automated GitHub Actions CI matrix (gcc & clang on ubuntu-latest)",
+    "2. Separated portable default C99 flags from strict maintainer flags (STRICT_WARNINGS ?= 0) in Makefile",
+    "3. Gated nonstandard wild linker behind explicit opt-in USE_WILD_LINKER ?= 0 with clear error reporting",
+    "4. Added #if DOS_PLATFORM_POSIX / ISO C clock() fallbacks and macOS/BSD socket prefix support",
+    "5. Added --mode portable (CI/containers) vs. --mode strict (bare-metal RT) in verify_dandelion_os_v2.8.0.py",
+    "6. Centralized all magic numbers, hash seeds, socket prefixes, and 9-Bite inodes into dandelion_os_v2.8.0.h",
+    "7. Directed compiled binary output exclusively into ./build/ (removed root binary pollution) and updated .gitignore",
+    "8. Added Supported Environments & Toolchain Reproducibility Matrix in README.md",
+    "9. Added Verified Behavior vs. Experimental & Hardware-Specific Scope and Known Limitations sections in README.md",
+    "10. Added explicit requirements.txt pinning numpy and matplotlib versions"
   ],
-  "canonical_files_manifest": {
-    "README.md": {
-      "size_bytes": 12491,
-      "sha256": "87f52383e199e40d293de01c404fb5a441642370f5288f71c40edfc82b8a09e1"
+  "pruned_legacy_files_count": 22,
+  "files": {
+    ".github/workflows/ci.yml": {
+      "size_bytes": 1746,
+      "sha256": "ac6476291321675a62e0747be86863089d9336b12cb4fa70980e72d5378ba92f"
     },
-    "VERSION_LOG.md": {
-      "size_bytes": 4216,
-      "sha256": "e71ce94dbc27a86fd5572fb427f6623843490c0e3fecc60abda6d37b593a1bc9"
+    ".gitignore": {
+      "size_bytes": 78,
+      "sha256": "4e36c4e3e2d5cba9052f07ea64829559b91e6571215d81f5eb6bb04863f69f58"
+    },
+    ".zenodo.json": {
+      "size_bytes": 2850,
+      "sha256": "aaed86b00b06dc8d49b8a2eb51c6cfdbe27e8b1ffb9d060c0fdccb7bf21e2c1e"
     },
     "AGENTS.md": {
-      "size_bytes": 2185,
-      "sha256": "152f8a4f0c731f274df63f6820223a70109ee47934f9bd0089cbe071a16aa9c0"
+      "size_bytes": 2385,
+      "sha256": "239c598b8d409eca9cacbd05289377f4fa5f808b15eb98b4095f86bc5fa62fc9"
+    },
+    "CITATION.cff": {
+      "size_bytes": 975,
+      "sha256": "310caf7e1b99db25b7ca1b2a3a5fac462d3e69294b8cd359996910b6cfbc35bb"
     },
     "CONTRIBUTING.md": {
       "size_bytes": 1662,
@@ -50,56 +62,60 @@
       "sha256": "0475b83c7c689bc1580ef58816dd94b28ea8d1e2643f5a1646f9b81f3ce49f58"
     },
     "Makefile": {
-      "size_bytes": 2781,
-      "sha256": "25eb89c2e5093e57f50b6987f9418a85380b48d6a94051e4ed99381199877bef"
+      "size_bytes": 4144,
+      "sha256": "08058bde4e5ab0266ccd879e7aeb72533cf6b41ad636b7c6fcb3a186dbc30eb1"
     },
-    ".zenodo.json": {
-      "size_bytes": 2850,
-      "sha256": "aaed86b00b06dc8d49b8a2eb51c6cfdbe27e8b1ffb9d060c0fdccb7bf21e2c1e"
+    "README.md": {
+      "size_bytes": 18501,
+      "sha256": "b1bceb92743b1ca6f9dc53319fe05072d228ce1bbbddf7d6c90faaf46ef73571"
     },
-    "CITATION.cff": {
-      "size_bytes": 975,
-      "sha256": "310caf7e1b99db25b7ca1b2a3a5fac462d3e69294b8cd359996910b6cfbc35bb"
+    "VERSION_LOG.md": {
+      "size_bytes": 4281,
+      "sha256": "c4385af309fdf62a4d046a8d522c193f172298f9debb3f36a0f1004d94da6a0f"
     },
-    "dandelion_os_v2.8.0.h": {
-      "size_bytes": 11190,
-      "sha256": "3446b69fa1cc6e72bec271755906432887fa3b647c535ab44600f9950c887e67"
-    },
-    "dandelion_os_grimm_fbw_v2.8.0.c": {
-      "size_bytes": 37912,
-      "sha256": "4ea0ba9cfee07134b49527a3e849612a2caf1739bf4bea087d6c143a70be66e7"
-    },
-    "dandelion_rt_v2.8.0.config": {
-      "size_bytes": 1406,
-      "sha256": "0a42356ca855379c89ec4ced4efcd47a44264cb63186c818811e82b59d4091e0"
-    },
-    "mk_switchblade_usb_v2.8.0.sh": {
-      "size_bytes": 5629,
-      "sha256": "62221adf0db24c194b6ede122d798180aa2948c67b16d78134e07a97f343cc94"
-    },
-    "verify_dandelion_os_v2.8.0.py": {
-      "size_bytes": 25531,
-      "sha256": "31af720b2140dc0fa4720054b26fecde618036c76f616cf92463d1e1b63c8a61"
-    },
-    "push_dandelion_day_github_v2.8.0.sh": {
-      "size_bytes": 6159,
-      "sha256": "5b806a4523a95cdaa7aad7fb40789369fbfd156dec8c8142e5be7bc5b3e146cf"
+    "audit_manifest_v2.8.0.json": {
+      "size_bytes": 2372,
+      "sha256": "de06f97f2e3141856fabc7739d3fa23cab73dd8056d11fe1733bcf53e00084bd"
     },
     "dandelion_b158_v2.8.0.tnpt": {
       "size_bytes": 577,
       "sha256": "22746ae36d8f8614d81b78dd806e7550c4f7a67b9b018a42b285d6a70ae8331d"
     },
-    "initramfs_dandelion_v2.8.0.cpio.gz": {
-      "size_bytes": 15276,
-      "sha256": "6aa96ff692c1b549a4c32efcb886ce75ba3c1d8dbd3c2511f6ed3a996de4b13b"
+    "dandelion_os_grimm_fbw_v2.8.0.c": {
+      "size_bytes": 37720,
+      "sha256": "263bd5d6a8cd5bbbdccb63408466add3e4cf9debe4886d6d15597fbba9ad9309"
     },
     "dandelion_os_grimm_whiteroom_state_map_v2.8.0.png": {
-      "size_bytes": 988891,
-      "sha256": "e9bd2d01a25b00dad3ad1739bce04344c3dc2f69e33b4de346f172f163c34911"
+      "size_bytes": 981532,
+      "sha256": "26dff0faf8805bb5e66e8515897c3f0b10f9bcbd4992fea8c839cd85be1b004c"
     },
-    "audit_manifest_v2.8.0.json": {
-      "size_bytes": 2663,
-      "sha256": "7ac1df23bf84ef0826a5c319141d148e61f78311888c74ea1630638afdba9bae"
+    "dandelion_os_v2.8.0.h": {
+      "size_bytes": 15674,
+      "sha256": "0aae1fd99e77bc909fe4262eba1d8ee301551f1cd852069fd76de3194070d281"
+    },
+    "dandelion_rt_v2.8.0.config": {
+      "size_bytes": 1406,
+      "sha256": "0a42356ca855379c89ec4ced4efcd47a44264cb63186c818811e82b59d4091e0"
+    },
+    "initramfs_dandelion_v2.8.0.cpio.gz": {
+      "size_bytes": 15776,
+      "sha256": "5d112137ddc5c53935069ef19695ac69b71a06b17ac5def24125a308b04e74eb"
+    },
+    "mk_switchblade_usb_v2.8.0.sh": {
+      "size_bytes": 5895,
+      "sha256": "1b83fa56c07d62d2a83f807f8e674ba435aba854d78c6782e24edbd04fe26840"
+    },
+    "push_dandelion_day_github_v2.8.0.sh": {
+      "size_bytes": 6124,
+      "sha256": "99d750f75fc24ba68598ae0ad08e33b8ef87d09ea968a059a6a5e152533892aa"
+    },
+    "requirements.txt": {
+      "size_bytes": 541,
+      "sha256": "aa2e53c19c1e3746e8df5a949608e55f8e1122d4f8806d6c681de18de4a18348"
+    },
+    "verify_dandelion_os_v2.8.0.py": {
+      "size_bytes": 25879,
+      "sha256": "6d7c3cc37d99b681e1bf4719261daad4affc58c854db9dfae23f373229150769"
     }
   }
 }
