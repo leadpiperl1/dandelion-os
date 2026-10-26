@@ -27,3 +27,6 @@ In the architecture of **Dandelion OS & Embedded AI (`v3.0.0`)**, we reject the 
    *How a single head-tap or eye-blink (`dit = -1`, `space = 0`, `dah = +1`) steers the entire operating system so no human learner is ever left in the dark.*
 4. **[Page 4: Endor-Kashyyyk 9-Gate Verification & FAQ (`Endor-Kashyyyk-Verification-And-FAQ.md`)](Endor-Kashyyyk-Verification-And-FAQ.md)**  
    *How Ewok log-traps (`Byte 253` / `Byte 254`) crush Imperial wrapper slop in `< 60` seconds (`make check-strict`), plus Path A Google Drive-to-GitHub release operations.*
+
+5. **[Page 5: Upstream Open-Source Ecosystem & Fork Registry (`Upstream-Open-Source-Ecosystem.md`)](Upstream-Open-Source-Ecosystem.md)**  
+   *The 10 GitHub repositories (`microsoft/T-MAC`, `microsoft/BitNet`, `sched-ext/scx`, `markqvist/Reticulum`, `StevenMHernandez/ESP32-CSI-Tool`, `OptiKey/OptiKey`, `OpenBCI/OpenBCI_GUI`, `YosysHQ/icestorm`, `YosysHQ/nextpnr`, `luanti-org/luanti`) bound into Dandelion OS v3.0.0.*
