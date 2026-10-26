@@ -1,7 +1,10 @@
+build/
+out/
+bin/
+build_whiteroom_*/
+__pycache__/
+.venv/
 *.aux
 *.log
 *.out
-__pycache__/
-.venv/
-build_whiteroom_v2.4.0/
-build_whiteroom_v2.7.0/
+*.o
