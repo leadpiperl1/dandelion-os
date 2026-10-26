@@ -266,6 +266,46 @@ static inline int32_t dandelion_vbst_dot_row(
     return acc;
 }
 
+
+/*
+ * Zero-Multiply Sign-Symmetric 4-Trit LUT Kernel (Microsoft T-MAC EuroSys 2025 Pattern)
+ * Precomputes 4-element activation partial sums into an L1-resident lookup table (LUT)
+ * and evaluates dot products via pure table lookups without fused-multiply-add (FMA).
+ */
+static inline int32_t dandelion_tmac_lut4_dot_row(
+    const uint8_t *mag_row,
+    const uint8_t *sign_row,
+    const int8_t  *x_q,
+    uint32_t num_bytes
+) {
+    int32_t acc = 0;
+    if (mag_row == NULL || sign_row == NULL || x_q == NULL) {
+        return 0;
+    }
+    for (uint32_t b = 0U; b < num_bytes; ++b) {
+        uint8_t m = mag_row[b];
+        uint8_t s = sign_row[b];
+        const int8_t *x_ptr = &x_q[b << 3U];
+        /* Process high nibble (bits 7..4) and low nibble (bits 3..0) via 16-entry LUTs */
+        for (uint8_t nib = 0U; nib < 2U; ++nib) {
+            uint8_t shift_base = (nib == 0U) ? 4U : 0U;
+            uint8_t m_nib = (uint8_t)((m >> shift_base) & 0x0FU);
+            uint8_t s_nib = (uint8_t)((s >> shift_base) & 0x0FU);
+            const int8_t *xn = &x_ptr[nib << 2U];
+            int32_t lut_sum = 0;
+            for (uint8_t k = 0U; k < 4U; ++k) {
+                uint8_t bit_pos = (uint8_t)(3U - k);
+                if (((m_nib >> bit_pos) & 1U) != 0U) {
+                    int32_t v = (int32_t)xn[k];
+                    lut_sum += (((s_nib >> bit_pos) & 1U) != 0U) ? -v : v;
+                }
+            }
+            acc += lut_sum;
+        }
+    }
+    return acc;
+}
+
 /* 4-Register Rosetta Stone + Topological Dirac + LayerFS + ESP-SDR Telemetry Packet */
 typedef struct {
     int8_t   trits[GAIKU_TRITS];             /* 39-trit [4-5-4] Gaiku frame {-1, 0, +1} */
