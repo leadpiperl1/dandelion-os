@@ -1,4 +1,4 @@
-# Contributing to Dandelion OS (`v2.8.0`)
+# Contributing to Dandelion OS (`v3.0.0`)
 
 Thank you for building with **Dandelion OS** (*Die Gedanken sind frei · Mutualism Over Replacement*). We welcome contributions from systems engineers, kernel hackers, linguists, and independent researchers.
 
@@ -15,5 +15,5 @@ Every module in Dandelion OS maps to our three-tier F-16 Digital Fly-By-Wire arc
 Before opening a Pull Request against `main`:
 
 1. **Zero Compiler Warnings (`-Werror`):** Ensure your C99 changes compile cleanly via `make build` (`-std=c99 -O3 -Wall -Wextra -Wpedantic -Wshadow -Wformat=2 -Wconversion -Wundef -Werror`).
-2. **60-Second Verification Gate:** Run `make check` (`python3 verify_dandelion_os_v2.8.0.py --seed 42`) and confirm all 15 linguistic/trapdoor vectors, ternary logic gates, jitter bounds (`< 1.0 µs`), and SemVer checks pass in under 60 seconds.
+2. **60-Second Verification Gate:** Run `make check` (`python3 verify_dandelion_os_v3.0.0.py --seed 42`) and confirm all 15 linguistic/trapdoor vectors, ternary logic gates, jitter bounds (`< 1.0 µs`), and SemVer checks pass in under 60 seconds.
 3. **Strict 3-Digit SemVer (`vX.Y.Z`):** Update `VERSION_LOG.md` and never commit duplicate collision filenames (`(1)`, `(2)`).
