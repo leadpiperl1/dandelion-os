@@ -1,5 +1,5 @@
 # ==============================================================================
-# DANDELION OS v2.8.0 ("SOVEREIGN DESKTOP & EMBEDDED AI RELEASE")
+# DANDELION OS v3.0.0 ("SOVEREIGN ARGON FRONTIER & EMBEDDED AI RELEASE")
 # PORTABLE ISO C99 & VERIFICATION MAKEFILE (COPILOT AUDIT COMPLIANT)
 # ==============================================================================
 # Supported Compilers : GCC >= 9.0, Clang >= 11.0, or any ISO C99 compiler
@@ -9,7 +9,7 @@
 # Strict Warning Gate : STRICT_WARNINGS ?= 0 (set STRICT_WARNINGS=1 for -Werror)
 # ==============================================================================
 
-VERSION          := v2.8.0
+VERSION          := v3.0.0
 CC               ?= cc
 PYTHON           ?= python3
 BUILD_DIR        ?= build
@@ -78,7 +78,7 @@ clean:
 
 help:
 	@echo "=============================================================================="
-	@echo " Dandelion OS $(VERSION) ('Sovereign Desktop & Embedded AI Release') Targets:"
+	@echo " Dandelion OS $(VERSION) ('Sovereign Argon Frontier & Embedded AI Release') Targets:"
 	@echo "   make build                   - Compile C99 microkernel into $(BUILD_DIR)/"
 	@echo "   make build STRICT_WARNINGS=1 - Compile with strict -Werror -Wconversion"
 	@echo "   make build USE_WILD_LINKER=1 - Opt-in build with 'wild' parallel linker"
