@@ -17,7 +17,7 @@
     "is_preempt_rt_kernel": false,
     "python_version": "3.11.2"
   },
-  "verification_runtime_sec": 8.6823,
+  "verification_runtime_sec": 8.6828,
   "all_invariants_passed": true,
   "c99_static_analysis_flags": "-std=c99 -O3 -Wall -Wextra -Wpedantic -Wshadow -Wformat=2 -Wconversion -Wundef -Werror",
   "compiler_warnings": 0,
@@ -69,17 +69,17 @@
     ]
   },
   "telemetry": {
-    "mean_grimm_rosetta_parse_us": 1.4961,
-    "mean_vbst_dirac_us": 0.2895,
-    "vbst_jitter_sigma_us": 0.0902,
-    "combined_kernel_loop_us": 1.7856,
+    "mean_grimm_rosetta_parse_us": 1.4507,
+    "mean_vbst_dirac_us": 0.2642,
+    "vbst_jitter_sigma_us": 0.0784,
+    "combined_kernel_loop_us": 1.7149,
     "preempt_rt_ceiling_us": 50.0,
     "jitter_threshold_us": 1.0,
     "dirac_cluster_sync_r": 0.9948,
     "khosla_privileged_axis_r": 1.0,
     "thermal_power_watts": 18.52,
     "tnpt_bytes": 577,
-    "initramfs_bytes": 22523,
+    "initramfs_bytes": 22525,
     "layerfs_point_v2_bytes": 6,
     "l1d_quorum_entry_bytes": 64,
     "stigmergic_ble_frame_bytes": 32
