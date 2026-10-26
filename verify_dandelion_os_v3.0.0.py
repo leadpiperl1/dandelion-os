@@ -762,7 +762,12 @@ def verify_accessibility_and_community_standards(repo_dir: Path, c_bin: Path) ->
         ".github/ISSUE_TEMPLATE/bug_report.md",
         ".github/ISSUE_TEMPLATE/feature_request.md",
         ".github/pull_request_template.md",
+        ".github/wiki/Home.md",
+        ".github/wiki/Upstream-Open-Source-Ecosystem.md",
     ]
+    for md_p in repo_dir.rglob("*.md"):
+        if "google.com/search?q=" in md_p.read_text(encoding="utf-8"):
+            raise AssertionError(f"Mangled google.com/search?q= link found in {md_p.relative_to(repo_dir)}!")
     missing = [f for f in required_files if not (repo_dir / f).is_file()]
     if missing:
         raise AssertionError(f"Missing community/accessibility files: {missing}")
