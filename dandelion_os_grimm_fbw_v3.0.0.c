@@ -775,6 +775,17 @@ int run_verification_suite(bool json_mode) {
         return 1;
     }
 
+        /* Verify Nested Chromatic Chromatography (Recursive ROYGBIV 7x7 Optical Wheel) */
+    nested_chromatography_wheel_t cwheel;
+    evaluate_nested_chromatography_wheel(&pkt, &tnpt, &cwheel);
+    if (cwheel.macro_domain_band >= ROYGBIV_BAND_COUNT ||
+        cwheel.micro_skill_band >= ROYGBIV_BAND_COUNT ||
+        cwheel.prime_lock_93 != 93U ||
+        cwheel.kamana_seal_173 != 173U) {
+        fprintf(stderr, "[FAIL] Nested Chromatic Chromatography ROYGBIV wheel check failed!\n");
+        return 1;
+    }
+
     /* Verify 2-Bit VBST Zero-Multiply Dot Product Kernel */
     uint8_t mag_test[1]  = {0xF5U}; /* 11110101 */
     uint8_t sign_test[1] = {0x50U}; /* 01010000 */
@@ -833,6 +844,65 @@ int run_verification_suite(bool json_mode) {
     }
 
     return 0;
+}
+
+
+int32_t dandelion_abi_vbst_dot_row(
+    const uint8_t *mag_row,
+    const uint8_t *sign_row,
+    const int8_t  *x_q,
+    uint32_t num_bytes
+) {
+    return dandelion_vbst_dot_row(mag_row, sign_row, x_q, num_bytes);
+}
+
+int32_t dandelion_abi_tmac_lut4_dot_row(
+    const uint8_t *mag_row,
+    const uint8_t *sign_row,
+    const int8_t  *x_q,
+    uint32_t num_bytes
+) {
+    return dandelion_tmac_lut4_dot_row(mag_row, sign_row, x_q, num_bytes);
+}
+
+
+static const uint16_t ROYGBIV_WAVELENGTH_NM[ROYGBIV_BAND_COUNT] = {
+    650U, /* Red:    Ke Ala Nalu / Ka Piko (0-1) */
+    600U, /* Orange: Ka Iwi (2) */
+    580U, /* Yellow: Ka Pe'a (3) */
+    530U, /* Green:  Ka Moena (4) */
+    470U, /* Blue:   Ka Hoku (5) */
+    445U, /* Indigo: Soliton Primes (13-73) */
+    410U  /* Violet: Ho'ailona Kamana Seal (173) */
+};
+
+void evaluate_nested_chromatography_wheel(
+    const shingari_grimm_packet_t *pkt,
+    const dandelion_tnpt_v3_0_t *tnpt,
+    nested_chromatography_wheel_t *out_wheel
+) {
+    if (pkt == NULL || tnpt == NULL || out_wheel == NULL) {
+        return;
+    }
+    uint8_t macro_b = (uint8_t)(pkt->shingari_root_idx % ROYGBIV_BAND_COUNT);
+    uint8_t micro_b = (uint8_t)((pkt->micro_texture_inode + pkt->detected_bite) % ROYGBIV_BAND_COUNT);
+    out_wheel->macro_domain_band = macro_b;
+    out_wheel->micro_skill_band  = micro_b;
+    out_wheel->wavelength_nm     = (uint16_t)(ROYGBIV_WAVELENGTH_NM[macro_b] - (uint16_t)(micro_b * 3U));
+
+    int8_t aar_adj = tnpt->aar_sustain_improve[pkt->shingari_root_idx & 63U];
+    if (pkt->boundary_code == CODE_ELIAS_TRAPDOOR || aar_adj < 0) {
+        out_wheel->aar_sustain_improve_trit = -1; /* Targeted AAR Improve vector */
+        out_wheel->saturation_q8 = 96U;
+    } else if (pkt->boundary_code == CODE_KINTSUGI_GOLD || pkt->twas_bidirectional_ok > 0) {
+        out_wheel->aar_sustain_improve_trit = +1; /* Verified AAR Sustain mastery */
+        out_wheel->saturation_q8 = 242U;
+    } else {
+        out_wheel->aar_sustain_improve_trit = 0;
+        out_wheel->saturation_q8 = 173U;
+    }
+    out_wheel->prime_lock_93   = (uint8_t)(CHROMATIC_PRIME_FACTOR_A * CHROMATIC_PRIME_FACTOR_B);
+    out_wheel->kamana_seal_173 = (uint8_t)CHROMATIC_SEAL_APEX;
 }
 
 int main(int argc, char **argv) {

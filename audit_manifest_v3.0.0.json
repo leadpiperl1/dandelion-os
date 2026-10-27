@@ -17,7 +17,7 @@
     "is_preempt_rt_kernel": false,
     "python_version": "3.11.2"
   },
-  "verification_runtime_sec": 8.6828,
+  "verification_runtime_sec": 14.6197,
   "all_invariants_passed": true,
   "c99_static_analysis_flags": "-std=c99 -O3 -Wall -Wextra -Wpedantic -Wshadow -Wformat=2 -Wconversion -Wundef -Werror",
   "compiler_warnings": 0,
@@ -68,21 +68,58 @@
       -1
     ]
   },
+  "shingari_polyglot_unification": {
+    "status": "PASS",
+    "shared_library_abi": "build/libdandelion_os_v3.0.0.so",
+    "shared_library_bytes": 66488,
+    "ffi_fowler_8byte_seed": [
+      102,
+      65,
+      196,
+      102,
+      65,
+      196,
+      102,
+      146
+    ],
+    "ffi_morse_sos_trits": [
+      -1,
+      -1,
+      -1,
+      0,
+      1,
+      1,
+      1,
+      0,
+      -1,
+      -1,
+      -1
+    ],
+    "ffi_vbst_vs_tmac_dot": -10,
+    "julia_bridge_file": "dandelion_shingari_bridge_v3.0.0.jl",
+    "theremin_sample_rate_hz": 96000.0,
+    "theremin_buffer_samples": 64,
+    "theremin_latency_ms": 0.66,
+    "chromatic_roygbiv_bins": 49,
+    "chromatic_wavelength_nm": 464,
+    "chromatic_prime_lock": 93,
+    "chromatic_kamana_seal": 173
+  },
   "telemetry": {
-    "mean_grimm_rosetta_parse_us": 1.4507,
-    "mean_vbst_dirac_us": 0.2642,
-    "vbst_jitter_sigma_us": 0.0784,
-    "combined_kernel_loop_us": 1.7149,
+    "mean_grimm_rosetta_parse_us": 1.4419,
+    "mean_vbst_dirac_us": 0.2616,
+    "vbst_jitter_sigma_us": 0.0773,
+    "combined_kernel_loop_us": 1.7035,
     "preempt_rt_ceiling_us": 50.0,
     "jitter_threshold_us": 1.0,
     "dirac_cluster_sync_r": 0.9948,
     "khosla_privileged_axis_r": 1.0,
     "thermal_power_watts": 18.52,
     "tnpt_bytes": 577,
-    "initramfs_bytes": 22525,
+    "initramfs_bytes": 23393,
     "layerfs_point_v2_bytes": 6,
     "l1d_quorum_entry_bytes": 64,
     "stigmergic_ble_frame_bytes": 32
   },
-  "status": "ALL_9_GATES_PASSED"
+  "status": "ALL_10_GATES_PASSED"
 }

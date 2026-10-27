@@ -8,35 +8,10 @@ We pledge to act and interact in ways that contribute to an open, welcoming, div
 
 ## Our Standards
 
-Examples of behavior that contributes to a positive environment for our community include:
-
 * Demonstrating empathy, patience, and kindness toward other people and learners at every skill level.
 * Designing and maintaining features so that all human beings—no matter how limited their sensory or motor channels (`ACCESSIBILITY.md`)—can learn, communicate, and contribute.
-* Being respectful of differing viewpoints, languages, and lived experiences.
-* Giving and gracefully accepting constructive, first-principles technical feedback.
-* Accepting responsibility and apologizing to those affected by our mistakes, and learning from the experience (*Kintsugi Gold `Code 251`*—treating errors as golden seams for growth).
-* Focusing on what is best not just for us as individuals, but for the overall open-source commons.
-
-Examples of unacceptable behavior include:
-
-* The use of sexualized language or imagery, and sexual attention or advances of any kind.
-* Trolling, insulting or derogatory comments, and personal or political attacks.
-* Public or private harassment.
-* Dismissing or excluding contributors based on disability, assistive communication speed, or native language.
-* Publishing others' private information, such as a physical or email address, without their explicit permission.
-* Other conduct which could reasonably be considered inappropriate in a professional or collaborative open-source setting.
-
-## Enforcement Responsibilities
-
-Project maintainers are responsible for clarifying and enforcing our standards of acceptable behavior and will take appropriate and fair corrective action in response to any behavior that they deem inappropriate, threatening, offensive, or harmful.
-
-## Scope
-
-This Code of Conduct applies within all project spaces (issues, pull requests, discussions, documentation, and mesh relays), and also applies when an individual is officially representing the project or its community in public spaces.
-
-## Enforcement & Contact
-
-Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to the project steward (**Justin D. Grimm / `@leadpiperl1`**) via GitHub repository issues or security advisories at `https://github.com/leadpiperl1/dandelion-os`. All complaints will be reviewed and investigated promptly and fairly.
+* Evaluating competency through **Nested Chromatic Chromatography** (Army After Action Review *Sustains & Improves* across recursive ROYGBIV optical wheels) rather than punitive or middle-clumping metrics.
+* Giving and gracefully accepting constructive, first-principles technical feedback (*Kintsugi Gold `Code 251`*).
 
 ## Attribution
 

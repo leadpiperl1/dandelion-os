@@ -30,3 +30,5 @@ In the architecture of **Dandelion OS & Embedded AI (`v3.0.0`)**, we reject the 
 
 5. **[Page 5: Upstream Open-Source Ecosystem & Fork Registry (`Upstream-Open-Source-Ecosystem.md`)](Upstream-Open-Source-Ecosystem.md)**  
    *The 10 GitHub repositories (`microsoft/T-MAC`, `microsoft/BitNet`, `sched-ext/scx`, `markqvist/Reticulum`, `StevenMHernandez/ESP32-CSI-Tool`, `OptiKey/OptiKey`, `OpenBCI/OpenBCI_GUI`, `YosysHQ/icestorm`, `YosysHQ/nextpnr`, `luanti-org/luanti`) bound into Dandelion OS v3.0.0.*
+
+- **[Page 6: Shingari Polyglot Unification (Julia 1.12, C99 ABI & Theremin 6D Bridge)](Shingari-Polyglot-Julia-C-AI-Bridge.md)** — Solving the Three-Language Problem across Human, Machine, and AI.

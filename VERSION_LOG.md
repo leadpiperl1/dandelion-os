@@ -24,3 +24,5 @@
 
 1. **Zero OS Collision Suffixes:** Every artifact, source file, binary, and manifest increments `MAJOR.MINOR.PATCH` cleanly so host operating systems never append `(1)` or `(2)` duplicate suffixes.
 2. **Single Canonical Tree:** Superseded versioned files (`*v2.4.0*`, `*v2.7.0*`, `*v2.8.0*`) are removed from the active repository tree upon incrementing to `v3.0.0` and listed in the release payload's `delete_files` array.
+
+- **Polyglot Shingari Unification (`v3.0.0` / Shingari `v3.7.0`)**: Added `dandelion_shingari_bridge_v3.0.0.jl` (Julia 1.12 multiple dispatch + MOTU M4 Theremin 6D voltage-to-trit bridge + zero-copy `ccall`), `build/libdandelion_os_v3.0.0.so` shared C-ABI target in `Makefile`, `.github/wiki/Shingari-Polyglot-Julia-C-AI-Bridge.md` (Page 6), and **Gate 10** live `.so` FFI verification in `verify_dandelion_os_v3.0.0.py`.

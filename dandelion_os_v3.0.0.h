@@ -383,6 +383,56 @@ void parse_grimm_rosetta_fbw(
 
 bool validate_uds_socket_path(const char *sock_path);
 
+int32_t dandelion_abi_vbst_dot_row(
+    const uint8_t *mag_row,
+    const uint8_t *sign_row,
+    const int8_t  *x_q,
+    uint32_t num_bytes
+);
+
+int32_t dandelion_abi_tmac_lut4_dot_row(
+    const uint8_t *mag_row,
+    const uint8_t *sign_row,
+    const int8_t  *x_q,
+    uint32_t num_bytes
+);
+
+
+
+/* --- 10. NESTED CHROMATIC CHROMATOGRAPHY (RECURSIVE ROYGBIV OPTICAL WHEELS) --- */
+#define ROYGBIV_BAND_COUNT       7U          /* 7 Macro & 7 Micro spectral bands (7x7 = 49 bins) */
+#define CHROMATIC_PRIME_FACTOR_A 3U          /* Triadic base prime */
+#define CHROMATIC_PRIME_FACTOR_B 31U         /* Mersenne side-channel prime (3 x 31 = 93) */
+#define CHROMATIC_SEAL_APEX      173U        /* Ho'ailona Kamana Violet Dovetail Pin Seal */
+
+typedef enum {
+    ROYGBIV_RED_ORIGIN       = 0, /* 650 nm: Ke Ala Nalu / Ka Piko (Origin & Signal Injection, 0-1) */
+    ROYGBIV_ORANGE_AXIS      = 1, /* 600 nm: Ka Iwi (Structural Barbell & Tension Lever, 2) */
+    ROYGBIV_YELLOW_ENERGY    = 2, /* 580 nm: Ka Pe'a (Triangle Entropy & Energy Capture, 3) */
+    ROYGBIV_GREEN_FOUNDATION = 3, /* 530 nm: Ka Moena (Square Grid Stability & LayerFS, 4) */
+    ROYGBIV_BLUE_HINGE       = 4, /* 470 nm: Ka Hoku (Pentagon Curvature & Quantum Hinge, 5) */
+    ROYGBIV_INDIGO_SOLITON   = 5, /* 445 nm: Soliton Primes (Fractal Cluster Logic, 13-73) */
+    ROYGBIV_VIOLET_SEAL      = 6  /* 410 nm: Ho'ailona Kamana (Dovetail Pin Final Seal, 173) */
+} chromatic_roygbiv_band_t;
+
+typedef struct __attribute__((packed)) {
+    uint8_t  macro_domain_band;              /* 0..6 (Red..Violet Macro-Wheel domain) */
+    uint8_t  micro_skill_band;               /* 0..6 (Red..Violet Micro-Wheel sub-skill) */
+    uint16_t wavelength_nm;                  /* 410..650 nm optical carrier coordinate */
+    int8_t   aar_sustain_improve_trit;       /* +1 Sustain (High Sat), 0 Baseline, -1 Improve (Focus) */
+    uint8_t  saturation_q8;                  /* 0..255 optical saturation gradient (no A-F clumping) */
+    uint8_t  prime_lock_93;                  /* 3 x 31 = 93 cryptographic priming invariant */
+    uint8_t  kamana_seal_173;                /* 173 Violet dovetail pin lock */
+} nested_chromatography_wheel_t;
+
+typedef char static_assert_chrom_8[(sizeof(nested_chromatography_wheel_t) == 8U) ? 1 : -1];
+
+void evaluate_nested_chromatography_wheel(
+    const shingari_grimm_packet_t *pkt,
+    const dandelion_tnpt_v3_0_t *tnpt,
+    nested_chromatography_wheel_t *out_wheel
+);
+
 #ifdef __cplusplus
 }
 #endif
