@@ -7,6 +7,9 @@ on:
     branches: [ main ]
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 jobs:
   portable-check:
     name: Portable verification (${{ matrix.compiler }})
