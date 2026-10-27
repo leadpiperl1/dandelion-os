@@ -51,7 +51,7 @@ jobs:
           name: dandelion-os-${{ matrix.compiler }}-artifacts
           path: |
             build/
-            audit_manifest_v2.8.0.json
+            audit_manifest_v3.0.0.json
           if-no-files-found: error
 
   strict-check:
@@ -83,5 +83,5 @@ jobs:
           name: dandelion-os-strict-artifacts
           path: |
             build/
-            audit_manifest_v2.8.0.json
+            audit_manifest_v3.0.0.json
           if-no-files-found: error
