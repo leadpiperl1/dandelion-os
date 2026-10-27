@@ -49,9 +49,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: dandelion-os-${{ matrix.compiler }}-artifacts
-          path: |
-            build/
-            audit_manifest_v3.0.0.json
+          path: build/
           if-no-files-found: error
 
   strict-check:
@@ -81,7 +79,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: dandelion-os-strict-artifacts
-          path: |
-            build/
-            audit_manifest_v3.0.0.json
+          path: build/
           if-no-files-found: error
