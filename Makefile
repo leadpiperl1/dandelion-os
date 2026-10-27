@@ -12,7 +12,7 @@ SHLIB            := $(BUILD_DIR)/libdandelion_os_$(VERSION).so
 SRC              := dandelion_os_grimm_fbw_$(VERSION).c
 HDR              := dandelion_os_$(VERSION).h
 
-.PHONY: all shared test verify clean
+.PHONY: all shared test verify check check-strict clean
 
 all: $(TARGET) $(SHLIB)
 
@@ -29,6 +29,10 @@ test: all
 
 verify: all
 	python3 verify_dandelion_os_$(VERSION).py --seed 42 --mode strict
+
+check: test
+
+check-strict: verify
 
 clean:
 	rm -rf $(BUILD_DIR)
