@@ -12,10 +12,20 @@ SHLIB            := $(BUILD_DIR)/libdandelion_os_$(VERSION).so
 SRC              := dandelion_os_grimm_fbw_$(VERSION).c
 HDR              := dandelion_os_$(VERSION).h
 
-.PHONY: all build shared test verify check check-strict clean usb
+.PHONY: all build shared test verify check check-strict clean usb help preflight
 
 # Default entry point: compile the target and shared library
 all: build
+
+help:
+	@echo "Dandelion OS v3.0.0 Make targets"
+	@echo "  build         Compile C99 artifacts into ./build/"
+	@echo "  check         Run the portable verification suite"
+	@echo "  check-strict  Run the strict maintainer verification suite"
+	@echo "  test          Run the local self-test binary"
+	@echo "  usb           Stage the live USB/rootfs workflow"
+	@echo "  clean         Remove generated build artifacts"
+	@echo "  preflight     Run compile + verification smoke check"
 
 # Canonical release/build target expected by README.md and AGENTS.md
 build: $(TARGET) $(SHLIB)
@@ -44,6 +54,11 @@ test: build
 # Portable verification: runs the Python verification harness in the default portable mode
 verify: build
 	python3 verify_dandelion_os_$(VERSION).py --seed 42 --mode portable
+
+# Quick smoke-check used before release or PR review
+preflight: build
+	python3 verify_dandelion_os_$(VERSION).py --seed 42 --mode portable >/tmp/dandelion_preflight.log 2>&1 || { cat /tmp/dandelion_preflight.log; exit 1; }
+	@echo "[preflight] Dandelion OS v3.0.0 portable verification completed successfully"
 
 # USB staging target expected by release docs; stages the live disk rootfs generation workflow
 usb:
