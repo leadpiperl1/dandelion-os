@@ -57,7 +57,7 @@ verify: build
 
 # Quick smoke-check used before release or PR review
 preflight: build
-	python3 verify_dandelion_os_$(VERSION).py --seed 42 --mode portable >/tmp/dandelion_preflight.log 2>&1 || { cat /tmp/dandelion_preflight.log; exit 1; }
+	@log_file="$$(mktemp /tmp/dandelion_preflight.XXXXXX.log)"; python3 verify_dandelion_os_$(VERSION).py --seed 42 --mode portable >"$$log_file" 2>&1 || { cat "$$log_file"; rm -f "$$log_file"; exit 1; }; rm -f "$$log_file"
 	@echo "[preflight] Dandelion OS v3.0.0 portable verification completed successfully"
 
 # USB staging target expected by release docs; stages the live disk rootfs generation workflow
