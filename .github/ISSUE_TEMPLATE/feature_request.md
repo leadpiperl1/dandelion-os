@@ -1,16 +1,27 @@
 ---
-name: Feature Request / Language or Sensory Node Proposal
-about: Propose a new language node, sensory transducer bridge, or kernel capability
-title: "[FEATURE] "
+name: Feature request
+about: Suggest an improvement or new capability
+title: ""
 labels: enhancement
-assignees: ''
+assignees: ""
 ---
 
-## 1. Proposed Invariant or Capability
-Describe the feature, language node, or assistive sensory transducer channel you would like to add.
+## Summary
 
-## 2. First-Principles & Accessibility Impact
-How does this help more people learn, communicate, or run Dandelion OS on constrained hardware (`ACCESSIBILITY.md`)?
+What feature or improvement would you like to see?
 
-## 3. Falsifiable Verification Check
-How can we test this deterministically inside `verify_dandelion_os_v3.0.0.py` in `< 60` seconds?
+## Motivation
+
+Why is this useful or important?
+
+## Proposed solution
+
+Describe the intended direction or design.
+
+## Alternatives considered
+
+List any other approaches you considered.
+
+## Additional context
+
+Add references, examples, or supporting notes here.

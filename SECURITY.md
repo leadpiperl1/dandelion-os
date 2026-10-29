@@ -1,20 +1,31 @@
-# Security Policy (`SECURITY.md`)
+# Security Policy
 
-## Supported Versions
+We take the security and integrity of Dandelion OS seriously.
 
-| Version | Supported | Kernel / Architecture |
-| :--- | :---: | :--- |
-| **`v3.0.0`** | Yes | Sovereign Argon Frontier & Embedded AI (10-Bite Grimm + LayerFS + Stigmergic Mesh + Nested Chromatic Chromatography) |
-| `< v3.0.0` | Legacy | Superseded historical milestones |
+## Reporting a vulnerability
 
-## Core Security Invariants
+Please do not open a public issue for security-sensitive findings.
 
-1. **Zero Dynamic Heap Allocation (`malloc` = 0)**: Deterministic static structures and `577-byte` `.tnpt` `mmap` tables eliminate heap corruption and use-after-free (UAF) bugs.
-2. **Pre-Auth SipHash-2-4 & CRC-16/CCITT-FALSE**: Authenticates utterances and 32-byte Stigmergic BLE gossip frames.
-3. **Fail-Closed `Byte 253` Hardware Latch**: Out-of-bounds Fowler bytes (`243..255`) never silently coerce to zero; `253` triggers an immediate fail-closed drop.
-4. **Hardened Unix Domain Socket (UDS) Namespaces**: `validate_uds_socket_path()` enforces `/var/run/dandelion_*` and `/tmp/dandelion_*` prefixes and blocks `..` traversal.
-5. **Least-Privilege CI/CD & Dependabot v2**: `.github/workflows/ci.yml` enforces `permissions: contents: read` (CWE-275), monitored by `.github/dependabot.yml`.
+Instead, send a private report to:
 
-## Reporting a Vulnerability
+- Email: leadpiperl1@gmail.com
 
-Please report suspected vulnerabilities via [GitHub Security Advisories](https://github.com/leadpiperl1/dandelion-os/security/advisories/new).
+Include:
+
+- a concise description of the issue
+- affected files, commands, or workflows
+- reproduction steps if available
+- impact and severity assessment
+- suggested fix or mitigation if you have one
+
+## Response expectations
+
+We will do our best to acknowledge the report promptly and work toward a validated fix. We appreciate responsible disclosure and will coordinate with the reporter on remediation timing.
+
+## Public disclosure
+
+Once a fix is ready and validated, we may publish a coordinated advisory or include the fix in a release notes update.
+
+## Scope
+
+This policy applies to the repository contents, build tooling, CI workflows, and project artifacts maintained in this repository.

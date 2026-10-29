@@ -1,10 +1,23 @@
-## Summary of Changes (`vX.Y.Z`)
+## Summary
 
-- **Semantic Version Target:** `v3.0.0`
-- **Subsystem Updated:** 
+Describe the bug, issue, or request briefly.
 
-## Pre-Flight Verification Checklist (`<= 60s`)
-- [ ] `make check-strict` passes all 9 gates with zero compiler warnings (`-Wall -Wextra -Werror -pedantic`).
-- [ ] Zero dynamic heap allocations (`malloc`/`calloc`/`realloc`/`free` = 0) in C99 kernel paths.
-- [ ] Accessibility invariants in `ACCESSIBILITY.md` (including Bite 10 Morse-to-Ternary `dit=-1, space=0, dah=+1` and `--json` screen-reader output) remain intact.
-- [ ] `VERSION_LOG.md` and `manifest_v3.0.0.json` SHA-256 hashes are synchronized.
+## Problem
+
+What is happening, and what is expected?
+
+## Reproduction
+
+Provide the command(s), environment, and steps used to reproduce the problem.
+
+## Impact
+
+Who or what is affected?
+
+## Validation
+
+Include any relevant commands, logs, or screenshots.
+
+## Proposed fix
+
+Describe the change you would like to make, if known.

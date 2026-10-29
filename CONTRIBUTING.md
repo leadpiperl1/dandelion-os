@@ -1,19 +1,66 @@
-# Contributing to Dandelion OS (`v3.0.0`)
+# Contributing to Dandelion OS
 
-Thank you for building with **Dandelion OS** (*Die Gedanken sind frei · Mutualism Over Replacement*). We welcome contributions from systems engineers, kernel hackers, linguists, and independent researchers.
+Thank you for helping build and improve Dandelion OS. We value clear engineering, reproducible builds, and respectful collaboration.
 
-## 1. The Triadic Engineering Contract (`-1 Blue`, `0 Green`, `+1 Red`)
+## How to contribute
 
-Every module in Dandelion OS maps to our three-tier F-16 Digital Fly-By-Wire architecture:
+1. Fork the repository.
+2. Create a feature branch.
+3. Make focused changes.
+4. Run the appropriate verification commands.
+5. Open a pull request with a clear summary and test evidence.
 
-* **`-1 Blue` (Human Pilot / Subject):** Preserves human sovereignty, clear CLI/HUD observability, and zero dark-pattern telemetry.
-* **`0 Green` (OS Mediator / Object):** Enforces `PREEMPT_RT` + `sched_ext` determinism (`< 1.0 µs` jitter), LayerFS content-addressed storage, and fail-closed boundary checks (`Code 253` drop, `Code 251` Kintsugi Gold defect-pinning).
-* **`+1 Red` (AI Co-Pilot / Action):** Executes multiplication-free 1.58-bit balanced ternary (`VBST`) inference, TokenGate routing, and `larchanka/skills` automated verification.
+## Local setup
 
-## 2. Pre-Submission Verification Checklist (`larchanka/code-review` 5 Pillars)
+```bash
+git clone https://github.com/leadpiperl1/dandelion-os.git
+cd dandelion-os
+python3 -m pip install -r requirements.txt
+make build
+make check
+```
 
-Before opening a Pull Request against `main`:
+## Project standards
 
-1. **Zero Compiler Warnings (`-Werror`):** Ensure your C99 changes compile cleanly via `make build` (`-std=c99 -O3 -Wall -Wextra -Wpedantic -Wshadow -Wformat=2 -Wconversion -Wundef -Werror`).
-2. **60-Second Verification Gate:** Run `make check` (`python3 verify_dandelion_os_v3.0.0.py --seed 42`) and confirm all 15 linguistic/trapdoor vectors, ternary logic gates, jitter bounds (`< 1.0 µs`), and SemVer checks pass in under 60 seconds.
-3. **Strict 3-Digit SemVer (`vX.Y.Z`):** Update `VERSION_LOG.md` and never commit duplicate collision filenames (`(1)`, `(2)`).
+- Prefer small, reviewable changes.
+- Keep build and verification commands reproducible.
+- Do not add hidden runtime requirements or undocumented system dependencies.
+- Preserve the repo’s versioning and build conventions.
+- If you modify tooling or CI, validate the same workflow locally first.
+
+## Quality gates
+
+Before opening a pull request, make sure the following pass locally:
+
+```bash
+make clean
+make build
+make check
+```
+
+For compiler matrix checks, use the GitHub Actions workflow as guidance and validate both `gcc` and `clang` when feasible.
+
+## Pull requests
+
+Please include:
+
+- a clear summary of the problem
+- what changed
+- why it was needed
+- any validation or testing evidence
+- notes about platform or dependency impacts
+
+## Code review expectations
+
+- Keep the scope narrow and explain the rationale.
+- Respect the work already in the repo.
+- Preserve project conventions and readability.
+- Update documentation when behavior or usage changes.
+
+## Reporting problems
+
+Use the issue tracker for bug reports or feature ideas. For security issues, follow the private reporting instructions in [SECURITY.md](SECURITY.md).
+
+## Community norms
+
+Be respectful, concise, and constructive. This repo is a public engineering project with a strong emphasis on reproducibility, trust, and calm collaboration.
