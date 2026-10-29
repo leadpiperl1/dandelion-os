@@ -1,8 +1,17 @@
-# Dandelion OS & Embedded AI v3.0.0 Sovereign Makefile
 VERSION          := v3.0.0
 SEMVER           := 3.0.0
 CC               ?= gcc
-CFLAGS           := -std=c99 -O3 -Wall -Wextra -Wpedantic -Wshadow -Wformat=2 -Wconversion -Wundef -Werror
+STRICT_WARNINGS  ?= 0
+USE_WILD_LINKER  ?= 0
+
+BASE_CFLAGS      := -std=c99 -O3 -Wall -Wextra -Wpedantic -Wshadow -Wformat=2
+STRICT_CFLAGS    := -Wconversion -Wundef -Werror
+COMMON_CFLAGS    := $(BASE_CFLAGS)
+ifeq ($(STRICT_WARNINGS),1)
+COMMON_CFLAGS    += $(STRICT_CFLAGS)
+endif
+
+CFLAGS           ?= $(COMMON_CFLAGS)
 SHFLAGS          := -std=c99 -O3 -fPIC -shared
 LDFLAGS          := -lm
 
@@ -12,9 +21,11 @@ SHLIB            := $(BUILD_DIR)/libdandelion_os_$(VERSION).so
 SRC              := dandelion_os_grimm_fbw_$(VERSION).c
 HDR              := dandelion_os_$(VERSION).h
 
-.PHONY: all shared test verify clean
+.PHONY: all shared test verify clean build check check-strict usb
 
-all: $(TARGET) $(SHLIB)
+all: build
+
+build: $(TARGET) $(SHLIB)
 
 $(TARGET): $(SRC) $(HDR)
 	@mkdir -p $(BUILD_DIR)
@@ -28,7 +39,15 @@ test: all
 	./$(TARGET) --self-test --tnpt dandelion_b158_$(VERSION).tnpt --seed 42
 
 verify: all
+	python3 verify_dandelion_os_$(VERSION).py --seed 42 --mode portable
+
+check: verify
+
+check-strict: all
 	python3 verify_dandelion_os_$(VERSION).py --seed 42 --mode strict
+
+usb:
+	@echo "[USB] USB staging is not implemented in this repository; no portable live-rootfs step is configured."
 
 clean:
 	rm -rf $(BUILD_DIR)
