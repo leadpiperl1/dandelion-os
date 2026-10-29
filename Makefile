@@ -21,9 +21,19 @@ SHLIB            := $(BUILD_DIR)/libdandelion_os_$(VERSION).so
 SRC              := dandelion_os_grimm_fbw_$(VERSION).c
 HDR              := dandelion_os_$(VERSION).h
 
-.PHONY: all shared test verify clean build check check-strict usb
+.PHONY: all shared test verify clean build check check-strict usb help
 
 all: build
+
+help:
+	@echo "Dandelion OS build targets:"
+	@echo "  make build        Compile the C99 microkernel and shared library into ./build"
+	@echo "  make test         Run the built-in self-test"
+	@echo "  make verify      Run the Python verification harness"
+	@echo "  make check        Alias for make verify"
+	@echo "  make check-strict Run the strict verification flow"
+	@echo "  make clean        Remove build artifacts"
+	@echo "  make usb          Show the USB staging status"
 
 build: $(TARGET) $(SHLIB)
 

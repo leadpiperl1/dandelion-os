@@ -7,7 +7,13 @@
 
 ![Dandelion OS v3.0.0 Blueprint & Telemetry State Map](https://raw.githubusercontent.com/leadpiperl1/dandelion-os/main/dandelion_os_grimm_whiteroom_state_map_v3.0.0.png)
 
-## Quick Start
+## Why this project exists
+
+Die Gedanken sind frei.
+
+Dandelion OS is a reproducible, sovereign, open engineering project designed to be understandable by humans, AI systems, and other interfaces that need clear, deterministic behavior. The goal is not lock-in; the goal is shared understanding and a usable public platform.
+
+## Quick start
 
 ```bash
 git clone https://github.com/leadpiperl1/dandelion-os.git
@@ -17,31 +23,30 @@ make build
 make check
 ```
 
-This repository is designed for a portable Linux-like environment. The default build path is `make build`, and the project verification suite is `make check`.
+## Project purpose
 
-## Project Purpose
-
-Dandelion OS is a sovereign embedded AI operating system prototype combining a portable C99 core, deterministic verification tools, and a Linux-first real-time platform narrative.
-
-## Contributing
-
-We welcome contributions from builders, researchers, and maintainers. Please read [CONTRIBUTING.md](CONTRIBUTING.md) before opening a pull request.
-
-## Security
-
-Please report vulnerabilities privately. See [SECURITY.md](SECURITY.md).
+This repository contains a portable C99 microkernel, verification harness, and Linux-first real-time system model. It is intended to support experimentation, reproducibility, and public collaboration across human and machine interfaces.
 
 ## Documentation
 
-- [README.md](README.md)
+- [docs/quickstart.md](docs/quickstart.md)
 - [CONTRIBUTING.md](CONTRIBUTING.md)
 - [SECURITY.md](SECURITY.md)
+- [CHANGELOG.md](CHANGELOG.md)
 - [VERSION_LOG.md](VERSION_LOG.md)
+
+## Contributing
+
+We welcome contributors who care about reproducibility, clarity, and public trust. Please read [CONTRIBUTING.md](CONTRIBUTING.md) before opening a pull request.
+
+## Security
+
+If you discover a security issue, please report it privately via [SECURITY.md](SECURITY.md).
 
 ## License
 
-This project is released under the GNU General Public License v2.0 or later, with additional repository-level terms as noted in the project files.
+This project is released under the GNU General Public License v2.0 or later, with project-specific caveats noted in the repository.
 
 ---
 
-The rest of this repository continues the full v3.0.0 design, verification, and release notes for the Dandelion OS project.
+The rest of this repository contains the full v3.0.0 system design, verification logic, and operational notes.

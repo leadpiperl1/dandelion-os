@@ -1,0 +1,9 @@
+# Default code owners for Dandelion OS
+
+* @leadpiperl1
+
+This file defines the default owners for review and escalation.
+
+- `*` targets the repository default owners
+- maintainers can be expanded as the project grows
+- branches and release work should be reviewed by the owners listed here
