@@ -2,22 +2,30 @@ name: C/C++ CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
+
+permissions:
+  contents: read
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        compiler: [gcc, clang]
 
     steps:
-    - uses: actions/checkout@v4
-    - name: configure
-      run: ./configure
-    - name: make
-      run: make
-    - name: make check
-      run: make check
-    - name: make distcheck
-      run: make distcheck
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install verification dependencies
+        run: python3 -m pip install -r requirements.txt
+
+      - name: Build with ${{ matrix.compiler }}
+        run: make build CC=${{ matrix.compiler }}
+
+      - name: Run portable verification suite
+        run: make check CC=${{ matrix.compiler }}
