@@ -1,29 +1,68 @@
-# AGENTS.md — Dandelion OS v3.0.0 ("Sovereign Argon Frontier & Embedded AI Release") Sovereign Agent Guidelines
+# AGENTS.md
 
-This repository conforms to the **Linux Foundation Agentic AI Foundation (AAIF)** `AGENTS.md` open standard, the **`larchanka/skills` modular software factory protocol**, and the **Dandelion Compact (`GODISLOVE:LOVEISGOD {3,2,4}` · *Die Gedanken sind frei*)**.
+This repository is the working tree for Dandelion OS v3.2.0. Use this file as the canonical operational guide for coding agents and contributors in this branch.
 
-## 1. Core Architectural Invariants (Non-Negotiable for Coding Agents)
+## Core principles
 
-1. **Zero-Massage & Fail-Closed Mandate:** Never apply artificial Gaussian smoothing to discrete balanced-ternary states (`{-1, 0, +1}`), and never silently coerce out-of-bounds Fowler byte codes (`243..255`) to neutral `0`. Always call `fowler_unpack_39trits_strict()` and verify `validate_uds_socket_path()`.
-2. **Mori-Zwanzig Dual Projection (`P + Q = I`) & Topological Dirac Sync:** Every linguistic, bioacoustic, or kernel state update must preserve both the shared **Macro Rosetta Inode (`P_psi = 1505`)** and the orthogonal, unsmoothed **Micro-Texture Inode (`Q_psi`)** across all 9 Bites while locking the Neuberger overlap Dirac zero-mode kernel (`sgn(H_w) = 0`, `R_sync >= 0.99`).
-3. **Centralized Configuration & Strict 3-Digit Triadic SemVer (`vX.Y.Z`):** Keep all runtime limits, socket namespaces, and inode coordinates centralized in `dandelion_os_v3.0.0.h`. Increment `MAJOR` (`das`), `MINOR` (`die`), or `PATCH` (`der`) cleanly across all files and headers (`v3.0.0`); never stage duplicate legacy files side-by-side or create `(1)` / `(2)` suffixes.
-4. **5-Pillar `larchanka/skills` Code Review & Portable/Strict Verification Gate:** Every commit must compile into `./build/` with zero warnings under both `gcc` and `clang` (`make build STRICT_WARNINGS=1`) and pass `make check` (`python3 verify_dandelion_os_v3.0.0.py --seed 42 --mode portable`) in `<= 60.0` seconds.
+1. Prefer explicit invariants over hidden complexity.
+2. Keep safety gates fail-closed and auditable.
+3. Avoid silent coercion of constrained ternary or Fowler-encoded values.
+4. Keep runtime limits centralized in the canonical source and header files.
+5. Prefer deterministic verification over ad hoc tuning.
+6. Preserve human sovereignty and human review as the final authority.
 
-## 2. Build, Test & Release Commands
+## Repository intent
+
+Dandelion OS is a sovereign, AI-assisted operating model with a compact C99 runtime and verification harness. The project combines:
+
+- a symbolically structured language parser,
+- bounded ternary logic,
+- fail-closed safety and validation checks,
+- Python-based reproducible verification,
+- shell and release tooling around the runtime.
+
+## Canonical version
+
+The active branch state is v3.2.0. Historical v3.0.0 files are treated as archive material unless explicitly reintroduced as part of a deliberate migration.
+
+## Required workflow
 
 ```bash
-# Install pinned Python verification dependencies
 python3 -m pip install -r requirements.txt
-
-# Build C99 microkernel into ./build/ and run portable verification suite
+make build
 make check
-
-# Run strict bare-metal RT jitter (<1.0 us) & -Werror verification
 make check-strict
-
-# Stage Dual-Mode Switchblade AI-Pen Live USB RootFS & GRUB2 config
-make usb
-
-# Test Mode 2 (Switchblade AI-Pen Sidecar / Vercel fx Zero-TUI sanitized JSON stream)
-./build/dandelion_os_grimm_fbw_v3.0.0 --json "div compute fbw pitch trim"
 ```
+
+## Build and verification commands
+
+```bash
+make help
+make build
+make check
+make check-strict
+make test
+make verify
+make shell
+make json
+make clean
+```
+
+## Repo hygiene rules
+
+- Do not mix active source with historical or generated artifacts without a clear reason.
+- Keep build outputs in `build/` or `release/`.
+- Treat root-level versioned bundles as historical artifacts unless intentionally promoted.
+- Favor single-version naming conventions and avoid stale file names in the active source tree.
+- Keep docs and implementation aligned to the same version.
+
+## Safety expectations
+
+- Failure paths should be explicit and deterministic.
+- Dangerous or ambiguous values should fail closed.
+- Validation logic should be explainable and testable.
+- Reproducibility matters more than cleverness.
+
+## Operational notes
+
+The project is intentionally verify-first and auditable. If a change does not show a clear runtime or safety rationale, ask before merging it.

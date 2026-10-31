@@ -9,9 +9,6 @@ on:
 permissions:
   contents: read
 
-permissions:
-  contents: read
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -27,8 +24,14 @@ jobs:
       - name: Install verification dependencies
         run: python3 -m pip install -r requirements.txt
 
+      - name: Clean prior build state
+        run: make clean
+
       - name: Build with ${{ matrix.compiler }}
         run: make build CC=${{ matrix.compiler }}
 
       - name: Run portable verification suite
         run: make check CC=${{ matrix.compiler }}
+
+      - name: Run strict verification gate
+        run: make check-strict CC=${{ matrix.compiler }}
