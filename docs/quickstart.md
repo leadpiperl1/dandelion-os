@@ -1,19 +1,22 @@
 # Dandelion OS Quickstart
 
-Welcome. Dandelion OS is designed to be approachable for people, AI systems, researchers, and resilient communities. The goal is simple: make the system understandable, reproducible, and usable.
+Welcome. This repo is designed to be approachable for humans, contributors, researchers, and AI systems. The goal is simple: keep the project understandable, reproducible, and usable.
 
-## The ethos
+## Ethos
 
 Die Gedanken sind frei.
 
-We aim to make the system accessible across human, AI, and machine interfaces. The design goal is not gatekeeping; it is shared understanding.
+We aim to make the system accessible without gatekeeping. Shared understanding matters more than hidden setup steps.
 
 ## Quick setup
 
 ```bash
 git clone https://github.com/leadpiperl1/dandelion-os.git
 cd dandelion-os
-python3 -m pip install -r requirements.txt
+python3 -m venv .venv
+. .venv/bin/activate
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
 make build
 make check
 ```
@@ -21,24 +24,28 @@ make check
 ## Common commands
 
 ```bash
-make help
-make clean
 make build
 make test
-make verify
 make check
+make check-strict
+make verify
+make usb
+make clean
 ```
 
 ## What to expect
 
 - `make build` compiles the project into `build/`
-- `make check` runs the portable project verification suite
-- `make verify` runs the project verification script directly
+- `make test` runs the project self-test target
+- `make check` runs the portable verification flow
+- `make check-strict` runs the stricter validation path
+- `make usb` stages the live USB deployment flow
 - `make clean` removes generated build artifacts
 
 ## Documentation
 
 - [README.md](../README.md)
+- [docs/BUILDING.md](BUILDING.md)
+- [docs/DEVELOPMENT.md](DEVELOPMENT.md)
 - [CONTRIBUTING.md](../CONTRIBUTING.md)
 - [SECURITY.md](../SECURITY.md)
-- [CHANGELOG.md](../CHANGELOG.md)
