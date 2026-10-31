@@ -1,0 +1,234 @@
+{
+  "artifact": "Dandelion OS Heimat-Agora \u2014 Sovereign Argon Kernel & Linus's Law Audit Release",
+  "version": "v3.2.0",
+  "semver": "3.2.0",
+  "codename": "Heimat-Agora \u2014 Sovereign Argon Kernel & Linus's Law Audit Release",
+  "release_date": "2026-10-30",
+  "author": "Justin D. Grimm (K-Lani 13 Actual)",
+  "co_architect_and_auditor": "Gemini Argon Kernel Architect & Hostile Reviewer #2 (Linus's Law Audit Engine)",
+  "orcid": "0009-0000-5299-0243",
+  "concept_doi": "10.5281/zenodo.21255229",
+  "repository": "https://github.com/leadpiperl1/dandelion-os",
+  "verification_mode": "strict",
+  "runtime_environment": {
+    "os_system": "Linux",
+    "kernel_release": "4.19.0-gvisor",
+    "architecture": "x86_64",
+    "is_linux": true,
+    "is_preempt_rt_kernel": false,
+    "is_virtualized_or_ci": true,
+    "python_version": "3.11.2"
+  },
+  "verification_runtime_sec": 21.1109,
+  "all_invariants_passed": true,
+  "c99_static_analysis_flags": "-std=c99 -O3 -Wall -Wextra -Wpedantic -Wshadow -Wformat=2 -Wconversion -Wundef -Werror",
+  "compiler_warnings": 0,
+  "sizeof_static_assertions": {
+    "dandelion_tnpt_v3_0_t": 577,
+    "sharded_quorum_entry_64b_t": 64,
+    "dandelion_point_v2_t": 6,
+    "stigmergic_ble_frame_t": 32,
+    "esp_sdr_dma_lldesc_t": 12,
+    "chair44_raw_states": 44,
+    "shingari_bounded_trits": 42,
+    "chair44_legal_orientations": 30
+  },
+  "ternary_logic_gates": {
+    "ternary_gates_verified": 81,
+    "fowler_bijection_states": 243,
+    "fail_closed_trap_codes": 13,
+    "mod3_sum_f3_cyclic_verified": true,
+    "status": "PASS"
+  },
+  "semver_compliance": {
+    "semver_version": "v3.2.0",
+    "codeql_permissions_verified": true,
+    "zero_duplicate_clutter": true
+  },
+  "argon_frontier_telemetry": {
+    "fbw_max_real_eigenvalue": -9.98355,
+    "fbw_final_pitch_error_rad": 0.000392,
+    "layerfs_wal_chunk_sha256": "2b1ca4aea60a0d2042478ba33914c589a1d257eb933981a90953fae7bc832ca4",
+    "bits_per_weight_packed": 1.6006,
+    "vbst_cosine_similarity_vs_fp32": 0.99017,
+    "barker13_psr": 6.587,
+    "post_haar_dwt_snr_db": 8.35,
+    "esp_sdr_sfdr_db": 53.67,
+    "grimm_tuttle_multiplex_gain_ratio": 1.801
+  },
+  "accessibility_and_community_standards": {
+    "accessibility_spec_present": true,
+    "code_of_conduct_present": true,
+    "security_policy_present": true,
+    "dependabot_v2_configured": true,
+    "issue_and_pr_templates_present": true,
+    "bite10_morse_sos_inode": 2001,
+    "rosetta_harmony_inode": 1505,
+    "kintsugi_gold_code": 251,
+    "sos_ternary_vector": [
+      -1,
+      -1,
+      -1,
+      0,
+      1,
+      1,
+      1,
+      0,
+      -1,
+      -1,
+      -1
+    ]
+  },
+  "shingari_polyglot_unification": {
+    "status": "PASS",
+    "shared_library_abi": "build/libdandelion_os_v3.2.0.so",
+    "shared_library_bytes": 75240,
+    "ffi_fowler_8byte_seed": [
+      102,
+      65,
+      196,
+      102,
+      65,
+      196,
+      102,
+      227
+    ],
+    "ffi_rosetta_40th_evidential_trit": 0,
+    "ffi_trap253_rejected": true,
+    "ffi_morse_sos_trits": [
+      -1,
+      -1,
+      -1,
+      0,
+      1,
+      1,
+      1,
+      0,
+      -1,
+      -1,
+      -1
+    ],
+    "ffi_vbst_vs_tmac_dot": -10,
+    "julia_bridge_file": "dandelion_shingari_bridge_v3.2.0.jl",
+    "theremin_sample_rate_hz": 96000.0,
+    "theremin_buffer_samples": 64,
+    "theremin_latency_ms": 0.66
+  },
+  "gate_11_kramhaus_torque_avalanche": {
+    "status": "PASS",
+    "injected_tasks": 12,
+    "unit_mass_g": 28,
+    "tau_crit_threshold_unm": 49426,
+    "tau_unmitigated_burst_unm": 62268,
+    "tau_governed_post_weld_unm": 31140,
+    "kintsugi_weld_code": 251,
+    "kintsugi_migrations": 8,
+    "shed_low_priority_red_tasks": 4,
+    "blue_frames_preserved": 4,
+    "blue_frames_dropped": 0,
+    "chair44_legal_orientation": 12,
+    "entropy_drift_ds": 0.63
+  },
+  "gate_12_byzantine_clue_epistemic_lock": {
+    "status": "PASS",
+    "turns_executed": 10,
+    "initial_candidate_triples": 80,
+    "final_candidate_triples": 1,
+    "initial_entropy_bits": 6.3219,
+    "final_entropy_bits": 0.0,
+    "entropy_trajectory_bits": [
+      6.3219,
+      6.0,
+      5.585,
+      5.1699,
+      4.585,
+      4.1699,
+      3.585,
+      3.0,
+      2.0,
+      1.0,
+      0.0
+    ],
+    "candidate_triples_trajectory": [
+      80,
+      64,
+      48,
+      36,
+      24,
+      18,
+      12,
+      8,
+      4,
+      2,
+      1
+    ],
+    "resolved_triad": [
+      "Plum",
+      "Lead Pipe",
+      "Conservatory"
+    ],
+    "so3_f3_det1_verified": true,
+    "singular_det0_rejected": true,
+    "reflection_det2_rejected": true,
+    "last_popcnt_dot40": 0,
+    "last_tmac_lut4_acc": 14
+  },
+  "linus_law_red_team_audit": {
+    "auditor_role": "Gemini Argon Kernel Architect & Hostile Reviewer #2 (Linus's Law Audit Engine)",
+    "governing_ethos": "Given enough eyeballs, all bugs are shallow (Linus's Law) | K&R C99 Clarity | Zero Heap Allocation (malloc = 0)",
+    "fault_vectors_audited": 4,
+    "all_fault_vectors_mitigated": true,
+    "vectors": [
+      {
+        "id": "FAULT-VEC-01",
+        "domain": "Integer Overflow in Fixed-Point Torque Accumulation (0 Green / Kramhaus Governor)",
+        "hostile_attack": "Injected a 12-task burst (62,268 uN*m > 49,426 uN*m) and a 42-task full Chair44 collar saturation burst with large lever arms (r_i = 450 mm, sin_theta_q1000 = 1000) to trigger 32-bit signed/unsigned multiplication overflow before division by 1,000,000.",
+        "shallow_bug_surfaced": "In 32-bit arithmetic, `m_g (28) * GRAVITY_MM_PER_S2 (9807) * r_mm (450) * sin_q (1000) = 123,568,200,000`, which overflows `INT32_MAX (2,147,483,647)` by 57.5x, wrapping negative or truncating cumulative torque.",
+        "c99_remediation": "Widened all intermediate lever-arm products (`m_g * GRAVITY_MM_PER_S2 * r_mm * sin_q`) and cumulative torque accumulators (`raw_tau_unm`, `governed_tau_unm`) to explicit 64-bit integers (`uint64_t` / `int64_t`) prior to `/ 1000000LL` scaling, clamping `sin_theta_q1000` to `[-1000, +1000]`.",
+        "verification_gate": "Gate 11 (PASS: 62,268 uN*m raw -> 31,140 uN*m governed, 0 dropped -1 Blue frames, dS = 0.6300 < 1.0)"
+      },
+      {
+        "id": "FAULT-VEC-02",
+        "domain": "Signed/Unsigned Promotion Traps under -Wconversion (-1 Blue & +1 Red Hot Paths)",
+        "hostile_attack": "Compiled all C99 translation units and shared libraries under `gcc -std=c99 -O3 -Wall -Wextra -Wpedantic -Wshadow -Wformat=2 -Wconversion -Wundef -Werror` while feeding negative trits (`-1`) into `mod3_sum(a,b)`, bit-shifts, and `<ctype.h>` character classifiers.",
+        "shallow_bug_surfaced": "C99 integer promotion rules promote `int8_t` and `uint8_t` operands in `(a + b + 4) % 3 - 1`, `crc ^= (data[i] << 8)`, and `mag_row[b] | (1U << bit)` to `int`, triggering `-Wconversion` errors or implementation-defined negative modulo behavior if `a + b` is not shifted positive before `% 3`.",
+        "c99_remediation": "Enforced `static inline int8_t mod3_sum(int8_t a, int8_t b) { return (int8_t)(((a + b + 4) % 3) - 1); }` where `a + b + 4 >= 2 > 0` for all `a, b in {-1, 0, +1}`, added explicit narrowing casts on all `uint8_t` / `uint16_t` bitwise accumulators, and cast all `<ctype.h>` inputs through `(unsigned char)`.",
+        "verification_gate": "Gate 1 & Gate 2 (PASS: 0 warnings, 0 errors under -Werror -Wconversion)"
+      },
+      {
+        "id": "FAULT-VEC-03",
+        "domain": "Unaligned Pointer Casts in the 577-Byte Packed .tnpt Struct (+1 Red L1 Table)",
+        "hostile_attack": "Inspected byte offsets of multi-byte scalar fields (`rosetta_anchor_inode`, `taxicab_constant`, `thermal_watts`, `fdt_ou_residual`) inside `__attribute__((packed)) dandelion_tnpt_v3_0_t` (577 bytes) and tested foreign-function buffer loads across `ctypes` / Julia `Mmap.mmap`.",
+        "shallow_bug_surfaced": "Casting an arbitrary unaligned `uint8_t*` buffer pointer or accessing misaligned `uint16_t`/`float` members can fault on strict-alignment RISC-V/ARM architectures (`SIGBUS`) if offsets are odd or if raw pointers are dereferenced without alignment guarantees.",
+        "c99_remediation": "Verified exact structural layout: `magic[8]` (offset 0) + `packed_weights[104]` (offset 8) + `grimm_shift_lut[256]` (offset 112) + `manner_lut[128]` (offset 368) + `aar_sustain_improve[64]` (offset 496) places `rosetta_anchor_inode` at offset 560 (16-byte aligned!), `taxicab_constant` at 562 (2-byte aligned), `thermal_watts` at 564 (4-byte aligned), and `fdt_ou_residual` at 568 (8-byte aligned), while unpackers read `packed_weights` strictly byte-by-byte (`uint8_t`).",
+        "verification_gate": "Gate 1, Gate 4 & Gate 10 (PASS: _Static_assert sizeof == 577B, offset 560 8-byte aligned)"
+      },
+      {
+        "id": "FAULT-VEC-04",
+        "domain": "Non-Invertible det(M) == 0, 2 (mod 3) Matrix Injection (+1 Red SO(3, F_3) Pullback)",
+        "hostile_attack": "Injected a singular all-ones matrix (`det(M) == 0 mod 3`, collapsing epistemic state space onto the isotropic null cone) and an improper permutation transposition (`det(M) == 2 == -1 mod 3`, flipping chiral orientation outside `SO(3, F_3)`) into `byzantine_clue_epistemic_prune_step()`.",
+        "shallow_bug_surfaced": "Without a strict `det(M) == +1 (mod 3)` gate, a singular matrix erases candidate exclusions (`H(Q)` freezes > 0) while a reflection matrix inverts `-1 Blue` and `+1 Red` rails.",
+        "c99_remediation": "Implemented `validate_so3_f3_pullback_matrix()` computing exact 3x3 cofactor determinant modulo 3 (`((det_raw % 3) + 3) % 3 == 1`) and hard-gated `byzantine_clue_epistemic_prune_step()` to fail-closed (`return -2`) whenever `is_valid_so3 == 0` or `det_mod3 != 1`.",
+        "verification_gate": "Gate 12 (PASS: det==0 and det==2 rejected with rc=-2; valid G cycle converges to H(Q)=0.0000 bits in 10 turns)"
+      }
+    ]
+  },
+  "telemetry": {
+    "mean_grimm_rosetta_parse_us": 1.5216,
+    "mean_vbst_dirac_us": 0.26,
+    "vbst_jitter_sigma_us": 0.0796,
+    "combined_kernel_loop_us": 1.7816,
+    "preempt_rt_ceiling_us": 50.0,
+    "jitter_threshold_us": 1.0,
+    "dirac_cluster_sync_r": 0.9948,
+    "khosla_privileged_axis_r": 1.0,
+    "thermal_power_watts": 18.52,
+    "tnpt_bytes": 577,
+    "initramfs_bytes": 29970,
+    "layerfs_point_v2_bytes": 6,
+    "l1d_quorum_entry_bytes": 64,
+    "stigmergic_ble_frame_bytes": 32,
+    "esp_sdr_dma_lldesc_bytes": 12
+  },
+  "status": "ALL_12_GATES_PASSED"
+}

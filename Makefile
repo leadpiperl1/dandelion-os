@@ -1,41 +1,49 @@
-VERSION          := v3.0.0
-SEMVER           := 3.0.0
-CC               ?= gcc
-STRICT_WARNINGS  ?= 0
-USE_WILD_LINKER  ?= 0
+# ==============================================================================
+# DANDELION OS v3.2.0 ("HEIMAT-AGORA") — SOVEREIGN C99 & POLYGLOT MAKEFILE
+# ==============================================================================
+VERSION := v3.2.0
+SEMVER := 3.2.0
+CC ?= gcc
+PYTHON ?= python3
+STRICT_WARNINGS ?= 0
+USE_WILD_LINKER ?= 0
 
-BASE_CFLAGS      := -std=c99 -O3 -Wall -Wextra -Wpedantic -Wshadow -Wformat=2
-STRICT_CFLAGS    := -Wconversion -Wundef -Werror
-COMMON_CFLAGS    := $(BASE_CFLAGS)
+CFLAGS_PORTABLE := -std=c99 -O3 -Wall -Wextra -Wpedantic -Wshadow -Wformat=2 -Wundef
+CFLAGS_STRICT := -Wconversion -Werror
+
 ifeq ($(STRICT_WARNINGS),1)
-COMMON_CFLAGS    += $(STRICT_CFLAGS)
+CFLAGS := $(CFLAGS_PORTABLE) $(CFLAGS_STRICT)
+else
+CFLAGS := $(CFLAGS_PORTABLE)
 endif
 
-CFLAGS           ?= $(COMMON_CFLAGS)
-SHFLAGS          := -std=c99 -O3 -fPIC -shared
-LDFLAGS          := -lm
+SHFLAGS := $(CFLAGS) -fPIC -shared
+LDFLAGS := -lm
 
-BUILD_DIR        := build
-TARGET           := $(BUILD_DIR)/dandelion_os_grimm_fbw_$(VERSION)
-SHLIB            := $(BUILD_DIR)/libdandelion_os_$(VERSION).so
-SRC              := dandelion_os_grimm_fbw_$(VERSION).c
-HDR              := dandelion_os_$(VERSION).h
+ifeq ($(USE_WILD_LINKER),1)
+ifneq ($(shell command -v wild 2>/dev/null),)
+LDFLAGS += -fuse-ld=wild
+endif
+endif
 
-.PHONY: all shared test verify clean build check check-strict usb help
+BUILD_DIR := build
+RELEASE_DIR := $(BUILD_DIR)/release
+TARGET := $(BUILD_DIR)/dandelion_os_grimm_fbw_$(VERSION)
+SHLIB := $(BUILD_DIR)/libdandelion_os_$(VERSION).so
+SRC := dandelion_os_grimm_fbw_$(VERSION).c
+HDR := dandelion_os_grimm_fbw_$(VERSION).h
+VERIFY_PY := verify_dandelion_os_$(VERSION).py
+USB_SH := mk_switchblade_usb_$(VERSION).sh
+TNPT := dandelion_b158_$(VERSION).tnpt
+INITRD := initramfs_dandelion_$(VERSION).cpio.gz
+STATE_MAP := dandelion_os_grimm_whiteroom_state_map_$(VERSION).png
+MANIFEST := audit_manifest_$(VERSION).json
 
-all: build
+.PHONY: all build shared check check-strict test verify release usb shell json clean help
 
-help:
-	@echo "Dandelion OS build targets:"
-	@echo "  make build        Compile the C99 microkernel and shared library into ./build"
-	@echo "  make test         Run the built-in self-test"
-	@echo "  make verify      Run the Python verification harness"
-	@echo "  make check        Alias for make verify"
-	@echo "  make check-strict Run the strict verification flow"
-	@echo "  make clean        Remove build artifacts"
-	@echo "  make usb          Show the USB staging status"
-
+all: build shared
 build: $(TARGET) $(SHLIB)
+shared: $(SHLIB)
 
 $(TARGET): $(SRC) $(HDR)
 	@mkdir -p $(BUILD_DIR)
@@ -45,19 +53,36 @@ $(SHLIB): $(SRC) $(HDR)
 	@mkdir -p $(BUILD_DIR)
 	$(CC) $(SHFLAGS) $(SRC) -o $(SHLIB) $(LDFLAGS)
 
-test: all
-	./$(TARGET) --self-test --tnpt dandelion_b158_$(VERSION).tnpt --seed 42
+check: build
+	$(PYTHON) $(VERIFY_PY) --seed 42 --mode portable
 
-verify: all
-	python3 verify_dandelion_os_$(VERSION).py --seed 42 --mode portable
+check-strict:
+	$(MAKE) clean
+	$(MAKE) build STRICT_WARNINGS=1
+	$(PYTHON) $(VERIFY_PY) --seed 42 --mode strict
 
-check: verify
+test: build
+	$(PYTHON) $(VERIFY_PY) --seed 42 --mode portable
+	./$(TARGET) --verify
 
-check-strict: all
-	python3 verify_dandelion_os_$(VERSION).py --seed 42 --mode strict
+verify: check-strict
 
-usb:
-	@echo "[USB] USB staging is not implemented in this repository; no portable live-rootfs step is configured."
+release: check-strict
+	@mkdir -p $(RELEASE_DIR)
+	@cp -f $(TARGET) $(SHLIB) $(TNPT) $(INITRD) $(STATE_MAP) $(MANIFEST) $(RELEASE_DIR)/
+
+usb: build
+	@chmod +x $(USB_SH)
+	@BUILD_DIR=/tmp/build_whiteroom_$(VERSION) OUT_DIR=$(BUILD_DIR) ./$(USB_SH)
+
+shell: $(TARGET)
+	./$(TARGET) --shell
+
+json: $(TARGET)
+	./$(TARGET) --json "div compute fbw pitch trim"
 
 clean:
-	rm -rf $(BUILD_DIR)
+	rm -rf $(BUILD_DIR) /tmp/build_whiteroom_$(VERSION) __pycache__
+
+help:
+	@echo "Dandelion OS $(VERSION) Build & Verification Targets"

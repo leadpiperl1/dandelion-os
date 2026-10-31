@@ -1,18 +1,1 @@
-# 🌐 Page 5: Upstream Open-Source Ecosystem & Fork Registry (`Upstream-Open-Source-Ecosystem.md`)
-
-**Version:** `v3.0.0` (*Sovereign Argon Frontier & Embedded AI Release*)  
-**Mandate:** Linus's Law (*"Given enough eyeballs, all bugs are shallow"*) — Standing on the shoulders of giants by binding and forking the strongest open-source bricks on GitHub across all 5 Dandelion OS subsystems.
-
----
-
-## 1. The 10 High-Signal GitHub Repositories Bound into Dandelion OS v3.0.0
-
-| Subsystem Pillar | Upstream Repository | License | Why We Fork / Bind It in Dandelion OS v3.0.0 | Kernel / Repo Integration Hook |
-| :--- | :--- | :---: | :--- | :--- |
-| **1. 1.58-Bit Ternary & LUT CPU Inference** | **[microsoft/T-MAC](https://github.com/microsoft/T-MAC/)** & **[microsoft/BitNet](https://github.com/microsoft/bitnet)** | MIT | Replaces multiply-accumulate (`FMA`) with sign-symmetric lookup table (`tbl`/`pshufb`) operations (`2^(n-1)` LUT compression), delivering `4-5x` CPU speedup over `llama.cpp` `TQ1_0`/`TQ2_0` (`20 tok/s` single-core, `11 tok/s` on Raspberry Pi 5). | `dandelion_tmac_lut4_dot_row()` & `dandelion_vbst_dot_row()` in `dandelion_os_v3.0.0.h` |
-| **2. Linux 6.12+ eBPF Real-Time Scheduling** | **[sched-ext/scx](https://github.com/sched-ext/scx)** (`scx_lavd` & `scx_layered`) | GPL-2.0 | Implements hot-swappable eBPF kernel thread schedulers (`scx_lavd` Latency-Criticality Aware Virtual Deadline & `scx_layered`), isolating `-1 Blue` Human Pilot (`Cores 0-2`), `0 Green` LayerFS (`Cores 3-4`), and `+1 Red` AI (`Cores 5-7`). | `CONFIG_SCHED_CLASS_EXT=y` in `dandelion_rt_v3.0.0.config` & `scx_chiral_domain` |
-| **3. Zero-Infrastructure Cryptography Mesh** | **[markqvist/Reticulum](https://github.com/markqvist/reticulum)** & **[meshtastic/firmware](https://github.com/meshtastic/firmware)** | MIT / GPL-3.0 | Self-configuring, zero-IP encrypted mesh networking stack (`500 B` MTU, Ed25519/X25519) running over BLE, LoRa, ESP-NOW, serial, and packet radio—extending our 32-byte `"DND3"` Stigmergic BLE gossip frame across off-grid continental links. | `stigmergic_ble_frame_t` (`32 B`) in `dandelion_os_v3.0.0.h` |
-| **4. Contactless Wi-Fi CSI & Baseband RF** | **[StevenMHernandez/ESP32-CSI-Tool](https://github.com/StevenMHernandez/ESP32-CSI-Tool)** | MIT | Extracts real-time Wi-Fi Channel State Information (CSI) phase/amplitude matrices from standard ESP32/ESP32-C5 radios—enabling zero-contact breathing and micro-movement detection for coma/locked-in patients alongside `80 MSa/s` ESP-SDR DMA capture. | `esp_sdr_dma_lldesc_t` (`12 B`) & Gate 8 `80 MSa/s` I/Q FFT |
-| **5. 1-Switch, Eye-Gaze & BCI Accessibility** | **[OptiKey/OptiKey](https://github.com/OptiKey/OptiKey)** & **[OpenBCI/OpenBCI_GUI](https://github.com/OpenBCI/OpenBCI_GUI)** | GPL-3.0 / MIT | Open-source eye-tracking AAC keyboard for Motor Neuron Disease (MND/ALS) and open-source EEG/EMG/EOG biosignal streaming—feeding directly into our **Bite 10 (`MICRO_BITE10_SENSORY_LIS = 2001`)** Morse-to-Ternary bridge (`dit=-1, space=0, dah=+1`). | `morse_to_ternary_bridge()` in `dandelion_os_grimm_fbw_v3.0.0.c` & `ACCESSIBILITY.md` |
-| **6. Open-Source Lattice iCE40 FPGA Flow** | **[YosysHQ/icestorm](https://github.com/YosysHQ/icestorm)** & **[YosysHQ/nextpnr](https://github.com/YosysHQ/nextpnr)** | ISC | 100% open-source Verilog-to-bitstream synthesis, place-and-route (`nextpnr-ice40`), and SPI flash programming (`iceprog`) for the **Lattice iCE40HX8K** apex arbiter on our Hybrid Triangular Ring Node. | `hybrid_ring_node_hw_t` (`47 Ohm` SPI, `40 MHz` Theremin clock) |
-| **7. Sovereign 3D Voxel Engine** | **[luanti-org/luanti](https://github.com/luanti-org/luanti)** | LGPL-2.1 | Open-source C++/Lua voxel engine (formerly Minetest) hosting *Heimat* `{0,0,0}`, the `3^13` (`1,594,323`) Burger parity pool, and the 5-bot Miney Swarm over Unix Domain Sockets. | `BURGER_POOL_3_POW_13` & `validate_uds_socket_path()` |
+# Upstream Open-Source Ecosystem
