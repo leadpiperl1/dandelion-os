@@ -1,13 +1,13 @@
 # 🦁 Page 1: Wookiee Macro-Kernel Architecture (`Wookiee-Macro-Kernel-Architecture.md`)
 
 **Subsystem Scope:** Linux 6.12+ `PREEMPT_RT` + `sched_ext`, 10-Bite Universal Grimm's Law (`P_psi = 1505`), 1.58-Bit Ternary `VBST`, & LayerFS SQLite WAL  
-**Primary Source Files:** `dandelion_os_v3.0.0.h`, `dandelion_os_grimm_fbw_v3.0.0.c`, `dandelion_rt_v3.0.0.config`
+**Primary Source Files:** `dandelion_os_v3.5.0.h`, `dandelion_os_grimm_fbw_v3.5.0.c`, `dandelion_rt_v3.5.0.config`
 
 ---
 
 ## 1. The Wroshyr Tree Root: Triadic F-16 Digital Fly-By-Wire
 
-Just as the Wookiees of Kashyyyk build kilometer-high cities anchored in the living roots of Wroshyr trees while maintaining master-level bowcaster and hyperdrive engineering, the **Dandelion OS v3.0.0 Macro-Kernel** anchors high-speed AI computation inside a deterministic, real-time physical control loop:
+Just as the Wookiees of Kashyyyk build kilometer-high cities anchored in the living roots of Wroshyr trees while maintaining master-level bowcaster and hyperdrive engineering, the **Dandelion OS v3.5.0 Macro-Kernel** anchors high-speed AI computation inside a deterministic, real-time physical control loop:
 
 - **Relaxed Static Stability (RSS) State Machine**: Modeled on the F-16 Fighting Falcon digital flight control computer, the open-loop plant matrix $A$ possesses an unstable pitch-divergence mode that is continuously stabilized to a triple closed-loop pole at **$s = -10.0\text{ rad/s}$** via feedback gain $K = [20.8552, 2.0138, 68.9655]$.
 - **Chiral Zen CCX Core Pinning**:

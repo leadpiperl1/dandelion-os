@@ -1,4 +1,4 @@
-# 🌲🌲 Dandelion OS v3.0.0 — The Wookiee-Ewok Wiki-Werkshop (`Home.md`)
+# 🌲🌲 Dandelion OS v3.5.0 — The Wookiee-Ewok Wiki-Werkshop (`Home.md`)
 
 **Welcome to the Sovereign Forest Moon & Wroshyr Canopy Knowledge Base!**  
 *Anchored in **Linus's Law**, **Robert Pirsig's Quality ($dQ$)**, the **Grimm-Tuttle Network Emergence Hypothesis**, and **Radical Sensory Accessibility (`Bite 10`)**.*
@@ -7,9 +7,9 @@
 
 ## Why Wookiees & Ewoks? The Dual-Scale Engineering Metaphor
 
-In the architecture of **Dandelion OS & Embedded AI (`v3.0.0`)**, we reject the brittle, centralized Imperial Death Star of corporate AI wrappers (the S&P 493 zero-payoff inference sink). Instead, our sovereign open-source commons operates across two symbiotic biological and computational scales—**Kashyyyk Wookiee Macro-Engineering** and **Endor Ewok Micro-Craft**:
+In the architecture of **Dandelion OS & Embedded AI (`v3.5.0`)**, we reject the brittle, centralized Imperial Death Star of corporate AI wrappers (the S&P 493 zero-payoff inference sink). Instead, our sovereign open-source commons operates across two symbiotic biological and computational scales—**Kashyyyk Wookiee Macro-Engineering** and **Endor Ewok Micro-Craft**:
 
-| Alliance Division | Mythic Archetype | Dandelion OS v3.0.0 Realization | Core Hardware & Invariants |
+| Alliance Division | Mythic Archetype | Dandelion OS v3.5.0 Realization | Core Hardware & Invariants |
 | :--- | :--- | :--- | :--- |
 | **Wookiee Macro-Architects** (*Wroshyr Canopy*) | **Chewbacca / Bowcaster / Shyriiwook** — Immense physical strength, deep ancestral memory, multi-century tree-city engineering, and cross-species comprehension | **Mainline Linux 6.12+ `PREEMPT_RT` + `sched_ext` + 10-Bite Universal Grimm's Law** (`P_psi = 1505`) | **Professor Plum** (AMD Ryzen 7 / 64 GB RAM / `18.52 W` night-shift envelope), `577 B` L1-resident `.tnpt` table, 2-Bit `VBST` zero-multiply engine, LayerFS SQLite WAL |
 | **Ewok Micro-Tacticians** (*Endor Forest Floor*) | **Chief Chirpa / Wicket / Asymmetric Log Traps** — Ultra-low-power, zero-cloud resourcefulness turning stones, vines, and acoustic horns into Empire-shattering defenses | **Transducer Edge Conditioning + 32B BLE Stigmergic Gossip + Zero-Hardware ESP-SDR** | **Hybrid Triangular Ring Node** (2x Waveshare ESP32-C5 RISC-V + Lattice iCE40HX8K FPGA with `47 Ohm` SPI termination + `40 MHz` 74HC14N Theremin geomagnetic clock) |
@@ -29,7 +29,7 @@ In the architecture of **Dandelion OS & Embedded AI (`v3.0.0`)**, we reject the 
    *How Ewok log-traps (`Byte 253` / `Byte 254`) crush Imperial wrapper slop in `< 60` seconds (`make check-strict`), plus Path A Google Drive-to-GitHub release operations.*
 
 5. **[Page 5: Upstream Open-Source Ecosystem & Fork Registry (`Upstream-Open-Source-Ecosystem.md`)](Upstream-Open-Source-Ecosystem.md)**  
-   *The 10 GitHub repositories (`microsoft/T-MAC`, `microsoft/BitNet`, `sched-ext/scx`, `markqvist/Reticulum`, `StevenMHernandez/ESP32-CSI-Tool`, `OptiKey/OptiKey`, `OpenBCI/OpenBCI_GUI`, `YosysHQ/icestorm`, `YosysHQ/nextpnr`, `luanti-org/luanti`) bound into Dandelion OS v3.0.0.*
+   *The 10 GitHub repositories (`microsoft/T-MAC`, `microsoft/BitNet`, `sched-ext/scx`, `markqvist/Reticulum`, `StevenMHernandez/ESP32-CSI-Tool`, `OptiKey/OptiKey`, `OpenBCI/OpenBCI_GUI`, `YosysHQ/icestorm`, `YosysHQ/nextpnr`, `luanti-org/luanti`) bound into Dandelion OS v3.5.0.*
 
 - **[Page 6: Shingari Polyglot Unification (Julia 1.12, C99 ABI & Theremin 6D Bridge)](Shingari-Polyglot-Julia-C-AI-Bridge.md)** — Solving the Three-Language Problem across Human, Machine, and AI.
 
@@ -38,13 +38,13 @@ In the architecture of **Dandelion OS & Embedded AI (`v3.0.0`)**, we reject the 
 # 🦁 Page 1: Wookiee Macro-Kernel Architecture (`Wookiee-Macro-Kernel-Architecture.md`)
 
 **Subsystem Scope:** Linux 6.12+ `PREEMPT_RT` + `sched_ext`, 10-Bite Universal Grimm's Law (`P_psi = 1505`), 1.58-Bit Ternary `VBST`, & LayerFS SQLite WAL  
-**Primary Source Files:** `dandelion_os_v3.0.0.h`, `dandelion_os_grimm_fbw_v3.0.0.c`, `dandelion_rt_v3.0.0.config`
+**Primary Source Files:** `dandelion_os_v3.5.0.h`, `dandelion_os_grimm_fbw_v3.5.0.c`, `dandelion_rt_v3.5.0.config`
 
 ---
 
 ## 1. The Wroshyr Tree Root: Triadic F-16 Digital Fly-By-Wire
 
-Just as the Wookiees of Kashyyyk build kilometer-high cities anchored in the living roots of Wroshyr trees while maintaining master-level bowcaster and hyperdrive engineering, the **Dandelion OS v3.0.0 Macro-Kernel** anchors high-speed AI computation inside a deterministic, real-time physical control loop:
+Just as the Wookiees of Kashyyyk build kilometer-high cities anchored in the living roots of Wroshyr trees while maintaining master-level bowcaster and hyperdrive engineering, the **Dandelion OS v3.5.0 Macro-Kernel** anchors high-speed AI computation inside a deterministic, real-time physical control loop:
 
 - **Relaxed Static Stability (RSS) State Machine**: Modeled on the F-16 Fighting Falcon digital flight control computer, the open-loop plant matrix $A$ possesses an unstable pitch-divergence mode that is continuously stabilized to a triple closed-loop pole at **$s = -10.0\text{ rad/s}$** via feedback gain $K = [20.8552, 2.0138, 68.9655]$.
 - **Chiral Zen CCX Core Pinning**:
@@ -84,13 +84,13 @@ Han Solo and Chewbacca prove that true cognitive partnership does not require tw
 # 🐻 Page 2: Ewok Micro-Edge & Stigmergic Mesh Protocol (`Ewok-Micro-Edge-And-Mesh-Protocol.md`)
 
 **Subsystem Scope:** Transducer Boundary Conditioning (Haar DWT + Barker-13), 32-Byte Stigmergic BLE Gossip, ESP-SDR `80 MSa/s` Baseband Recon, & Hybrid Triangular Ring Node  
-**Primary Source Files:** `dandelion_os_v3.0.0.h`, `dandelion_os_grimm_fbw_v3.0.0.c`, `verify_dandelion_os_v3.0.0.py`
+**Primary Source Files:** `dandelion_os_v3.5.0.h`, `dandelion_os_grimm_fbw_v3.5.0.c`, `verify_dandelion_os_v3.5.0.py`
 
 ---
 
 ## 1. Ewok Forest-Floor Ingenuity: Zero-Cloud Edge Sovereignty
 
-On the forest moon of Endor, the Ewoks defeat mechanized Imperial walkers using acoustic horn relays, gravity-powered log pendulums, and intimate knowledge of local terrain. In **Dandelion OS v3.0.0**, our **Ewok Micro-Nodes** achieve full wireless spectrum awareness and peer-to-peer mesh coordination on `$5` microcontrollers with **zero cloud dependency** and **zero extra RF hardware**:
+On the forest moon of Endor, the Ewoks defeat mechanized Imperial walkers using acoustic horn relays, gravity-powered log pendulums, and intimate knowledge of local terrain. In **Dandelion OS v3.5.0**, our **Ewok Micro-Nodes** achieve full wireless spectrum awareness and peer-to-peer mesh coordination on `$5` microcontrollers with **zero cloud dependency** and **zero extra RF hardware**:
 
 ### A. Acoustic & RF Horn Synchronization (Haar DWT + 13-Chip Barker Filter)
 Before an edge node ever wakes the `+1 Red` AI co-pilot, incoming acoustic, piezo, or RF samples pass through two hardware-friendly filters:
@@ -127,13 +127,13 @@ Using open-source ESP-SDR DMA descriptor rings (`esp_sdr_dma_lldesc_t`, `12 byte
 # ♿ Page 3: Universal Sensory & Locked-In Accessibility — Bite 10 (`Universal-Sensory-Accessibility-Bite-10.md`)
 
 **Subsystem Scope:** `MICRO_BITE10_SENSORY_LIS = 2001U`, `morse_to_ternary_bridge()`, 1-Switch Coma/LIS Transduction, Braille/Vibrotactile Output, & Zero-TUI Screen-Reader Mode  
-**Primary Source Files:** `ACCESSIBILITY.md`, `dandelion_os_v3.0.0.h`, `dandelion_os_grimm_fbw_v3.0.0.c`
+**Primary Source Files:** `ACCESSIBILITY.md`, `dandelion_os_v3.5.0.h`, `dandelion_os_grimm_fbw_v3.5.0.c`
 
 ---
 
 ## 1. The Heart of the Alliance: Why Every Mind Matters
 
-Whether a learner speaks Navajo, Quechua, Sanskrit, Shyriiwook, or communicates through a single eyelid blink from an intensive-care hospital bed, **Dandelion OS v3.0.0 guarantees that no human mind is ever locked out of learning.**
+Whether a learner speaks Navajo, Quechua, Sanskrit, Shyriiwook, or communicates through a single eyelid blink from an intensive-care hospital bed, **Dandelion OS v3.5.0 guarantees that no human mind is ever locked out of learning.**
 
 Inspired by Dalton Trumbo's [*Johnny Got His Gun* (1939)](https://en.wikipedia.org/wiki/Johnny_Got_His_Gun), Metallica's [*"One"* (1988)](https://en.wikipedia.org/wiki/One_(Metallica_song)), clinical Locked-In Syndrome (LIS) brain-computer interface research ([PMC4437925](https://pmc.ncbi.nlm.nih.gov/articles/PMC4437925/), [PMC9688086](https://pmc.ncbi.nlm.nih.gov/articles/PMC9688086/), [PubMed 33530868](https://pubmed.ncbi.nlm.nih.gov/33530868/)), and our workspace *Treatise on Radical Cognitive Accessibility*, **Bite 10 (`MICRO_BITE10_SENSORY_LIS = 2001`)** builds 1-channel sensory transduction directly into the C99 microkernel.
 
@@ -148,11 +148,11 @@ In C99 (`morse_to_ternary_bridge`), a single physical or neural switching channe
 
 ### Live Kernel Verification (`Gate 9`)
 ```bash
-./build/dandelion_os_grimm_fbw_v3.0.0 --json "sos ... --- ..."
+./build/dandelion_os_grimm_fbw_v3.5.0 --json "sos ... --- ..."
 ```
 ```json
 {
-  "version": "v3.0.0",
+  "version": "v3.5.0",
   "bite": 10,
   "macro_p_inode": 1505,
   "micro_q_inode": 2001,
@@ -168,23 +168,23 @@ In C99 (`morse_to_ternary_bridge`), a single physical or neural switching channe
 
 # 🛡️ Page 4: Endor-Kashyyyk 9-Gate Verification & FAQ (`Endor-Kashyyyk-Verification-And-FAQ.md`)
 
-**Subsystem Scope:** `< 60s` 9-Gate Verification Harness (`verify_dandelion_os_v3.0.0.py`), Ewok Log-Trap Fail-Closed Boundaries (`Byte 253` & `Byte 254`), & Path A Drive-to-GitHub Troubleshooting  
-**Primary Source Files:** `verify_dandelion_os_v3.0.0.py`, `Drive_Github_AutoPush_v3.0.0.gs`, `README.md`
+**Subsystem Scope:** `< 60s` 9-Gate Verification Harness (`verify_dandelion_os_v3.5.0.py`), Ewok Log-Trap Fail-Closed Boundaries (`Byte 253` & `Byte 254`), & Path A Drive-to-GitHub Troubleshooting  
+**Primary Source Files:** `verify_dandelion_os_v3.5.0.py`, `Drive_Github_AutoPush_v3.5.0.gs`, `README.md`
 
 ---
 
 ## 1. The 9 Deterministic Verification Gates (`make check-strict`)
 
-Every release of Dandelion OS v3.0.0 must pass all 9 falsifiable gates in under **60 seconds** (`8.68s` measured):
+Every release of Dandelion OS v3.5.0 must pass all 9 falsifiable gates in under **60 seconds** (`8.68s` measured):
 
-| Gate | Subsystem Verified | Empirical Pass Telemetry (`v3.0.0`) |
+| Gate | Subsystem Verified | Empirical Pass Telemetry (`v3.5.0`) |
 | :---: | :--- | :--- |
 | **Gate 1** | ISO C99 Strict Compilation (`-std=c99 -O3 -Wall -Wextra -Wpedantic -Wconversion -Werror`) | `0` warnings, `0` errors |
 | **Gate 2** | 81 Ternary Logic Identities, 243 Fowler States, Fail-Closed `Byte 253` & 32B BLE `CRC-16` | `81/81` gates, `243/243` bytes, `32 B` frame |
 | **Gate 3** | 100,000-Iteration C99 Grimm + 1.58-Bit `VBST` + Dirac Sync Benchmark | Loop = `1.7856 us`, Jitter = `0.0902 us` (`< 1.0 us`) |
-| **Gate 4** | Bootable SVR4 (`070701`) `initramfs_dandelion_v3.0.0.cpio.gz` & `577 B` `.tnpt` Table | `22,523 B` initramfs, `577 B` `.tnpt` |
-| **Gate 5** | 300-DPI 6-Panel Unified State Map (`dandelion_os_grimm_whiteroom_state_map_v3.0.0.png`) | Rendered at `4350 x 4050` px (`300 DPI`) |
-| **Gate 6** | Strict 3-Digit SemVer (`v3.0.0`), CodeQL CWE-275 Permissions & Zero Duplicate Clutter | `v3.0.0` verified, `contents: read` active |
+| **Gate 4** | Bootable SVR4 (`070701`) `initramfs_dandelion_v3.5.0.cpio.gz` & `577 B` `.tnpt` Table | `22,523 B` initramfs, `577 B` `.tnpt` |
+| **Gate 5** | 300-DPI 6-Panel Unified State Map (`dandelion_os_grimm_whiteroom_state_map_v3.5.0.png`) | Rendered at `4350 x 4050` px (`300 DPI`) |
+| **Gate 6** | Strict 3-Digit SemVer (`v3.5.0`), CodeQL CWE-275 Permissions & Zero Duplicate Clutter | `v3.5.0` verified, `contents: read` active |
 | **Gate 7** | LayerFS SQLite WAL (`1.60 b/w`), 2-Bit `VBST` (`CosineSim > 0.98`) & Edge Barker-13 | `CosineSim = 0.99017`, `PSR = 6.587` |
 | **Gate 8** | ESP-SDR `80 MSa/s` Baseband I/Q FFT (`SFDR > 50 dB`) & Grimm-Tuttle Multiplex Gain | `SFDR = 53.67 dB`, `G_ratio = 1.801x` |
 | **Gate 9** | **Universal Sensory Accessibility (`Bite 10` Inode `2001`), Community Standards & Dependabot** | `P_psi=1505`, `Q_psi=2001`, `Code=251`, `7/7` docs |
@@ -193,33 +193,33 @@ Every release of Dandelion OS v3.0.0 must pass all 9 falsifiable gates in under 
 
 ## 2. Troubleshooting Path A (`Drive_Github_AutoPush` HTTP 500 Fix)
 
-### Why did `Code.gs` throw `GitHub API returned code 500` on file #19 (`dandelion_os_grimm_fbw_v3.0.0.c`)?
+### Why did `Code.gs` throw `GitHub API returned code 500` on file #19 (`dandelion_os_grimm_fbw_v3.5.0.c`)?
 - Your active `Drive_Github_AutoPush` script used the per-file **Contents API (`PUT /repos/{owner}/{repo}/contents/{path}`)** in a tight loop without `Utilities.sleep()` or retry backoff.
 - Files **1 through 18** (`dependabot.yml`, issue templates, `ACCESSIBILITY.md`, `CODE_OF_CONDUCT.md`, `SECURITY.md`, `README.md`, etc.) **succeeded and are already live on GitHub!**
-- On file #19 (`dandelion_os_grimm_fbw_v3.0.0.c`), firing 19 consecutive branch-head commits in 21 seconds triggered a transient GitHub `HTTP 500` ref-lock collision.
+- On file #19 (`dandelion_os_grimm_fbw_v3.5.0.c`), firing 19 consecutive branch-head commits in 21 seconds triggered a transient GitHub `HTTP 500` ref-lock collision.
 
 ### Two Instant Ways to Finish the Push:
-1. **Zero-Edit Resume (Just Click `▷ Run` Again!)**: We uploaded `dandelion_github_payload_v3.0.0_part2_resume.json` to your Google Drive containing only the remaining files starting at `dandelion_os_grimm_fbw_v3.0.0.c` (plus the 5 Wookiee-Ewok Wiki pages in `.github/wiki/`). Clicking **`▷ Run`** in your existing Apps Script tab will automatically pick up this smaller resume payload and finish the remaining files in ~10 seconds!
-2. **Permanent `Code.gs` Upgrade (`Drive_Github_AutoPush_v3.0.0.gs`)**: Replace `Code.gs` with `Drive_Github_AutoPush_v3.0.0.gs`, which adds **4-try exponential backoff (`fetchWithRetry_`) + 350 ms pacing** and **Atomic Git Trees batching** so even 100-file payloads never hit GitHub's `HTTP 500` rate limit.
+1. **Zero-Edit Resume (Just Click `▷ Run` Again!)**: We uploaded `dandelion_github_payload_v3.5.0_part2_resume.json` to your Google Drive containing only the remaining files starting at `dandelion_os_grimm_fbw_v3.5.0.c` (plus the 5 Wookiee-Ewok Wiki pages in `.github/wiki/`). Clicking **`▷ Run`** in your existing Apps Script tab will automatically pick up this smaller resume payload and finish the remaining files in ~10 seconds!
+2. **Permanent `Code.gs` Upgrade (`Drive_Github_AutoPush_v3.5.0.gs`)**: Replace `Code.gs` with `Drive_Github_AutoPush_v3.5.0.gs`, which adds **4-try exponential backoff (`fetchWithRetry_`) + 350 ms pacing** and **Atomic Git Trees batching** so even 100-file payloads never hit GitHub's `HTTP 500` rate limit.
 
 ---
 
 # 🌐 Page 5: Upstream Open-Source Ecosystem & Fork Registry (`Upstream-Open-Source-Ecosystem.md`)
 
-**Version:** `v3.0.0` (*Sovereign Argon Frontier & Embedded AI Release*)  
+**Version:** `v3.5.0` (*Heimat-Agora — Sovereign Argon Frontier & Embedded AI Release*)  
 **Mandate:** Linus's Law (*"Given enough eyeballs, all bugs are shallow"*) — Standing on the shoulders of giants by binding and forking the strongest open-source bricks on GitHub across all 5 Dandelion OS subsystems.
 
 ---
 
-## 1. The 10 High-Signal GitHub Repositories Bound into Dandelion OS v3.0.0
+## 1. The 10 High-Signal GitHub Repositories Bound into Dandelion OS v3.5.0
 
-| Subsystem Pillar | Upstream Repository | License | Why We Fork / Bind It in Dandelion OS v3.0.0 | Kernel / Repo Integration Hook |
+| Subsystem Pillar | Upstream Repository | License | Why We Fork / Bind It in Dandelion OS v3.5.0 | Kernel / Repo Integration Hook |
 | :--- | :--- | :---: | :--- | :--- |
-| **1. 1.58-Bit Ternary & LUT CPU Inference** | **[microsoft/T-MAC](https://github.com/microsoft/T-MAC/)** & **[microsoft/BitNet](https://github.com/microsoft/bitnet)** | MIT | Replaces multiply-accumulate (`FMA`) with sign-symmetric lookup table (`tbl`/`pshufb`) operations (`2^(n-1)` LUT compression), delivering `4-5x` CPU speedup over `llama.cpp` `TQ1_0`/`TQ2_0` (`20 tok/s` single-core, `11 tok/s` on Raspberry Pi 5). | `dandelion_tmac_lut4_dot_row()` & `dandelion_vbst_dot_row()` in `dandelion_os_v3.0.0.h` |
-| **2. Linux 6.12+ eBPF Real-Time Scheduling** | **[sched-ext/scx](https://github.com/sched-ext/scx)** (`scx_lavd` & `scx_layered`) | GPL-2.0 | Implements hot-swappable eBPF kernel thread schedulers (`scx_lavd` Latency-Criticality Aware Virtual Deadline & `scx_layered`), isolating `-1 Blue` Human Pilot (`Cores 0-2`), `0 Green` LayerFS (`Cores 3-4`), and `+1 Red` AI (`Cores 5-7`). | `CONFIG_SCHED_CLASS_EXT=y` in `dandelion_rt_v3.0.0.config` & `scx_chiral_domain` |
-| **3. Zero-Infrastructure Cryptography Mesh** | **[markqvist/Reticulum](https://github.com/markqvist/reticulum)** & **[meshtastic/firmware](https://github.com/meshtastic/firmware)** | MIT / GPL-3.0 | Self-configuring, zero-IP encrypted mesh networking stack (`500 B` MTU, Ed25519/X25519) running over BLE, LoRa, ESP-NOW, serial, and packet radio—extending our 32-byte `"DND3"` Stigmergic BLE gossip frame across off-grid continental links. | `stigmergic_ble_frame_t` (`32 B`) in `dandelion_os_v3.0.0.h` |
+| **1. 1.58-Bit Ternary & LUT CPU Inference** | **[microsoft/T-MAC](https://github.com/microsoft/T-MAC/)** & **[microsoft/BitNet](https://github.com/microsoft/bitnet)** | MIT | Replaces multiply-accumulate (`FMA`) with sign-symmetric lookup table (`tbl`/`pshufb`) operations (`2^(n-1)` LUT compression), delivering `4-5x` CPU speedup over `llama.cpp` `TQ1_0`/`TQ2_0` (`20 tok/s` single-core, `11 tok/s` on Raspberry Pi 5). | `dandelion_tmac_lut4_dot_row()` & `dandelion_vbst_dot_row()` in `dandelion_os_v3.5.0.h` |
+| **2. Linux 6.12+ eBPF Real-Time Scheduling** | **[sched-ext/scx](https://github.com/sched-ext/scx)** (`scx_lavd` & `scx_layered`) | GPL-2.0 | Implements hot-swappable eBPF kernel thread schedulers (`scx_lavd` Latency-Criticality Aware Virtual Deadline & `scx_layered`), isolating `-1 Blue` Human Pilot (`Cores 0-2`), `0 Green` LayerFS (`Cores 3-4`), and `+1 Red` AI (`Cores 5-7`). | `CONFIG_SCHED_CLASS_EXT=y` in `dandelion_rt_v3.5.0.config` & `scx_chiral_domain` |
+| **3. Zero-Infrastructure Cryptography Mesh** | **[markqvist/Reticulum](https://github.com/markqvist/reticulum)** & **[meshtastic/firmware](https://github.com/meshtastic/firmware)** | MIT / GPL-3.0 | Self-configuring, zero-IP encrypted mesh networking stack (`500 B` MTU, Ed25519/X25519) running over BLE, LoRa, ESP-NOW, serial, and packet radio—extending our 32-byte `"DND3"` Stigmergic BLE gossip frame across off-grid continental links. | `stigmergic_ble_frame_t` (`32 B`) in `dandelion_os_v3.5.0.h` |
 | **4. Contactless Wi-Fi CSI & Baseband RF** | **[StevenMHernandez/ESP32-CSI-Tool](https://github.com/StevenMHernandez/ESP32-CSI-Tool)** | MIT | Extracts real-time Wi-Fi Channel State Information (CSI) phase/amplitude matrices from standard ESP32/ESP32-C5 radios—enabling zero-contact breathing and micro-movement detection for coma/locked-in patients alongside `80 MSa/s` ESP-SDR DMA capture. | `esp_sdr_dma_lldesc_t` (`12 B`) & Gate 8 `80 MSa/s` I/Q FFT |
-| **5. 1-Switch, Eye-Gaze & BCI Accessibility** | **[OptiKey/OptiKey](https://github.com/OptiKey/OptiKey)** & **[OpenBCI/OpenBCI_GUI](https://github.com/OpenBCI/OpenBCI_GUI)** | GPL-3.0 / MIT | Open-source eye-tracking AAC keyboard for Motor Neuron Disease (MND/ALS) and open-source EEG/EMG/EOG biosignal streaming—feeding directly into our **Bite 10 (`MICRO_BITE10_SENSORY_LIS = 2001`)** Morse-to-Ternary bridge (`dit=-1, space=0, dah=+1`). | `morse_to_ternary_bridge()` in `dandelion_os_grimm_fbw_v3.0.0.c` & `ACCESSIBILITY.md` |
+| **5. 1-Switch, Eye-Gaze & BCI Accessibility** | **[OptiKey/OptiKey](https://github.com/OptiKey/OptiKey)** & **[OpenBCI/OpenBCI_GUI](https://github.com/OpenBCI/OpenBCI_GUI)** | GPL-3.0 / MIT | Open-source eye-tracking AAC keyboard for Motor Neuron Disease (MND/ALS) and open-source EEG/EMG/EOG biosignal streaming—feeding directly into our **Bite 10 (`MICRO_BITE10_SENSORY_LIS = 2001`)** Morse-to-Ternary bridge (`dit=-1, space=0, dah=+1`). | `morse_to_ternary_bridge()` in `dandelion_os_grimm_fbw_v3.5.0.c` & `ACCESSIBILITY.md` |
 | **6. Open-Source Lattice iCE40 FPGA Flow** | **[YosysHQ/icestorm](https://github.com/YosysHQ/icestorm)** & **[YosysHQ/nextpnr](https://github.com/YosysHQ/nextpnr)** | ISC | 100% open-source Verilog-to-bitstream synthesis, place-and-route (`nextpnr-ice40`), and SPI flash programming (`iceprog`) for the **Lattice iCE40HX8K** apex arbiter on our Hybrid Triangular Ring Node. | `hybrid_ring_node_hw_t` (`47 Ohm` SPI, `40 MHz` Theremin clock) |
 | **7. Sovereign 3D Voxel Engine** | **[luanti-org/luanti](https://github.com/luanti-org/luanti)** | LGPL-2.1 | Open-source C++/Lua voxel engine (formerly Minetest) hosting *Heimat* `{0,0,0}`, the `3^13` (`1,594,323`) Burger parity pool, and the 5-bot Miney Swarm over Unix Domain Sockets. | `BURGER_POOL_3_POW_13` & `validate_uds_socket_path()` |
 
@@ -234,19 +234,19 @@ Every release of Dandelion OS v3.0.0 must pass all 9 falsifiable gates in under 
 
 ## 1. Solving the Three-Language Problem (Human, Machine & AI Unification)
 
-In **Dandelion OS v3.0.0**, we answer the Reasonable Person Standard by solving the **Three-Language Problem** across three invariant layers that share the exact same binary memory layout (`577-byte` `.tnpt` + `libdandelion_os_v3.0.0.so`):
+In **Dandelion OS v3.5.0**, we answer the Reasonable Person Standard by solving the **Three-Language Problem** across three invariant layers that share the exact same binary memory layout (`577-byte` `.tnpt` + `libdandelion_os_v3.5.0.so`):
 
 | Shingari Stratum | Trit Role | Primary Language / Interface | Binary / Mathematical Substrate | Latency / Overhead |
 | :--- | :---: | :--- | :--- | :--- |
 | **Human Expressive Layer** | `-1` Blue ($V_H$) | Spoken/Indigenous (Bites 1–9), 1-Switch Morse/LIS (Bite 10), Analog Gesture ([MOTU M4 Theremin 6D](https://drive.google.com/file/d/1Uk4uoZUqK1r0egBkUEOuBiIzeZZu5v-x/view?usp=drivesdk)) | `shingari_grimm_packet_t` + `AudioInputConfig(96000.0, 64, 1, 2)` | `0.66 ms` audio buffer (`5.8 μs` jitter) |
-| **Machine Deterministic Layer** | `0` Green ($0$) | Strict ISO C99 (`dandelion_os_grimm_fbw_v3.0.0.c` -> `build/libdandelion_os_v3.0.0.so`) | Shared C-ABI (`-fPIC -shared`), `malloc = 0`, `577 B` `.tnpt` `mmap` | `1.70 μs` PREEMPT_RT loop (`0.077 μs` jitter) |
-| **Scientific & AI Layer** | `+1` Red ($+1$) | **Julia 1.12 (`dandelion_shingari_bridge_v3.0.0.jl`)** + Python 3 (`verify_dandelion_os_v3.0.0.py`) | Multiple Dispatch (`ShingariTrit`), `@simd` VBST/T-MAC LUT4, Zero-Copy [`ccall` / `@ccall`](https://docs.julialang.org/en/v1/manual/calling-c-and-fortran-code/) | Zero FFI copy (`Mmap.mmap` + `Ref{T}`) |
+| **Machine Deterministic Layer** | `0` Green ($0$) | Strict ISO C99 (`dandelion_os_grimm_fbw_v3.5.0.c` -> `build/libdandelion_os_v3.5.0.so`) | Shared C-ABI (`-fPIC -shared`), `malloc = 0`, `577 B` `.tnpt` `mmap` | `1.70 μs` PREEMPT_RT loop (`0.077 μs` jitter) |
+| **Scientific & AI Layer** | `+1` Red ($+1$) | **Julia 1.12 (`dandelion_shingari_bridge_v3.5.0.jl`)** + Python 3 (`verify_dandelion_os_v3.5.0.py`) | Multiple Dispatch (`ShingariTrit`), `@simd` VBST/T-MAC LUT4, Zero-Copy [`ccall` / `@ccall`](https://docs.julialang.org/en/v1/manual/calling-c-and-fortran-code/) | Zero FFI copy (`Mmap.mmap` + `Ref{T}`) |
 
 ---
 
 ## 2. Nested Chromatic Chromatography (Recursive ROYGBIV 7x7 Optical Wheels)
 
-Synthesizing [Workspace Pearl - Nested Chromatic Chromatography & Dandelion Network Architecture v3.2.0](https://docs.google.com/document/d/1rMhE2MFTUTIuZw58_BwfvsGEJHXlr3RLDSSwO4yrF2M/edit?usp=drivesdk) and [Shingari Tetris: The ROYGBIV Harmonic Blueprint](https://drive.google.com/file/d/1Xm9zLWA13OTatdMMogRQTb6-Zfq-7tD0/view?usp=drivesdk), `evaluate_nested_chromatography_wheel()` replaces middle-clumping letter grades (`A-F`) with the Army After Action Review (**Sustains = `+1`**, **Baseline = `0`**, **Improves = `-1`**) mapped across a **7 Macro x 7 Micro = 49-bin ROYGBIV optical wheel**:
+Synthesizing [Workspace Pearl - Nested Chromatic Chromatography & Dandelion Network Architecture v3.5.0](https://docs.google.com/document/d/1rMhE2MFTUTIuZw58_BwfvsGEJHXlr3RLDSSwO4yrF2M/edit?usp=drivesdk) and [Shingari Tetris: The ROYGBIV Harmonic Blueprint](https://drive.google.com/file/d/1Xm9zLWA13OTatdMMogRQTb6-Zfq-7tD0/view?usp=drivesdk), `evaluate_nested_chromatography_wheel()` replaces middle-clumping letter grades (`A-F`) with the Army After Action Review (**Sustains = `+1`**, **Baseline = `0`**, **Improves = `-1`**) mapped across a **7 Macro x 7 Micro = 49-bin ROYGBIV optical wheel**:
 
 - **`0` Red (`650 nm`)**: *Ke Ala Nalu / Ka Piko* — Origin & Signal Injection (`0-1`)
 - **`1` Orange (`600 nm`)**: *Ka Iwi* — Structural Barbell & Tension Lever (`2`)

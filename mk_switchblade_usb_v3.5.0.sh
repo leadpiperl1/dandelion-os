@@ -1,19 +1,19 @@
 #!/usr/bin/env bash
 # ==============================================================================
-# DANDELION OS v3.0.0 ("SOVEREIGN ARGON FRONTIER & EMBEDDED AI RELEASE") — DUAL-MODE
+# DANDELION OS v3.5.0 ("HEIMAT-AGORA — SOVEREIGN ARGON FRONTIER & EMBEDDED AI RELEASE") — DUAL-MODE
 # SWITCHBLADE AI-PEN USB, LAYERFS & SCHED_EXT ROOTFS BUILDER
 # ==============================================================================
-# File:        mk_switchblade_usb_v3.0.0.sh
-# Version:     v3.0.0 (Strict 3-Digit Triadic SemVer: MAJOR=3, MINOR=0, PATCH=0)
+# File:        mk_switchblade_usb_v3.5.0.sh
+# Version:     v3.5.0 (Strict 3-Digit Triadic SemVer: MAJOR=3, MINOR=1, PATCH=0)
 # Author:      Justin D. Grimm (@leadpiperl1, ORCID: 0009-0000-5299-0243)
 # License:     GPL-2.0-or-later / MIT Dual Open-Source
-# Portability: Stages RootFS in ${BUILD_DIR:-${TMPDIR:-/tmp}/build_whiteroom_v3.0.0}
+# Portability: Stages RootFS in ${BUILD_DIR:-${TMPDIR:-/tmp}/build_whiteroom_v3.5.0}
 #              and gates Wild linker behind explicit opt-in USE_WILD_LINKER=1.
 # ==============================================================================
 
 set -euo pipefail
 
-VERSION="v3.0.0"
+VERSION="v3.5.0"
 CC="${CC:-cc}"
 USE_WILD_LINKER="${USE_WILD_LINKER:-0}"
 OUT_DIR="${OUT_DIR:-${PWD}/build}"
@@ -24,7 +24,7 @@ SRC_C="dandelion_os_grimm_fbw_${VERSION}.c"
 
 echo "=============================================================================="
 echo " [DANDELION OS ${VERSION}] Switchblade AI-Pen Dual-Mode USB & Initramfs Builder"
-echo " [CODENAME]  Sovereign Argon Frontier & Embedded AI Release"
+echo " [CODENAME]  Heimat-Agora — Sovereign Argon Frontier & Embedded AI Release"
 echo " [SUBSTRATE] Linux 6.12+ PREEMPT_RT + sched_ext + LayerFS + Dirac Sync + VBST"
 echo "=============================================================================="
 
@@ -39,7 +39,7 @@ cp -f "dandelion_rt_${VERSION}.config" "${BUILD_DIR}/dandelion_rt_${VERSION}.con
 cat << 'INITEOF' > "${ROOTFS_DIR}/init"
 #!/bin/sh
 # ==============================================================================
-# DANDELION OS v3.0.0 — PID 1 WHITE-ROOM INITIALIZATION & F-16 FBW LAUNCHER
+# DANDELION OS v3.5.0 — PID 1 WHITE-ROOM INITIALIZATION & F-16 FBW LAUNCHER
 # ==============================================================================
 export PATH=/bin:/sbin:/usr/bin:/usr/sbin:/opt/dandelion/bin
 export ONEDNN_X64_USE_ZEN=ON
@@ -65,12 +65,12 @@ mkfifo -m 0600 /var/run/dandelion_prompt.fifo 2>/dev/null || true
 mkfifo -m 0600 /var/run/dandelion_reply.fifo 2>/dev/null || true
 
 echo "=============================================================================="
-echo " Welcome to DANDELION OS v3.0.0 ('Sovereign Argon Frontier & Embedded AI Release')"
+echo " Welcome to DANDELION OS v3.5.0 ('Heimat-Agora — Sovereign Argon Frontier & Embedded AI Release')"
 echo " Chiral Pinning: Blue(-1) Cores 0-2 | Green(0) Cores 3-4 | Red(+1) Cores 5-7"
 echo " Ecosystem: Linux 6.12 PREEMPT_RT + sched_ext + LayerFS + Dirac Cluster Sync"
 echo "=============================================================================="
 
-/opt/dandelion/bin/dandelion_os_grimm_fbw_v3.0.0 --verify
+/opt/dandelion/bin/dandelion_os_grimm_fbw_v3.5.0 --verify
 
 exec /bin/sh
 INITEOF
@@ -100,7 +100,7 @@ if [ "${USE_WILD_LINKER}" = "1" ]; then
     LINKER_FLAGS="-fuse-ld=wild"
 fi
 
-# 5. Compile C99 Dandelion OS v3.0.0 Engine into RootFS and ./build/
+# 5. Compile C99 Dandelion OS v3.5.0 Engine into RootFS and ./build/
 "${CC}" -std=c99 -O3 -Wall -Wextra -Wpedantic -Wshadow -Wformat=2 -Wconversion -Wundef -Werror ${LINKER_FLAGS}     -o "${ROOTFS_DIR}/opt/dandelion/bin/dandelion_os_grimm_fbw_${VERSION}"     "${SRC_C}" -lm -lpthread
 cp -f "${ROOTFS_DIR}/opt/dandelion/bin/dandelion_os_grimm_fbw_${VERSION}" "${OUT_DIR}/dandelion_os_grimm_fbw_${VERSION}"
 echo "[OK] Compiled C99 binary -> ${OUT_DIR}/dandelion_os_grimm_fbw_${VERSION}"
@@ -110,14 +110,14 @@ cat << 'GRUBEOF' > "${ISO_DIR}/boot/grub/grub.cfg"
 set timeout=3
 set default=0
 
-menuentry "Mode 1: Dandelion OS v3.0.0 Sovereign Desktop & Live RAMDisk (Linux 6.12+ PREEMPT_RT + sched_ext)" {
+menuentry "Mode 1: Dandelion OS v3.5.0 Sovereign Desktop & Live RAMDisk (Linux 6.12+ PREEMPT_RT + sched_ext)" {
     linux /boot/bzImage console=tty0 console=ttyS0,115200n8 amd_pstate=active processor.max_cstate=0 idle=poll isolcpus=domain,managed_irq,2-7 nohz_full=2-7 rcu_nocbs=2-7 tsc=reliable clocksource=tsc rdinit=/init
-    initrd /boot/initramfs_dandelion_v3.0.0.cpio.gz
+    initrd /boot/initramfs_dandelion_v3.5.0.cpio.gz
 }
 
 menuentry "Mode 2: Switchblade AI-Pen Sidecar Node (Zero-TUI JSON Stream / MCP & larchanka Bridge)" {
-    linux /boot/bzImage console=ttyS0,115200n8 rdinit=/opt/dandelion/bin/dandelion_os_grimm_fbw_v3.0.0 --json
-    initrd /boot/initramfs_dandelion_v3.0.0.cpio.gz
+    linux /boot/bzImage console=ttyS0,115200n8 rdinit=/opt/dandelion/bin/dandelion_os_grimm_fbw_v3.5.0 --json
+    initrd /boot/initramfs_dandelion_v3.5.0.cpio.gz
 }
 GRUBEOF
 

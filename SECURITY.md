@@ -4,8 +4,8 @@
 
 | Version | Supported | Kernel / Architecture |
 | :--- | :---: | :--- |
-| **`v3.0.0`** | Yes | Sovereign Argon Frontier & Embedded AI (10-Bite Grimm + LayerFS + Stigmergic Mesh + Nested Chromatic Chromatography) |
-| `< v3.0.0` | Legacy | Superseded historical milestones |
+| **`v3.5.0`** | Yes | Sovereign Argon Frontier & Embedded AI (10-Bite Grimm + LayerFS + Stigmergic Mesh + Nested Chromatic Chromatography) |
+| `< v3.5.0` | Legacy | Superseded historical milestones |
 
 ## Core Security Invariants
 

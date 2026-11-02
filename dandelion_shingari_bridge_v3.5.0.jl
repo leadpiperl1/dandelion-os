@@ -1,14 +1,14 @@
 # ==============================================================================
-# DANDELION OS & SHINGARI v3.2.0: JULIA 1.12 POLYGLOT, THEREMIN 6D & IO_URING BRIDGE
+# DANDELION OS & SHINGARI v3.5.0: JULIA 1.12 POLYGLOT, THEREMIN 6D & IO_URING BRIDGE
 # ==============================================================================
-# File: dandelion_shingari_bridge_v3.2.0.jl
-# Version: v3.2.0 (Shingari Grammar v3.10.0 / Universal Grimm's Law v3.4.0)
+# File: dandelion_shingari_bridge_v3.5.0.jl
+# Version: v3.5.0 (Shingari Grammar v3.10.0 / Universal Grimm's Law v3.4.0)
 # Target Runtime: Julia 1.12+ (Zero-Copy @ccall / ccall C99 ABI + @simd)
 # License: GPL-2.0-or-later / MIT Dual Open-Source
 #
 # ARCHITECTURAL MANDATE (THE REASONABLE PERSON STANDARD & LINUS'S LAW):
 # 1. Solves the Three-Language Problem across Human (-1 Blue), Machine (0 Green
-#    C99 Shared ABI `libdandelion_os_v3.2.0.so`), and AI/Math (+1 Red Julia
+#    C99 Shared ABI `libdandelion_os_v3.5.0.so`), and AI/Math (+1 Red Julia
 #    Multiple Dispatch):
 #    - https://julialang.org/blog/2012/02/why-we-created-julia/
 #    - https://docs.julialang.org/en/v1/manual/calling-c-and-fortran-code/
@@ -326,9 +326,9 @@ const CENTROID_RED_ACTION   = (0.85, 0.85, 0.00, 0.90, 0.50, 0.56)
 end
 
 # ------------------------------------------------------------------------------
-# 7. ZERO-COPY C99 SHARED LIBRARY ABI WRAPPERS (`@ccall` / `ccall` -> libdandelion_os_v3.2.0.so)
+# 7. ZERO-COPY C99 SHARED LIBRARY ABI WRAPPERS (`@ccall` / `ccall` -> libdandelion_os_v3.5.0.so)
 # ------------------------------------------------------------------------------
-const DEFAULT_LIB_PATH = joinpath(@__DIR__, "build", "libdandelion_os_v3.2.0.so")
+const DEFAULT_LIB_PATH = joinpath(@__DIR__, "build", "libdandelion_os_v3.5.0.so")
 
 function ccall_morse_to_ternary(morse_seq::AbstractString;
                                 libpath::AbstractString = DEFAULT_LIB_PATH)::Tuple{Int32, Vector{Int8}}
@@ -400,7 +400,7 @@ function ccall_iouring_ingest_motu_m4(ring_ptr::Ptr{Cvoid}, pitch_q15::Vector{In
     return (Int32(rc), trap_ref[], out_rosetta)
 end
 
-function run_shingari_polyglot_self_test(tnpt_path::AbstractString = "dandelion_b158_v3.2.0.tnpt")
+function run_shingari_polyglot_self_test(tnpt_path::AbstractString = "dandelion_b158_v3.5.0.tnpt")
     @assert (BlueHuman() ⊗ RedAction()) == BlueHuman()
     @assert (BlueHuman() ⊕ RedAction()) == GreenTreaty()
     @assert (RedAction() ⊕ RedAction()) == BlueHuman()

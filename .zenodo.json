@@ -1,9 +1,9 @@
 {
-  "title": "Dandelion OS v3.0.0 ('Sovereign Argon Frontier & Embedded AI Release'): Open-Source Real-Time Linux 6.12+ PREEMPT_RT + sched_ext Distribution with Embedded 1.58-Bit Ternary VBST AI, LayerFS SQLite WAL, ESP-SDR 80 MSa/s Baseband Recon, Stigmergic BLE Mesh & 9-Bite Universal Grimm's Law",
+  "title": "Dandelion OS v3.5.0 ('Heimat-Agora — Sovereign Argon Frontier & Embedded AI Release'): Open-Source Real-Time Linux 6.12+ PREEMPT_RT + sched_ext Distribution with Embedded 1.58-Bit Ternary VBST AI, LayerFS SQLite WAL, ESP-SDR 80 MSa/s Baseband Recon, Stigmergic BLE Mesh & 9-Bite Universal Grimm's Law",
   "upload_type": "software",
-  "version": "3.0.0",
-  "publication_date": "2026-10-26",
-  "description": "Official v3.0.0 ('Sovereign Argon Frontier & Embedded AI Release') of Dandelion OS, synthesizing a strictly audited ISO C99 microkernel (-Werror -Wconversion clean), F-16 Digital Fly-By-Wire relaxed-static-stability control laws, 1.58-bit balanced ternary Virtual Bit-Slice Transform (VBST) zero-multiply inference engine, LayerFS content-addressed SQLite WAL storage, Transducer Boundary Conditioning (Haar DWT + Barker-13 Matched Filter), 32-byte Stigmergic BLE Extended Advertising gossip frames, zero-hardware ESP-SDR 80 MSa/s raw I/Q baseband DMA tapping across 2.4/5 GHz (ESP32-C5 + Lattice iCE40HX8K Hybrid Ring Node), Stanford OpenJarvis local-first routing, OpenMobile-2 / MobileGym++ verification, Carbon-X 6-mer genomic coordinate alignment, and 9-Bite Universal Grimm's Law on Linux 6.12+ PREEMPT_RT + sched_ext.",
+  "version": "3.5.0",
+  "publication_date": "2026-11-02",
+  "description": "Official v3.5.0 ('Heimat-Agora — Sovereign Argon Frontier & Embedded AI Release') of Dandelion OS, synthesizing a strictly audited ISO C99 microkernel (-Werror -Wconversion clean), F-16 Digital Fly-By-Wire relaxed-static-stability control laws, 1.58-bit balanced ternary Virtual Bit-Slice Transform (VBST) zero-multiply inference engine, LayerFS content-addressed SQLite WAL storage, Transducer Boundary Conditioning (Haar DWT + Barker-13 Matched Filter), 32-byte Stigmergic BLE Extended Advertising gossip frames, zero-hardware ESP-SDR 80 MSa/s raw I/Q baseband DMA tapping across 2.4/5 GHz (ESP32-C5 + Lattice iCE40HX8K Hybrid Ring Node), Stanford OpenJarvis local-first routing, OpenMobile-2 / MobileGym++ verification, Carbon-X 6-mer genomic coordinate alignment, and 9-Bite Universal Grimm's Law on Linux 6.12+ PREEMPT_RT + sched_ext.",
   "creators": [
     {
       "name": "Grimm, Justin D.",
@@ -18,7 +18,7 @@
   "license": "GPL-2.0-or-later",
   "keywords": [
     "Dandelion OS",
-    "v3.0.0",
+    "v3.5.0",
     "PREEMPT_RT",
     "sched_ext",
     "io_uring",

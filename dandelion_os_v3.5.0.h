@@ -1,17 +1,17 @@
 /*
  * ============================================================================
- * DANDELION OS v3.2.0 (CODENAME: HEIMAT-AGORA — SOVEREIGN ARGON KERNEL & LINUS'S LAW RELEASE)
+ * DANDELION OS v3.5.0 (CODENAME: HEIMAT-AGORA — SOVEREIGN ARGON KERNEL & LINUS'S LAW RELEASE)
  * CENTRALIZED C99 CONFIGURATION, PLATFORM GUARDS & TRIADIC CONTROL DEFINITIONS
  * ============================================================================
- * File: dandelion_os_grimm_fbw_v3.2.0.h (Aliased as dandelion_os_v3.2.0.h)
- * Version: v3.2.0 (Strict 3-Digit Triadic SemVer: MAJOR=3 [das], MINOR=2 [die], PATCH=0 [der])
+ * File: dandelion_os_grimm_fbw_v3.5.0.h (Aliased as dandelion_os_v3.5.0.h)
+ * Version: v3.5.0 (Strict 3-Digit Triadic SemVer: MAJOR=3 [das], MINOR=2 [die], PATCH=0 [der])
  * Author: Justin D. Grimm (K-Lani 13 Actual, @leadpiperl1, ORCID: 0009-0000-5299-0243)
  * Co-Pilot & Hostile Reviewer #2: Gemini Argon Kernel Architect (Linus's Law Audit Engine)
  * License: GPL-2.0-or-later / MIT Dual Open-Source
  *
- * UNIFIED v3.2.0 TRIAD ARCHITECTURAL INVARIANTS & LINUS'S LAW HARDENING:
+ * UNIFIED v3.5.0 TRIAD ARCHITECTURAL INVARIANTS & LINUS'S LAW HARDENING:
  * 1. [-1 Blue] Human Ground Control / Sensory Ingest (Bite 10, Inode 2001):
- *    - Binds Julia 1.12 zero-copy @ccall ABI (dandelion_shingari_bridge_v3.2.0.jl)
+ *    - Binds Julia 1.12 zero-copy @ccall ABI (dandelion_shingari_bridge_v3.5.0.jl)
  *      and MOTU M4 96 kHz / 64-sample (0.66 ms) frame window to an io_uring fixed-buffer ring.
  *    - Enforces strict Fail-Closed Trapdoor Byte 253 Rejection and preserves the
  *      40-trit Fowler Rosetta Frame ([0..38] 39-trit Gaiku + [39] Evidential Trit).
@@ -36,8 +36,8 @@
  * ============================================================================
  */
 
-#ifndef DANDELION_OS_GRIMM_FBW_V3_2_0_H
-#define DANDELION_OS_GRIMM_FBW_V3_2_0_H
+#ifndef DANDELION_OS_GRIMM_FBW_V3_5_0_H
+#define DANDELION_OS_GRIMM_FBW_V3_5_0_H
 
 #include <stddef.h>
 #include <stdint.h>
@@ -66,8 +66,8 @@ extern "C" {
 #define DOS_VERSION_MAJOR 3
 #define DOS_VERSION_MINOR 2
 #define DOS_VERSION_PATCH 0
-#define DOS_VERSION_STR "v3.2.0"
-#define DOS_SEMVER_BARE_STR "3.2.0"
+#define DOS_VERSION_STR "v3.5.0"
+#define DOS_SEMVER_BARE_STR "3.5.0"
 #define DOS_CODENAME_STR "Heimat-Agora (Sovereign Argon Kernel & Linus's Law Audit Release)"
 #define SHINGARI_VERSION_STR "v3.10.0"
 #define GRIMM_LAW_VERSION_STR "v3.4.0"
@@ -250,9 +250,9 @@ typedef struct __attribute__((packed, aligned(64))) {
     uint8_t  reserved_l1d_pad[22];  /* Pad to exact 64-byte L1D cache line (22 B) */
 } sharded_quorum_entry_64b_t;
 
-/* 5. 577-Byte Memory-Mapped Ternary Neural Parameter Table (.tnpt v3.2.0, malloc = 0) */
+/* 5. 577-Byte Memory-Mapped Ternary Neural Parameter Table (.tnpt v3.5.0, malloc = 0) */
 typedef struct __attribute__((packed)) {
-    char     magic[8];              /* "TNPT320\0" (8 bytes) */
+    char     magic[8];              /* "TNPT350\0" (8 bytes) */
     uint8_t  packed_weights[13][8]; /* 13 Shingari roots x 8 Fowler bytes (104 bytes) */
     uint8_t  grimm_shift_lut[256];  /* O(1) 10-Bite phonological shift LUT (256 bytes) */
     uint8_t  manner_lut[128];       /* O(1) articulatory manner {-1,0,+1} (128 bytes) */
@@ -629,8 +629,120 @@ void evaluate_nested_chromatography_wheel(
     nested_chromatography_wheel_t *out_wheel
 );
 
+
+/* ============================================================================
+ * 16. GATE 13 (v3.3.0 / v3.3.1): DND3 32-BYTE MESH ROUTER, DANDELION-RESTD
+ *     C99 ICEBERG CATALOG / TOKEN VENDING & CHANGE-STEP ANTI-SYNC JITTER
+ * ============================================================================ */
+
+#define DND3_MESH_MAGIC_0               ((uint8_t)'D')
+#define DND3_MESH_MAGIC_1               ((uint8_t)'N')
+#define DND3_MESH_MAGIC_2               ((uint8_t)'D')
+#define DND3_MESH_MAGIC_3               ((uint8_t)'3')
+#define DND3_MESH_FRAME_BYTES           32U
+#define DND3_MESH_PULLBACK_LIMIT        65535U
+#define DANDELION_RESTD_TTL_MAX_S       900U
+#define DANDELION_RESTD_LATENCY_MAX_US  500.0
+#define CHANGE_STEP_SYNC_GAIN_MAX       1.0
+
+typedef struct {
+    uint8_t  magic[4];            /* "DND3" (0x44, 0x4E, 0x44, 0x33)         */
+    uint16_t mesh_epoch;          /* Stigmergic synchronization epoch        */
+    uint8_t  hop_ttl;             /* Hop limit (decremented per relay)       */
+    int8_t   chiral_source;       /* -1 (Blue), 0 (Green), +1 (Red)          */
+    uint64_t pos_rail_trits;      /* 40-trit Fowler positive rail (+1 mask)  */
+    uint64_t neg_rail_trits;      /* 40-trit Fowler negative rail (-1 mask)  */
+    uint32_t rea_obligation_hash; /* McCarthy REA Resource-Event-Agent hash  */
+    uint16_t pullback_budget;     /* Remaining autonomous pullback actions   */
+    uint16_t crc16_ccitt;         /* CRC-16/CCITT-FALSE integrity check      */
+} dnd3_mesh_frame_t;
+
+typedef char static_assert_dnd3_32[(sizeof(dnd3_mesh_frame_t) == 32U) ? 1 : -1];
+
+typedef struct {
+    char     namespace_id[16];    /* e.g. "heimat_core"                      */
+    char     table_name[24];      /* e.g. "rea_obligation_ledger"            */
+    uint64_t snapshot_id;         /* Immutable Iceberg WAL snapshot ID       */
+    uint32_t vended_token_ttl_s;  /* Ephemeral token TTL (<= 900 s)          */
+    double   dispatch_latency_us; /* UDS /var/run/dandelion_rest.sock latency*/
+    int8_t   quorum_trit;         /* +1 committed, 0 pending, -1 rejected    */
+} dandelion_restd_catalog_entry_t;
+
+/* ============================================================================
+ * 17. GATE 14 (v3.4.0): 1.25-BIT SPARSE TERNARY KERNEL, QUIESCENT ZERO-MASKING,
+ *     CAUCHY 1/4:3/4 PROJECTIVE OCCLUSION & BOUNDED LOCAL AUTONOMY
+ * ============================================================================ */
+
+#define VBST_SPARSE_125BIT_ENTROPY      1.2516291673878228
+#define VBST_QUIESCENT_SPARSITY_MIN     0.75
+#define VBST_THERMAL_DIDT_MAX_A_US      25.0
+#define CAUCHY_VISIBLE_RATIO            0.25
+#define CAUCHY_OCCLUDED_RATIO           0.75
+
+typedef struct {
+    uint32_t total_synapses;
+    uint32_t quiescent_zero_count;
+    double   sparsity_ratio;          /* Must satisfy > 0.75 in quiescent mode */
+    double   effective_bits_per_trit; /* ~1.25 bits/trit via zero-masking      */
+    double   peak_didt_a_per_us;      /* Must satisfy < 25.0 A/us              */
+    double   cauchy_visible_fraction; /* 1/4 visible simplicial face           */
+    double   cauchy_occluded_fraction;/* 3/4 occluded hull                     */
+    int32_t  topological_annihilation;/* (+1) + (-1) == 0 exact cancellation   */
+    bool     bounded_autonomy_valid;  /* Local survivability under link drop   */
+} vbst_sparse_125bit_telemetry_t;
+
+/* ============================================================================
+ * 18. GATE 15 (v3.5.0): PHYSIOLOGICAL-TO-INTENT / MOTION-TO-PHOTON (MTP)
+ *     ACCESSIBILITY LATENCY BENCHMARK & F-16 RSS DYNAMIC DEADBAND TRIM
+ * ============================================================================ */
+
+#define MTP_STAGE1_TRANSDUCTION_MAX_US  15.0
+#define MTP_STAGE2_KERNEL_SCHED_MAX_US  10.0
+#define MTP_STAGE3_VBST_DECODE_MAX_US   15.0
+#define MTP_STAGE4_COMMIT_ACK_MAX_US    10.0
+#define MTP_TOTAL_P999_CEILING_US       50.0
+#define RSS_TREMOR_SUPPRESSION_MIN      0.92
+
+typedef struct {
+    double   stage1_transduction_us;  /* GPIO/I2S/DMA ring ingest (<= 15 us)   */
+    double   stage2_sched_wakeup_us;  /* PREEMPT_RT + sched_ext wakeup (<=10us)*/
+    double   stage3_vbst_decode_us;   /* Bite 10 + 1.25-bit VBST decode (<=15) */
+    double   stage4_commit_ack_us;    /* io_uring / FIFO commit ack (<= 10 us) */
+    double   mtp_p50_us;
+    double   mtp_p99_us;
+    double   mtp_p999_us;             /* Hard invariant: p99.9 <= 50.0 us      */
+    double   tremor_suppression_ratio;/* Dynamic deadband filters >= 92% noise */
+    uint32_t false_positive_commits;  /* Must equal 0 under tremor injection   */
+} accessibility_mtp_telemetry_t;
+
+/* v3.5.0 Function Prototypes (Gates 13-15) */
+bool dandelion_dnd3_pack_and_verify(uint16_t epoch, uint8_t ttl, int8_t chiral_src,
+                                    uint64_t pos_rail, uint64_t neg_rail,
+                                    uint32_t rea_hash, uint16_t pullback_budget,
+                                    dnd3_mesh_frame_t *out_frame, uint32_t *out_hamming_dist);
+
+bool dandelion_restd_handle_request(const char *namespace_id, const char *table_name,
+                                    uint64_t snapshot_id, uint32_t requested_ttl_s,
+                                    dandelion_restd_catalog_entry_t *out_entry);
+
+double dandelion_change_step_jitter_us(double base_period_us, uint32_t node_id,
+                                       uint32_t step_index, double *out_sync_gain);
+
+int32_t dandelion_vbst_sparse_125bit_dot_row(const uint64_t *pos_mask,
+                                             const uint64_t *neg_mask,
+                                             const uint64_t *quiescent_group_mask,
+                                             const int8_t *activations,
+                                             size_t num_words,
+                                             vbst_sparse_125bit_telemetry_t *out_telemetry);
+
+double dandelion_rss_fbw_dynamic_trim(double raw_impulse, double baseline_drift,
+                                      double tremor_sigma, bool *out_intent_locked);
+
+bool dandelion_run_accessibility_mtp_gate(uint32_t seed,
+                                          accessibility_mtp_telemetry_t *out_mtp);
+
 #ifdef __cplusplus
 }
 #endif
 
-#endif /* DANDELION_OS_GRIMM_FBW_V3_2_0_H */
+#endif /* DANDELION_OS_GRIMM_FBW_V3_5_0_H */

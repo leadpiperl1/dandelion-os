@@ -1,13 +1,13 @@
 # 🐻 Page 2: Ewok Micro-Edge & Stigmergic Mesh Protocol (`Ewok-Micro-Edge-And-Mesh-Protocol.md`)
 
 **Subsystem Scope:** Transducer Boundary Conditioning (Haar DWT + Barker-13), 32-Byte Stigmergic BLE Gossip, ESP-SDR `80 MSa/s` Baseband Recon, & Hybrid Triangular Ring Node  
-**Primary Source Files:** `dandelion_os_v3.0.0.h`, `dandelion_os_grimm_fbw_v3.0.0.c`, `verify_dandelion_os_v3.0.0.py`
+**Primary Source Files:** `dandelion_os_v3.5.0.h`, `dandelion_os_grimm_fbw_v3.5.0.c`, `verify_dandelion_os_v3.5.0.py`
 
 ---
 
 ## 1. Ewok Forest-Floor Ingenuity: Zero-Cloud Edge Sovereignty
 
-On the forest moon of Endor, the Ewoks defeat mechanized Imperial walkers using acoustic horn relays, gravity-powered log pendulums, and intimate knowledge of local terrain. In **Dandelion OS v3.0.0**, our **Ewok Micro-Nodes** achieve full wireless spectrum awareness and peer-to-peer mesh coordination on `$5` microcontrollers with **zero cloud dependency** and **zero extra RF hardware**:
+On the forest moon of Endor, the Ewoks defeat mechanized Imperial walkers using acoustic horn relays, gravity-powered log pendulums, and intimate knowledge of local terrain. In **Dandelion OS v3.5.0**, our **Ewok Micro-Nodes** achieve full wireless spectrum awareness and peer-to-peer mesh coordination on `$5` microcontrollers with **zero cloud dependency** and **zero extra RF hardware**:
 
 ### A. Acoustic & RF Horn Synchronization (Haar DWT + 13-Chip Barker Filter)
 Before an edge node ever wakes the `+1 Red` AI co-pilot, incoming acoustic, piezo, or RF samples pass through two hardware-friendly filters:

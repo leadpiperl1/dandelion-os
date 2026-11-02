@@ -1,0 +1,66 @@
+name: Dandelion OS v3.5.0 CI & 15-Gate Verification
+
+on:
+  push:
+    branches: [ "main" ]
+    tags: [ "v*" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify-matrix:
+    name: C99 & Polyglot 15-Gate Audit (${{ matrix.compiler }})
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    strategy:
+      fail-fast: false
+      matrix:
+        compiler: [gcc, clang]
+
+    steps:
+      - name: Checkout Dandelion OS v3.5.0 Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Python Verification Dependencies
+        run: |
+          python3 -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+      - name: Verify Toolchain Availability
+        run: |
+          ${{ matrix.compiler }} --version
+          python3 --version
+          make --version
+
+      - name: Compile C99 Microkernel & Shared Library (Strict -Werror -Wconversion)
+        run: |
+          mkdir -p build
+          make clean
+          make build CC=${{ matrix.compiler }} STRICT_WARNINGS=1
+
+      - name: Execute 15-Gate Verification Harness & Linus's Law Fault Injection
+        run: |
+          python3 verify_dandelion_os_v3.5.0.py --seed 42 --mode strict
+
+      - name: Execute Secure Preflight & Portable Check
+        run: |
+          make preflight CC=${{ matrix.compiler }}
+
+      - name: Upload Audit Manifest & Binary Telemetry
+        uses: actions/upload-artifact@v4
+        with:
+          name: dandelion-os-v3.5.0-${{ matrix.compiler }}-artifacts
+          path: |
+            audit_manifest_v3.5.0.json
+            build/dandelion_os_grimm_fbw_v3.5.0
+            build/libdandelion_os_v3.5.0.so
