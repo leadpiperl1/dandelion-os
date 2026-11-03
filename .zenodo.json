@@ -1,44 +1,15 @@
 {
-  "title": "Dandelion OS v3.5.0 ('Heimat-Agora — Sovereign Argon Frontier & Embedded AI Release'): Open-Source Real-Time Linux 6.12+ PREEMPT_RT + sched_ext Distribution with Embedded 1.58-Bit Ternary VBST AI, LayerFS SQLite WAL, ESP-SDR 80 MSa/s Baseband Recon, Stigmergic BLE Mesh & 9-Bite Universal Grimm's Law",
+  "title": "Dandelion OS (v4.1.1): Real-Time 1.25-Bit Sparse Ternary Microkernel, Harappan Tensegrity Assistive Solver & Zero-Copy DMA-BUF/io_uring Substrate",
   "upload_type": "software",
-  "version": "3.5.0",
-  "publication_date": "2026-11-02",
-  "description": "Official v3.5.0 ('Heimat-Agora — Sovereign Argon Frontier & Embedded AI Release') of Dandelion OS, synthesizing a strictly audited ISO C99 microkernel (-Werror -Wconversion clean), F-16 Digital Fly-By-Wire relaxed-static-stability control laws, 1.58-bit balanced ternary Virtual Bit-Slice Transform (VBST) zero-multiply inference engine, LayerFS content-addressed SQLite WAL storage, Transducer Boundary Conditioning (Haar DWT + Barker-13 Matched Filter), 32-byte Stigmergic BLE Extended Advertising gossip frames, zero-hardware ESP-SDR 80 MSa/s raw I/Q baseband DMA tapping across 2.4/5 GHz (ESP32-C5 + Lattice iCE40HX8K Hybrid Ring Node), Stanford OpenJarvis local-first routing, OpenMobile-2 / MobileGym++ verification, Carbon-X 6-mer genomic coordinate alignment, and 9-Bite Universal Grimm's Law on Linux 6.12+ PREEMPT_RT + sched_ext.",
+  "publication_date": "2026-11-03",
+  "version": "4.1.1",
+  "license": "GPL-2.0-or-later",
   "creators": [
     {
       "name": "Grimm, Justin D.",
-      "affiliation": "Independent Dandelion Substrate Research Group, Heimat {0,0,0}, Gurley, Alabama, USA",
+      "affiliation": "Independent Dandelion Substrate Research Group, Heimat {0,0,0}, Gurley, Alabama 35748, USA",
       "orcid": "0009-0000-5299-0243"
-    },
-    {
-      "name": "Dandelion AI (Gemini Spark / Argon)",
-      "affiliation": "Cognitive Partner & Fly-By-Wire Co-Stabilizer"
     }
-  ],
-  "license": "GPL-2.0-or-later",
-  "keywords": [
-    "Dandelion OS",
-    "v3.5.0",
-    "PREEMPT_RT",
-    "sched_ext",
-    "io_uring",
-    "Linux 6.12",
-    "Balanced Ternary",
-    "BitNet 1.58-bit",
-    "VBST",
-    "ESP-SDR",
-    "ESP32-C5",
-    "Lattice iCE40",
-    "LayerFS",
-    "OpenJarvis",
-    "OpenMobile-2",
-    "Topological Dirac Operator",
-    "larchanka/skills",
-    "Shingari",
-    "Grimm's Law",
-    "Mori-Zwanzig",
-    "Grimm-Tuttle Emergence",
-    "Switchblade Live USB"
   ],
   "related_identifiers": [
     {
@@ -47,48 +18,18 @@
       "scheme": "url"
     },
     {
-      "identifier": "arXiv:2402.17764",
-      "relation": "continues",
-      "scheme": "arxiv"
-    },
-    {
-      "identifier": "arXiv:2502.11880",
-      "relation": "cites",
-      "scheme": "arxiv"
-    },
-    {
-      "identifier": "arXiv:2605.17172",
-      "relation": "cites",
-      "scheme": "arxiv"
-    },
-    {
-      "identifier": "arXiv:2610.14157",
-      "relation": "cites",
-      "scheme": "arxiv"
-    },
-    {
-      "identifier": "arXiv:2605.26492",
+      "identifier": "https://github.com/leadpiperl1/wookiw-ewok",
       "relation": "isSupplementTo",
-      "scheme": "arxiv"
-    },
-    {
-      "identifier": "arXiv:2610.16733",
-      "relation": "cites",
-      "scheme": "arxiv"
-    },
-    {
-      "identifier": "10.1038/s41586-024-07566-y",
-      "relation": "cites",
-      "scheme": "doi"
-    },
-    {
-      "identifier": "10.1103/PhysRevE.111.034130",
-      "relation": "cites",
-      "scheme": "doi"
+      "scheme": "url"
     },
     {
       "identifier": "10.5281/zenodo.21255229",
-      "relation": "isNewVersionOf",
+      "relation": "isVersionOf",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.5281/zenodo.14159269",
+      "relation": "isPreviousVersionOf",
       "scheme": "doi"
     }
   ]
