@@ -1,36 +1,34 @@
 {
-  "title": "Dandelion OS (v4.1.1): Real-Time 1.25-Bit Sparse Ternary Microkernel, Harappan Tensegrity Assistive Solver & Zero-Copy DMA-BUF/io_uring Substrate",
+  "title": "Dandelion OS v4.1.1 (Ursine & Urshwera Edition): Sovereign ISO C99 Ternary Microkernel, 16-Gate Fly-By-Wire Engine, and Harappan Tensegrity Assistive Suite",
+  "version": "4.1.1",
   "upload_type": "software",
   "publication_date": "2026-11-03",
-  "version": "4.1.1",
-  "license": "GPL-2.0-or-later",
   "creators": [
     {
       "name": "Grimm, Justin D.",
-      "affiliation": "Independent Dandelion Substrate Research Group, Heimat {0,0,0}, Gurley, Alabama 35748, USA",
+      "affiliation": "Independent Dandelion Substrate Research Group, Gurley, Alabama 35748, USA",
       "orcid": "0009-0000-5299-0243"
     }
   ],
+  "license": "GPL-2.0-or-later",
+  "keywords": [
+    "Dandelion OS",
+    "Balanced Ternary",
+    "sched_ext",
+    "Assistive Computing",
+    "Multi-Token Prediction",
+    "Harappan Tensegrity"
+  ],
   "related_identifiers": [
-    {
-      "identifier": "https://github.com/leadpiperl1/dandelion-os",
-      "relation": "isSupplementTo",
-      "scheme": "url"
-    },
-    {
-      "identifier": "https://github.com/leadpiperl1/wookiw-ewok",
-      "relation": "isSupplementTo",
-      "scheme": "url"
-    },
     {
       "identifier": "10.5281/zenodo.21255229",
       "relation": "isVersionOf",
       "scheme": "doi"
     },
     {
-      "identifier": "10.5281/zenodo.14159269",
-      "relation": "isPreviousVersionOf",
-      "scheme": "doi"
+      "identifier": "https://github.com/leadpiperl1/dandelion-os",
+      "relation": "isSupplementTo",
+      "scheme": "url"
     }
   ]
 }

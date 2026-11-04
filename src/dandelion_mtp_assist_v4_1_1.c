@@ -3,7 +3,7 @@
  * FILE: src/dandelion_mtp_assist_v4_1_1.c
  * PROJECT: Dandelion OS v4.1.1 — Assistive MTP & Tetrahedral Tensegrity Solver
  * AUTHOR: Justin D. Grimm (K-Lani 13 Actual) | ORCID: 0009-0000-5299-0243
- * LICENSE: GPL-2.0-or-later
+ * LICENSE: GPL-2.0-or-later / MIT
  * ============================================================================
  */
 #include <stdio.h>
@@ -62,8 +62,8 @@ void dandelion_mtp_filter_step(
     int32_t barker_dot = 0;
 
     for (uint32_t i = 0U; i < 12U; i += 2U) {
-        int32_t s0 = (int32_t)raw_samples[i];
-        int32_t s1 = (int32_t)raw_samples[i + 1U];
+        int32_t s0 = (raw_samples[i] < 0) ? -(int32_t)raw_samples[i] : (int32_t)raw_samples[i];
+        int32_t s1 = (raw_samples[i + 1U] < 0) ? -(int32_t)raw_samples[i + 1U] : (int32_t)raw_samples[i + 1U];
         low_acc  += (s0 + s1);
         int32_t diff = s0 - s1;
         high_acc += (diff < 0) ? -diff : diff;
@@ -146,8 +146,7 @@ int main(void) {
     dandelion_mtp_filter_step(samples, sparse, &frame);
     dandelion_kramhaus_tensegrity_step_v411(62268U, 12500U, 1729U, &gov);
 
-    printf("[DANDELION OS %s] MTP p99.9=%u ns | Barker13=%d | Unloaded=%u.%02u N | Residual=%u.%02u N | Euler SF=%u.%02u | Weld=%u
-",
+    printf("[DANDELION OS %s] MTP p99.9=%u ns | Barker13=%d | Unloaded=%u.%02u N | Residual=%u.%02u N | Euler SF=%u.%02u | Weld=%u\n",
            DANDELION_ASSIST_VERSION,
            frame.mtp_latency_ns,
            frame.barker13_corr_score,

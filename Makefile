@@ -1,16 +1,54 @@
-CC = gcc
-CFLAGS = -std=c99 -O3 -Wall -Wextra -Wconversion -Werror
+# ==============================================================================
+# DANDELION OS v4.1.1 (URSINE & URSHWERA EDITION) - MASTER BUILD SYSTEM
+# Target: Sovereign Bare-Metal ISO C99 & Linux 6.12+ PREEMPT_RT / sched_ext
+# Strict Linus's Law Compliance: -std=c99 -O3 -Wall -Wextra -Wconversion -Werror
+# ==============================================================================
 
-all: build/dandelion_mtp_assist_v4_1_1
+CC       = gcc
+CFLAGS   = -std=c99 -O3 -Wall -Wextra -Wpedantic -Wshadow -Wformat=2 -Wconversion -Wundef -Werror -Iinclude
+LDFLAGS  = -lm
+BUILD    = build
 
-build/dandelion_mtp_assist_v4_1_1: src/dandelion_mtp_assist_v4_1_1.c src/ternary_raft.c src/fox_daemon_core.c
-	@mkdir -p build
-	  -c src/ternary_raft.c -o build/ternary_raft.o
-	  -c src/fox_daemon_core.c -o build/fox_daemon_core.o
-	  src/dandelion_mtp_assist_v4_1_1.c build/ternary_raft.o build/fox_daemon_core.o -o build/dandelion_mtp_assist_v4_1_1
+TARGETS  = $(BUILD)/dandelion_os_grimm_fbw \
+           $(BUILD)/libdandelion_os.so \
+           $(BUILD)/ternary_raft \
+           $(BUILD)/fox_daemon_core \
+           $(BUILD)/dandelion_mtp_assist
+
+.PHONY: all clean dirs test
+
+all: dirs $(TARGETS)
+
+dirs:
+	@mkdir -p $(BUILD)
+
+$(BUILD)/dandelion_os_grimm_fbw: src/dandelion_os_grimm_fbw_v3.5.1.c include/dandelion_os_v3.5.1.h
+	$(CC) $(CFLAGS) -DDANDELION_STANDALONE_MAIN $< -o $@ $(LDFLAGS)
+
+$(BUILD)/libdandelion_os.so: src/dandelion_os_grimm_fbw_v3.5.1.c include/dandelion_os_v3.5.1.h
+	$(CC) $(CFLAGS) -fPIC -shared $< -o $@ $(LDFLAGS)
+
+$(BUILD)/ternary_raft: src/ternary_raft.c
+	$(CC) $(CFLAGS) $< -o $@ $(LDFLAGS)
+
+$(BUILD)/fox_daemon_core: src/fox_daemon_core.c
+	$(CC) $(CFLAGS) $< -o $@ $(LDFLAGS)
+
+$(BUILD)/dandelion_mtp_assist: src/dandelion_mtp_assist_v4_1_1.c
+	$(CC) $(CFLAGS) $< -o $@ $(LDFLAGS)
 
 test: all
-	./build/dandelion_mtp_assist_v4_1_1
+	@echo "=== [1/4] Running 16-Gate Shingari/Grimm/Fowler/DNHM C99 & Python FFI Suite ==="
+	python3 verification/verify_dandelion_os_v4_1_1.py
+	@echo ""
+	@echo "=== [2/4] Running Ternary Raft Consensus & 3-Way Split-Brain Simulation ==="
+	./$(BUILD)/ternary_raft
+	@echo ""
+	@echo "=== [3/4] Running Fox Daemon L1 Pruning & Thermal-Entropy Gate ==="
+	./$(BUILD)/fox_daemon_core
+	@echo ""
+	@echo "=== [4/4] Running Dandelion OS v4.1.1 MTP & Kramhaus Tensegrity Kernel ==="
+	./$(BUILD)/dandelion_mtp_assist
 
 clean:
-	rm -rf build
+	@rm -rf $(BUILD)

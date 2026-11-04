@@ -1,20 +1,25 @@
-name: Dandelion OS CI & Verification Gate (v4.1.1)
+name: Dandelion OS C99 & 16-Gate Verification Suite
 
 on:
   push:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
+  workflow_dispatch:
 
 permissions:
   contents: read
 
 jobs:
-  verify-c99-kernel:
+  build-and-verify:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
-      - uses: actions/checkout@v4
-      - name: Compile & Verify C99 Kernel Modules (-Werror)
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Compile and Verify C99 Kernels & 16-Gate FFI Suite
         run: |
           make clean
           make all
