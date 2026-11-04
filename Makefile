@@ -1,5 +1,5 @@
 # ==============================================================================
-# DANDELION OS v4.1.1 (URSINE & URSHWERA EDITION) - MASTER BUILD SYSTEM
+# DANDELION OS v4.1.2 (BRIGHT PORCH & SUNSTONE EDITION) - MASTER BUILD SYSTEM
 # Target: Sovereign Bare-Metal ISO C99 & Linux 6.12+ PREEMPT_RT / sched_ext
 # Strict Linus's Law Compliance: -std=c99 -O3 -Wall -Wextra -Wconversion -Werror
 # ==============================================================================
@@ -38,17 +38,23 @@ $(BUILD)/dandelion_mtp_assist: src/dandelion_mtp_assist_v4_1_1.c
 	$(CC) $(CFLAGS) $< -o $@ $(LDFLAGS)
 
 test: all
-	@echo "=== [1/4] Running 16-Gate Shingari/Grimm/Fowler/DNHM C99 & Python FFI Suite ==="
+	@echo "=== [1/6] Running 16-Gate Shingari/Grimm/Fowler/DNHM C99 & Python FFI Suite ==="
 	python3 verification/verify_dandelion_os_v4_1_1.py
 	@echo ""
-	@echo "=== [2/4] Running Ternary Raft Consensus & 3-Way Split-Brain Simulation ==="
+	@echo "=== [2/6] Running Ternary Raft Consensus & 3-Way Split-Brain Simulation ==="
 	./$(BUILD)/ternary_raft
 	@echo ""
-	@echo "=== [3/4] Running Fox Daemon L1 Pruning & Thermal-Entropy Gate ==="
+	@echo "=== [3/6] Running Fox Daemon L1 Pruning & Thermal-Entropy Gate ==="
 	./$(BUILD)/fox_daemon_core
 	@echo ""
-	@echo "=== [4/4] Running Dandelion OS v4.1.1 MTP & Kramhaus Tensegrity Kernel ==="
+	@echo "=== [4/6] Running Dandelion OS v4.1.2 MTP & Kramhaus Tensegrity Kernel ==="
 	./$(BUILD)/dandelion_mtp_assist
+	@echo ""
+	@echo "=== [5/6] Running Gemini Argon 'Dave's Not Here, Man' 612-Impasse Audit ==="
+	python3 verification/verify_daves_not_here_argon_v1_0_0.py
+	@echo ""
+	@echo "=== [6/6] Running Epistemic Weight & Grand Negus Gold-Pressed Latinum Test ==="
+	python3 verification/verify_epistemic_weight_boundary_v1_0_0.py
 
 clean:
 	@rm -rf $(BUILD)

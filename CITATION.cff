@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use Dandelion OS in your research, please cite it as below."
+title: "Dandelion OS v4.1.1 (Ursine & Urshwera Edition): Sovereign ISO C99 Ternary Microkernel & Assistive Fly-By-Wire Suite"
+version: "4.1.1"
+date-released: "2026-11-03"
+authors:
+  - family-names: "Grimm"
+    given-names: "Justin D."
+    orcid: "https://orcid.org/0009-0000-5299-0243"
+repository-code: "https://github.com/leadpiperl1/dandelion-os"
+license: "GPL-2.0-or-later"
+doi: "10.5281/zenodo.14159269"
