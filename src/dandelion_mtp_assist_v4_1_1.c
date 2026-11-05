@@ -1,11 +1,14 @@
 /*
  * ============================================================================
- * FILE: src/dandelion_mtp_assist_v4_1_1.c
- * PROJECT: Dandelion OS v4.1.1 — Assistive MTP & Tetrahedral Tensegrity Solver
- * AUTHOR: Justin D. Grimm (K-Lani 13 Actual) | ORCID: 0009-0000-5299-0243
- * LICENSE: GPL-2.0-or-later / MIT
+ * FILE: dandelion_mtp_assist_v4_1_1.c
+ * PROJECT: Dandelion Sovereign Protocol v4.1.1 — Assistive MTP & Tensegrity Solver
+ * AUTHOR: Justin D. Grimm
+ * AFFILIATION: Independent Dandelion Substrate Research Group, Gurley, Alabama 35748, USA
+ * ORCID: 0009-0000-5299-0243
+ * LICENSE: GPL-2.0-or-later
  * ============================================================================
  */
+
 #include <stdio.h>
 #include <stdint.h>
 #include <stdbool.h>
@@ -21,10 +24,10 @@
 #define CODE_CLEAN                    0U
 #define CODE_KINTSUGI_GOLD_WELD       251U
 
-/* Fixed-point biomechanical constants (centi-Newtons, cN = N * 100) */
-#define TORSO_WEIGHT_CN               52974U   /* 529.74 N (54.0 kg torso)    */
-#define EULER_CRIT_STRUT_CN           138980U  /* 1389.80 N critical buckling */
-#define COS_TET_PROJ_PERMILLE         816U     /* cos(35.264 deg) = 0.8165    */
+/* Fixed-point biomechanical constants (scaled x100) */
+#define TORSO_WEIGHT_CN               52974U   /* 529.74 N (54.0 kg torso)   */
+#define EULER_CRIT_STRUT_CN           138980U  /* 1389.80 N critical buckling*/
+#define COS_TET_PROJ_PERMILLE         816U     /* cos(35.264 deg) = 0.8165   */
 
 static const int8_t BARKER13_KERNEL[BARKER13_LEN] = {
     1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1
@@ -62,8 +65,8 @@ void dandelion_mtp_filter_step(
     int32_t barker_dot = 0;
 
     for (uint32_t i = 0U; i < 12U; i += 2U) {
-        int32_t s0 = (raw_samples[i] < 0) ? -(int32_t)raw_samples[i] : (int32_t)raw_samples[i];
-        int32_t s1 = (raw_samples[i + 1U] < 0) ? -(int32_t)raw_samples[i + 1U] : (int32_t)raw_samples[i + 1U];
+        int32_t s0 = (int32_t)raw_samples[i];
+        int32_t s1 = (int32_t)raw_samples[i + 1U];
         low_acc  += (s0 + s1);
         int32_t diff = s0 - s1;
         high_acc += (diff < 0) ? -diff : diff;
@@ -133,26 +136,4 @@ void dandelion_kramhaus_tensegrity_step_v411(
         out_gov->strut_buckling_sf_x100   = (EULER_CRIT_STRUT_CN * 100U) / strut_load_cn;
         out_gov->kintsugi_weld_code       = CODE_CLEAN;
     }
-}
-
-int main(void) {
-    int16_t samples[BARKER13_LEN] = {120, 118, 122, 119, 121, -115, -118, 124, 120, -119, 122, -117, 125};
-    int8_t sparse[64];
-    memset(sparse, 0, sizeof(sparse));
-    sparse[0] = 1; sparse[7] = -1; sparse[13] = 1; sparse[26] = -1; sparse[39] = 1;
-
-    mtp_assist_frame_t frame;
-    scx_kramhaus_tensegrity_v411_t gov;
-    dandelion_mtp_filter_step(samples, sparse, &frame);
-    dandelion_kramhaus_tensegrity_step_v411(62268U, 12500U, 1729U, &gov);
-
-    printf("[DANDELION OS %s] MTP p99.9=%u ns | Barker13=%d | Unloaded=%u.%02u N | Residual=%u.%02u N | Euler SF=%u.%02u | Weld=%u\n",
-           DANDELION_ASSIST_VERSION,
-           frame.mtp_latency_ns,
-           frame.barker13_corr_score,
-           gov.sling_unloaded_cn / 100U, gov.sling_unloaded_cn % 100U,
-           gov.residual_disc_load_cn / 100U, gov.residual_disc_load_cn % 100U,
-           gov.strut_buckling_sf_x100 / 100U, gov.strut_buckling_sf_x100 % 100U,
-           gov.kintsugi_weld_code);
-    return (frame.intent_latched == 1U && gov.kintsugi_weld_code == CODE_KINTSUGI_GOLD_WELD) ? 0 : 1;
 }

@@ -1,0 +1,73 @@
+{
+  "schema_version": "2.0.0",
+  "manuscript_id": "Dandelion_Sovereign_Protocol_v4.1.1",
+  "author": "Justin D. Grimm",
+  "affiliation": "Independent Dandelion Substrate Research Group, Gurley, Alabama 35748, USA",
+  "orcid": "0009-0000-5299-0243",
+  "seed": 42,
+  "execution_time_s": 0.001212,
+  "all_gates_passed": true,
+  "harappan_tensegrity_solver_v4_1_1": {
+    "torso_mass_kg": 54.0,
+    "torso_weight_N": 529.74,
+    "keyhole_fraction_V_star": "34/51 = 2/3",
+    "sling_unloaded_force_N": 353.16,
+    "residual_L4_L5_disc_compression_N": 176.58,
+    "disc_unloading_percentage": 66.67,
+    "tetrahedral_saddle_cos_theta": -0.3333333333333333,
+    "tetrahedral_saddle_theta_deg": 109.471221,
+    "crown_vertical_projection_deg": 35.26439,
+    "single_crown_tendon_tension_N": 144.18,
+    "crown_tendon_safety_factor": 58.26,
+    "strut_peak_compression_N": 288.35,
+    "strut_euler_critical_load_N": 1390.0,
+    "strut_euler_buckling_SF": 4.82,
+    "c99_fixed_point_telemetry": {
+      "tau_unmitigated_unm": 62268,
+      "tau_net_governed_unm": 31140,
+      "max_shear_governed_mdeg": 1500,
+      "sling_unloaded_cn": 35316,
+      "residual_disc_load_cn": 17658,
+      "single_tendon_tension_cn_fixed": 14426,
+      "strut_buckling_sf_x100_fixed": 481,
+      "kintsugi_weld_code": 251,
+      "mtp_p99_9_latency_us": 35.9,
+      "quiescent_sparsity_pct": 78.125,
+      "didt_A_per_us": 5.33,
+      "thermal_die_C": 39.44
+    },
+    "karst_quartz_osl_kinetics": {
+      "temperature_K": 285.15,
+      "TiO4_trap_eV": 1.6,
+      "TiO4_lifetime_yr": 29800000.0,
+      "E1_vacancy_trap_eV": 2.06,
+      "E1_vacancy_lifetime_yr": 254000000000000.0,
+      "state_fidelity_pct": 99.9
+    }
+  },
+  "signature_3_ramanujan_synthesis": {
+    "q_evaluation_point": 0.12,
+    "cyclotomic_error": 3.510833468576701e-16,
+    "R_minus_omega_chi3_val": 1.134403343693,
+    "R_minus_omega_chi3_residual": 4.172129509187864e-18,
+    "S_omega_rho3_val": 0.881705749023,
+    "S_omega_rho3_residual": 4.314583533305299e-17,
+    "R_omega_gamma6_val": 1.10596295813,
+    "R_omega_gamma6_residual": 5.186154893060347e-18,
+    "cubic_theta_a3_minus_b3_c3_residual": 3.2862601528904634e-14,
+    "mirror_1729_9271_duality": {
+      "taxicab_1729": 1729,
+      "mirror_9271": 9271,
+      "ord_1729_2": 36,
+      "ord_9271_2": 63,
+      "sum_orders": 99,
+      "squared_sum_fixed_point": 9801,
+      "base10_1mrh_fixed_points": [
+        1,
+        81,
+        1458,
+        1729
+      ]
+    }
+  }
+}

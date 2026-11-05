@@ -1,8 +1,10 @@
 {
-  "title": "Dandelion OS v4.1.1 (Ursine & Urshwera Edition): Sovereign ISO C99 Ternary Microkernel, 16-Gate Fly-By-Wire Engine, and Harappan Tensegrity Assistive Suite",
+  "title": "Dandelion Sovereign Protocol (v4.1.1) and The Inharmonicity of Abstraction (v1.0.0): Coupled Dispersive Lattice Optimization, Harappan Tensegrity Biomechanics, Geomorphic Alpha-Quartz Metrology, and Signature-3 Ramanujan Mock Theta Synthesis",
+  "upload_type": "publication",
+  "publication_type": "article",
   "version": "4.1.1",
-  "upload_type": "software",
-  "publication_date": "2026-11-03",
+  "publication_date": "2026-11-04",
+  "description": "Omnibus reproducibility release uniting: (1) The Inharmonicity of Abstraction (v1.0.0), formulating the N=88 Coupled Inharmonic Lattice Optimization Problem (CILOP), the cos(theta) = -1/3 Frustrated Triad Railsback soliton geodesic, and the 19/16 Lindblad n_23 boundary impedance buffer (|Z(nu_23)| = (4/sqrt(3))Z_0); and (2) Dandelion Sovereign Protocol (v4.1.1), specifying the closed-loop C99 Harappan Tensegrity lumbar unloading solver (F_sling = 353.16 N, residual L4-L5 compression F_disc = 176.58 N, Euler buckling SF = 4.82), isothermal Randall-Wilkins alpha-quartz OSL trap retention kinetics, Signature-3 Ramanujan mock theta rank kernel specializations (chi_3, rho_3, gamma_6), and the 1729 <-> 9271 multiplicative mirror order identity ((36 + 63)^2 = 9801), certified via deterministic Python harnesses (--seed 42) and zero-axiom Lean 4 proofs.",
   "creators": [
     {
       "name": "Grimm, Justin D.",
@@ -10,25 +12,100 @@
       "orcid": "0009-0000-5299-0243"
     }
   ],
+  "access_right": "open",
   "license": "GPL-2.0-or-later",
   "keywords": [
-    "Dandelion OS",
-    "Balanced Ternary",
-    "sched_ext",
-    "Assistive Computing",
-    "Multi-Token Prediction",
-    "Harappan Tensegrity"
+    "coupled inharmonic lattice",
+    "Euler-Bernoulli dispersion",
+    "Railsback curve",
+    "Lindblad master equation",
+    "tensegrity biomechanics",
+    "optically stimulated luminescence",
+    "Ramanujan mock theta functions",
+    "Eisenstein lattice",
+    "balanced ternary",
+    "Lean 4 formal verification"
   ],
   "related_identifiers": [
     {
-      "identifier": "10.5281/zenodo.21255229",
-      "relation": "isVersionOf",
+      "identifier": "10.1121/1.1902056",
+      "relation": "cites",
       "scheme": "doi"
     },
     {
-      "identifier": "https://github.com/leadpiperl1/dandelion-os",
-      "relation": "isSupplementTo",
-      "scheme": "url"
+      "identifier": "10.1121/1.1918933",
+      "relation": "cites",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.1121/1.1906888",
+      "relation": "cites",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.1121/1.416017",
+      "relation": "cites",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.1016/j.plrev.2013.08.002",
+      "relation": "cites",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.1007/BF01608499",
+      "relation": "cites",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.1147/rd.53.0183",
+      "relation": "cites",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.1143/PTP.33.423",
+      "relation": "cites",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.1103/PhysRev.141.517",
+      "relation": "cites",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.1098/rspa.1945.0024",
+      "relation": "cites",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.1090/S0002-9947-1991-1010408-0",
+      "relation": "cites",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.1112/jlms/s1-11.1.55",
+      "relation": "cites",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.1016/0001-8708(91)90083-J",
+      "relation": "cites",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.1112/plms/pdu007",
+      "relation": "cites",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.1186/s40687-015-0044-7",
+      "relation": "cites",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.1103/PhysRevLett.58.1799",
+      "relation": "cites",
+      "scheme": "doi"
     }
   ]
 }
