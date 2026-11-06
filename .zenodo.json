@@ -1,7 +1,7 @@
 {
-  "title": "Dandelion OS: Balanced Ternary & Multi-Substrate Architecture (v4.1.1)",
+  "title": "Dandelion OS v4.2.0: Zero-Copy DMA-BUF and io_uring Substrate Pipeline",
   "upload_type": "software",
-  "description": "Dandelion OS v4.1.1 is an open-source PREEMPT_RT Linux substrate integrating C99, Rust (#![no_std]), Julia 1.12 FFI, and balanced ternary vector execution engines with strict hardware-agnostic reproducibility.",
+  "description": "Dandelion OS v4.2.0 release introducing a high-performance, zero-allocation C99/Rust-compatible DMA-BUF and io_uring zero-copy pipeline with 64-byte L1 cache-line alignment, strict static assertions, and automated triad verification.",
   "creators": [
     {
       "name": "Grimm, Justin D.",
@@ -10,5 +10,14 @@
   ],
   "access_right": "open",
   "license": "mit",
-  "version": "v4.1.1"
+  "keywords": [
+    "Dandelion OS",
+    "C99",
+    "Rust",
+    "DMA-BUF",
+    "io_uring",
+    "zero-allocation",
+    "balanced ternary",
+    "L1 cache alignment"
+  ]
 }
