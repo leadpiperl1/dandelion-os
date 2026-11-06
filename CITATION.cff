@@ -1,4 +1,5 @@
 cff-version: 1.2.0
+<<<<<<< HEAD
 title: "Dandelion Sovereign Protocol (v4.1.1) and The Inharmonicity of Abstraction (v1.0.0): Coupled Dispersive Lattice Optimization, Harappan Tensegrity Assistive Kernel, Geomorphic Quartz Metrology, and Signature-3 Ramanujan Synthesis"
 message: "If you use these manuscripts, the C99 MTP Assistive Library, the Lean 4 formalizations, or the Python verification harnesses, please cite this release."
 type: software
@@ -24,3 +25,15 @@ keywords:
   - "Ramanujan mock theta functions"
   - "Mori-Zwanzig projection"
   - "Landauer limit"
+=======
+message: "If you use this software, please cite it as below."
+authors:
+  - family-names: Grimm
+    given-names: Justin D.
+    orcid: "https://orcid.org/0009-0000-5299-0243"
+    email: leadpiperl1@gmail.com
+title: "Shingari v4.3.0: Zero-Allocation Triadic FFI and C-ABI Dispatch Engine for Dandelion OS"
+version: v4.3.0
+date-released: 2026-11-05
+url: "https://github.com/leadpiperl1/dandelion-os"
+>>>>>>> d7044a3 (chore(release): add Zenodo and CITATION metadata for Shingari v4.3.0)

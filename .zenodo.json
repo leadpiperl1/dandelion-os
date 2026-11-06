@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "title": "Dandelion Sovereign Protocol (v4.1.1) and The Inharmonicity of Abstraction (v1.0.0): Coupled Dispersive Lattice Optimization, Harappan Tensegrity Biomechanics, Geomorphic Alpha-Quartz Metrology, and Signature-3 Ramanujan Mock Theta Synthesis",
   "upload_type": "publication",
   "publication_type": "article",
@@ -108,4 +109,19 @@
       "scheme": "doi"
     }
   ]
+=======
+  "title": "Shingari v4.3.0: Zero-Allocation Triadic FFI and C-ABI Dispatch Engine for Dandelion OS",
+  "upload_type": "software",
+  "description": "Shingari v4.3.0 triadic compiler, zero-allocation Julia FFI verification harness, and C-ABI L1 cache-aligned packet dispatch engine for Dandelion OS.",
+  "creators": [
+    {
+      "name": "Grimm, Justin D.",
+      "orcid": "0009-0000-5299-0243",
+      "affiliation": "Independent Dandelion Substrate Research Group"
+    }
+  ],
+  "access_right": "open",
+  "license": "mit",
+  "version": "v4.3.0"
+>>>>>>> d7044a3 (chore(release): add Zenodo and CITATION metadata for Shingari v4.3.0)
 }
