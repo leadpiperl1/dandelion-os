@@ -8,3 +8,12 @@ __pycache__/
 *.log
 *.out
 *.o
+
+# Dandelion OS Build Artifacts, Logs & Caches
+build/
+dist/
+target/
+*.log
+__pycache__/
+.pytest_cache/
+.DS_Store
