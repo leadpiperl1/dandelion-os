@@ -1,15 +1,14 @@
 {
-  "title": "Shingari v4.3.0: Zero-Allocation Triadic FFI and C-ABI Dispatch Engine for Dandelion OS",
+  "title": "Dandelion OS: Balanced Ternary & Multi-Substrate Architecture (v4.1.1)",
   "upload_type": "software",
-  "description": "Shingari v4.3.0 triadic compiler, zero-allocation Julia FFI verification harness, and C-ABI L1 cache-aligned packet dispatch engine for Dandelion OS.",
+  "description": "Dandelion OS v4.1.1 is an open-source PREEMPT_RT Linux substrate integrating C99, Rust (#![no_std]), Julia 1.12 FFI, and balanced ternary vector execution engines with strict hardware-agnostic reproducibility.",
   "creators": [
     {
       "name": "Grimm, Justin D.",
-      "orcid": "0009-0000-5299-0243",
-      "affiliation": "Independent Dandelion Substrate Research Group"
+      "orcid": "0009-0000-5299-0243"
     }
   ],
   "access_right": "open",
   "license": "mit",
-  "version": "v4.3.0"
+  "version": "v4.1.1"
 }

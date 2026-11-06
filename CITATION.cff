@@ -1,11 +1,11 @@
 cff-version: 1.2.0
-message: "If you use this software, please cite it as below."
+message: "If you use this software, please cite it using these metadata fields."
+type: software
 authors:
   - family-names: Grimm
     given-names: Justin D.
     orcid: "https://orcid.org/0009-0000-5299-0243"
-    email: leadpiperl1@gmail.com
-title: "Shingari v4.3.0: Zero-Allocation Triadic FFI and C-ABI Dispatch Engine for Dandelion OS"
-version: v4.3.0
+title: "Dandelion OS: Balanced Ternary & Multi-Substrate Architecture"
+version: v4.1.1
 date-released: 2026-11-05
 url: "https://github.com/leadpiperl1/dandelion-os"
