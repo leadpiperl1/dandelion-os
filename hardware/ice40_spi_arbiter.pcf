@@ -1,0 +1,12 @@
+# Dandelion OS v4.1.1 - Lattice iCE40UP5K FPGA Arbiter & PocketQube S-Band Pin Mapping
+# Author: Justin D. Grimm (ORCID: 0009-0000-5299-0243)
+set_io clk_in        35
+set_io spi_sck       15
+set_io spi_mosi      16
+set_io spi_miso      17
+set_io spi_cs_n      18
+set_io sband_cs_n    19
+set_io sband_tx_en   20
+set_io sband_irq     21
+set_io led_status    9
+set_io entropy_pulse 10

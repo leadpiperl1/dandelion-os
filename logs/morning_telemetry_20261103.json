@@ -1,0 +1,38 @@
+{
+  "schema_version": "4.1.1",
+  "timestamp_utc": "2026-11-03T22:00:00Z",
+  "operator": "Justin D. Grimm",
+  "orcid": "0009-0000-5299-0243",
+  "zenodo_doi": "10.5281/zenodo.14159269",
+  "concept_doi": "10.5281/zenodo.21255229",
+  "cluster_nodes": {
+    "profplum": {
+      "status": "ONLINE",
+      "dmabuf_ring_bytes": 65536,
+      "dmabuf_crc32c": "0x8F4A2C19",
+      "iouring_throughput_gbps": 4.82,
+      "mtp_p99_9_us": 35.9,
+      "tensegrity_unloaded_n": 353.16,
+      "euler_buckling_sf": 4.81,
+      "junction_temp_c": 39.44,
+      "power_draw_w": 14.2,
+      "entropy_ds": 0.078
+    },
+    "gurley-karst-heimat": {
+      "status": "ONLINE",
+      "dmabuf_ring_bytes": 65536,
+      "dmabuf_crc32c": "0x8F4A2C19",
+      "heterodyne_clock_mhz": 1.02,
+      "sband_spi_mux": "VERIFIED",
+      "junction_temp_c": 41.0,
+      "power_draw_w": 13.9,
+      "entropy_ds": 0.074
+    }
+  },
+  "invariants": {
+    "landauer_bound_satisfied": true,
+    "tetrahedral_cosine": -0.333333,
+    "manifold_tension_deg": 109.4712,
+    "ternary_raft_quorum": "COMMIT (+1)"
+  }
+}
