@@ -18,3 +18,11 @@ triad: verify
 
 clean:
 	rm -rf build/*.o dist/ __pycache__/ .pytest_cache/
+
+# Dandelion OS v4.2.0 DMA-BUF & io_uring Pipeline Verification Target
+dma_tests: dandelion_dma_uring.c test_dandelion_dma_uring.c dandelion_dma_uring.h
+	gcc -std=c11 -Wall -Wextra -Werror -O3 dandelion_dma_uring.c test_dandelion_dma_uring.c -o run_dma_tests
+	./run_dma_tests
+
+triad: dma_tests
+	@echo "[ === TRIAD VERIFICATION PASSED === ]"
