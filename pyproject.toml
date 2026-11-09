@@ -1,0 +1,18 @@
+[project]
+name = "tinker-session"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "tinker>=0.39.0",
+    "tinker-cookbook>=0.6.1",
+    "tml-renderers>=0.4.1",
+]
+
+[project.scripts]
+tinker-session = "tinker_session:main"
+
+[build-system]
+requires = ["uv_build>=0.13.7,<0.14.0"]
+build-backend = "uv_build"
