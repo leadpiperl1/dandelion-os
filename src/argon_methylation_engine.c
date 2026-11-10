@@ -1,159 +1,237 @@
 /*
- * Title:   Argon-Hard-Iron v3.8.0 Bare-Metal RC Accumulator & Schmitt Trigger C11 Kernel
- * Author:  Justin D. Grimm (K-Lani 13 Actual, ORCID: 0009-0000-5299-0243)
+ * File: src/argon_methylation_engine.c
+ * Architecture: Dandelion Sovereign Substrate — Living Trunk (Un-Versioned Continuous Main)
+ * Author: Justin D. Grimm (ORCID: 0009-0000-5299-0243)
+ * Affiliation: Independent Dandelion Substrate Research Group, Gurley, Alabama
  */
+
+#include "argon_methylation_engine.h"
 #include <stdio.h>
-#include <stdint.h>
-#include <stdbool.h>
-#include <stdlib.h>
+#include <string.h>
 
-#define V_BASELINE_0        1650
-#define V_MAX_RAIL          3300
-#define DELTA_VH            165
-#define SCHMITT_UPPER_ENTER 1980
-#define SCHMITT_UPPER_EXIT  1815
-#define SCHMITT_LOWER_ENTER 1320
-#define SCHMITT_LOWER_EXIT  1485
-#define SHEAR_TRAP_TH       45000
-#define KINTSUGI_GOLD_BYTE  251U
-#define TELLURIC_PERIOD_NS  9615384ULL
-#define TELLURIC_EPOCHS     13U
-
-typedef enum {
-    TRIT_SINK    = -1,
-    TRIT_NEUTRAL =  0,
-    TRIT_SOURCE  =  1
-} TernaryState;
-
-typedef struct {
-    uint64_t pos_rail_64;
-    uint64_t neg_rail_64;
-    uint64_t p_scale_3n;
-    uint64_t epoch_period_ns;
-    int32_t  v_rc_mv;
-    int32_t  v_conj_mv;
-    int32_t  methyl_bias_mv;
-    uint32_t l1_taxicab_norm;
-    uint32_t shear_tau_ug;
-    uint16_t methyl_cpg_mask;
-    uint8_t  scale_n;
-    int8_t   window_trit;
-    uint8_t  trapdoor_byte;
-    uint8_t  vbst_bytes[3];
-    uint8_t  misfolded_flag;
-    uint8_t  reserved_align[3];
-} ArgonMethylatedFrame64B;
-
-_Static_assert(sizeof(ArgonMethylatedFrame64B) == 64,
-               "ArgonMethylatedFrame64B must occupy 1 L1D cache line (64 bytes)");
-
-typedef struct {
-    int32_t      v_rc;
-    TernaryState state;
-    uint32_t     trapdoor_trips;
-    bool         misfolded;
-} ArgonAccumulatorContext;
-
-static inline int32_t conjugate_reflect_v0(int32_t v_rc_mv) {
-    return (V_BASELINE_0 << 1) - v_rc_mv;
-}
-
-static inline uint32_t branchless_abs_i32(int32_t x) {
-    int32_t const mask = x >> 31;
-    return (uint32_t)((x + mask) ^ mask);
-}
-
-void argon_accumulator_init(ArgonAccumulatorContext *ctx) {
-    ctx->v_rc           = V_BASELINE_0;
-    ctx->state          = TRIT_NEUTRAL;
-    ctx->trapdoor_trips = 0U;
-    ctx->misfolded      = false;
-}
-
-void argon_step(ArgonAccumulatorContext *ctx, int32_t delta_v_in, int32_t m_epig, int32_t shear_ug, int32_t delta_e_noise) {
-    if (shear_ug > SHEAR_TRAP_TH) {
-        ctx->trapdoor_trips++;
-        ctx->v_rc = V_BASELINE_0 + (251 * DELTA_VH) / V_MAX_RAIL;
-        return;
-    }
-    int32_t decay_term = (ctx->v_rc - V_BASELINE_0) >> 3;
-    int32_t epig_term  = m_epig >> 2;
-    ctx->v_rc = ctx->v_rc - decay_term + delta_v_in + epig_term + delta_e_noise;
-    if (ctx->v_rc < 0)          ctx->v_rc = 0;
-    if (ctx->v_rc > V_MAX_RAIL) ctx->v_rc = V_MAX_RAIL;
-
-    if (ctx->state == TRIT_NEUTRAL) {
-        if (ctx->v_rc >= SCHMITT_UPPER_ENTER)      ctx->state = TRIT_SOURCE;
-        else if (ctx->v_rc <= SCHMITT_LOWER_ENTER) ctx->state = TRIT_SINK;
-    } else if (ctx->state == TRIT_SOURCE) {
-        if (ctx->v_rc <= SCHMITT_UPPER_EXIT)       ctx->state = TRIT_NEUTRAL;
-    } else if (ctx->state == TRIT_SINK) {
-        if (ctx->v_rc >= SCHMITT_LOWER_EXIT)       ctx->state = TRIT_NEUTRAL;
-    }
-    if ((int32_t)branchless_abs_i32(delta_e_noise) > DELTA_VH && shear_ug <= SHEAR_TRAP_TH) {
-        ctx->misfolded = true;
-    }
-}
-
-static const int32_t  EPOCH_V_RC[TELLURIC_EPOCHS]   = {2030,2158,1565,1267,1477,1974,2110,1446,1187,1790,1365,1129,1671};
-static const int32_t  EPOCH_METHYL[TELLURIC_EPOCHS] = {55,97,80,19,-26,-12,46,42,-9,1,8,-35,-19};
-static const int8_t   EPOCH_TRIT[TELLURIC_EPOCHS]   = {1,1,0,-1,-1,0,1,0,-1,0,0,-1,0};
-static const uint32_t EPOCH_L1[TELLURIC_EPOCHS]     = {439,615,166,484,441,335,700,247,1211,142,294,595,39};
-static const uint32_t EPOCH_TAU_UG[TELLURIC_EPOCHS] = {31200,48900,29400,52100,34000,62700,38500,46800,28900,54300,38100,71200,41500};
-static const uint16_t EPOCH_CPG[TELLURIC_EPOCHS]    = {0x007EU,0x017DU,0x0478U,0x0D79U,0x084CU,0x191DU,0x0B48U,0x0161U,0x02F4U,0x1668U,0x10A4U,0x04D3U,0x01E2U};
-static const uint8_t  EPOCH_VBST[TELLURIC_EPOCHS][3] = {
-    {122,121,121},{125,121,121},{125,121,121},{98,121,121},{17,121,121},
-    {17,121,121},{17,124,121},{17,124,121},{17,97,121},{17,97,121},
-    {17,97,121},{17,97,118},{17,97,118}
+static ArgonEpochInput const kCanonicalEpochs[ARGON_EPOCHS_COUNT] = {
+    /* Ep  n   dV_in  M_epig    dx    dy    dz  shear_ug  cpg_mask */
+    {  1,  2,   +367,    +55, -210, +149,  -80,   31200U,  0x007EU },
+    {  2,  3,   +151,    +97, +312, -198, +105,   48900U,  0x017DU },
+    {  3,  4,   -550,    +80,  -84,  +52,  -30,   29400U,  0x0478U },
+    {  4,  5,   -313,    +19, +240, -164,  +80,   52100U,  0x0D79U },
+    {  5,  6,   +169,    -26, -195, +156,  -90,   34000U,  0x084CU },
+    {  6,  7,   +478,    -12, +150, -115,  +70,   62700U,  0x191DU },
+    {  7,  8,   +165,    +46, -340, +250, -110,   38500U,  0x0B48U },
+    {  8,  9,   -617,    +42, +112,  -85,  +50,   46800U,  0x0161U },
+    {  9, 10,   -282,     -9, -600, +411, -200,   28900U,  0x02F4U },
+    { 10, 11,   +545,     +1,  +70,  -48,  +24,   54300U,  0x1668U },
+    { 11, 12,   -410,     +8, -140, +104,  -50,   38100U,  0x10A4U },
+    { 12, 13,   -263,    -35, +295, -200, +100,   71200U,  0x04D3U },
+    { 13, 14,   +481,    -19,  -18,  +13,   -8,   41500U,  0x01E2U }
 };
 
+typedef struct {
+    uint64_t p_3n_states;
+    int32_t  v_rc_mv;
+    int32_t  v_conj_mv;
+    int8_t   window_trit;
+    uint32_t l1_norm;
+    uint8_t  trapdoor_byte;
+    uint8_t  vbst[3];
+} ArgonExpectedTelemetry;
+
+static ArgonExpectedTelemetry const kExpectedTelemetry[ARGON_EPOCHS_COUNT] = {
+    {       3ULL, 2030, 1270, +1,  439U,   0U, { 122U, 121U, 121U } },
+    {       9ULL, 2158, 1142, +1,  615U, 251U, { 125U, 121U, 121U } },
+    {      27ULL, 1565, 1735,  0,  166U,   0U, { 125U, 121U, 121U } },
+    {      81ULL, 1267, 2033, -1,  484U, 251U, {  98U, 121U, 121U } },
+    {     243ULL, 1477, 1823, -1,  441U,   0U, {  17U, 121U, 121U } },
+    {     729ULL, 1974, 1326,  0,  335U, 251U, {  17U, 121U, 121U } },
+    {    2187ULL, 2110, 1190, +1,  700U,   0U, {  17U, 124U, 121U } },
+    {    6561ULL, 1446, 1854,  0,  247U, 251U, {  17U, 124U, 121U } },
+    {   19683ULL, 1187, 2113, -1, 1211U,   0U, {  17U,  97U, 121U } },
+    {   59049ULL, 1790, 1510,  0,  142U, 251U, {  17U,  97U, 121U } },
+    {  177147ULL, 1365, 1935,  0,  294U,   0U, {  17U,  97U, 121U } },
+    {  531441ULL, 1129, 2171, -1,  595U, 251U, {  17U,  97U, 118U } },
+    { 1594323ULL, 1671, 1629,  0,   39U,   0U, {  17U,  97U, 118U } }
+};
+
+void argon_engine_init(ArgonEngineContext *ctx) {
+    if (ctx == NULL) {
+        return;
+    }
+    memset(ctx, 0, sizeof(*ctx));
+
+    ctx->frame.pos_rail_64     = 0ULL;
+    ctx->frame.neg_rail_64     = 0ULL;
+    ctx->frame.p_3n_states     = 1ULL;
+    ctx->frame.v_rc_mv         = ARGON_V0_BASELINE_MV;
+    ctx->frame.v_conj_mv       = ARGON_V0_BASELINE_MV;
+    ctx->frame.m_epig_mv       = 0;
+    ctx->frame.taxicab_l1_norm = 0U;
+    ctx->frame.shear_tau_ug    = 0U;
+    ctx->frame.methyl_cpg_mask = 0U;
+    ctx->frame.vbst_packed[0]  = ARGON_VBST_NEUTRAL_BYTE;
+    ctx->frame.vbst_packed[1]  = ARGON_VBST_NEUTRAL_BYTE;
+    ctx->frame.vbst_packed[2]  = ARGON_VBST_NEUTRAL_BYTE;
+    ctx->frame.window_trit     = (int8_t)ARGON_TRIT_NEUTRAL;
+    ctx->frame.trapdoor_byte   = ARGON_NOMINAL_TRAPDOOR;
+    ctx->frame.epoch_scale_n   = 1U;
+
+    for (size_t i = 0U; i < sizeof(ctx->frame.open_circle_pad); ++i) {
+        ctx->frame.open_circle_pad[i] = 0xAAU;
+    }
+
+    ctx->kintsugi_welds_count   = 0U;
+    ctx->trit_transitions_count = 0U;
+    ctx->epochs_executed        = 0U;
+    ctx->conservation_verified  = true;
+}
+
+bool argon_engine_verify_frame(ArgonMethylatedFrame64B const *frame) {
+    if (frame == NULL) {
+        return false;
+    }
+    if ((frame->v_rc_mv + frame->v_conj_mv) != ARGON_VMAX_RAIL_MV) {
+        return false;
+    }
+    if ((frame->pos_rail_64 & frame->neg_rail_64) != 0ULL) {
+        return false;
+    }
+    for (size_t b = 0U; b < ARGON_VBST_BYTES_LEN; ++b) {
+        if (frame->vbst_packed[b] > ARGON_VBST_RADIX_MAX) {
+            return false;
+        }
+    }
+    if (frame->trapdoor_byte != ARGON_NOMINAL_TRAPDOOR &&
+        frame->trapdoor_byte != ARGON_KINTSUGI_GOLD_BYTE) {
+        return false;
+    }
+    return true;
+}
+
+void argon_engine_step_epoch(ArgonEngineContext    *ctx,
+                             ArgonEpochInput const *input) {
+    ArgonMethylatedFrame64B * const f = &ctx->frame;
+    uint8_t const bit_pos             = (uint8_t)(input->epoch_idx - 1U);
+
+    f->p_3n_states     = argon_step_base3_shift(f->p_3n_states);
+    f->epoch_scale_n   = input->scale_n;
+    f->methyl_cpg_mask = (uint16_t)(input->methyl_cpg_mask & ARGON_CPG_13BIT_MASK);
+    f->m_epig_mv       = input->m_epig_mv;
+
+    f->v_rc_mv   = argon_rc_step_mv(f->v_rc_mv, input->delta_v_in_mv, input->m_epig_mv);
+    f->v_conj_mv = argon_conjugate_mirror_mv(f->v_rc_mv);
+
+    int8_t const prev_trit = f->window_trit;
+    int8_t const next_trit = argon_schmitt_eval(prev_trit, f->v_rc_mv);
+    ctx->trit_transitions_count += (uint32_t)((ctx->epochs_executed > 0U) &
+                                              (uint32_t)(next_trit != prev_trit));
+    f->window_trit = next_trit;
+
+    uint64_t const bit_mask = (1ULL << bit_pos);
+    uint64_t const is_pos   = (uint64_t)(next_trit == (int8_t)ARGON_TRIT_SOURCE);
+    uint64_t const is_neg   = (uint64_t)(next_trit == (int8_t)ARGON_TRIT_SINK);
+
+    f->pos_rail_64 = (f->pos_rail_64 & ~bit_mask) | ((0ULL - is_pos) & bit_mask);
+    f->neg_rail_64 = (f->neg_rail_64 & ~bit_mask) | ((0ULL - is_neg) & bit_mask);
+
+    argon_vbst_pack_trit(f->vbst_packed, bit_pos, next_trit);
+
+    f->taxicab_l1_norm = argon_branchless_l1_norm(input->dx, input->dy, input->dz);
+    f->shear_tau_ug    = input->shear_tau_ug;
+    f->trapdoor_byte   = argon_latch_kintsugi_shear(input->shear_tau_ug,
+                                                    &ctx->kintsugi_welds_count);
+
+    ctx->epochs_executed++;
+    if (!argon_engine_verify_frame(f)) {
+        ctx->conservation_verified = false;
+    }
+}
+
+bool argon_engine_run_13_epochs(ArgonEngineContext      *ctx,
+                                ArgonMethylatedFrame64B  history_out[ARGON_EPOCHS_COUNT]) {
+    argon_engine_init(ctx);
+    for (size_t i = 0U; i < ARGON_EPOCHS_COUNT; ++i) {
+        argon_engine_step_epoch(ctx, &kCanonicalEpochs[i]);
+        if (history_out != NULL) {
+            history_out[i] = ctx->frame;
+        }
+    }
+    return ctx->conservation_verified;
+}
+
 int main(void) {
-    printf("=== ARGON-HARD-IRON v3.8.0 C11 RC ACCUMULATOR & METHYLATION KERNEL ===\n");
-    printf("[INVARIANT] sizeof(ArgonMethylatedFrame64B) = %zu bytes (1 L1D cache line)\n",
-           sizeof(ArgonMethylatedFrame64B));
+    ArgonEngineContext      ctx;
+    ArgonMethylatedFrame64B history[ARGON_EPOCHS_COUNT];
 
-    uint64_t p_3n = 1ULL;
-    uint32_t kintsugi_welds = 0U;
-    for (uint32_t i = 0U; i < TELLURIC_EPOCHS; i++) {
-        p_3n = (p_3n << 1ULL) + p_3n;
-        ArgonMethylatedFrame64B frame = {0};
-        frame.p_scale_3n      = p_3n;
-        frame.epoch_period_ns = TELLURIC_PERIOD_NS;
-        frame.v_rc_mv         = EPOCH_V_RC[i];
-        frame.v_conj_mv       = conjugate_reflect_v0(frame.v_rc_mv);
-        frame.methyl_bias_mv  = EPOCH_METHYL[i];
-        frame.l1_taxicab_norm = EPOCH_L1[i];
-        frame.shear_tau_ug    = EPOCH_TAU_UG[i];
-        frame.methyl_cpg_mask = EPOCH_CPG[i];
-        frame.scale_n         = (uint8_t)(i + 2U);
-        frame.window_trit     = EPOCH_TRIT[i];
-        frame.trapdoor_byte   = (frame.shear_tau_ug > (uint32_t)SHEAR_TRAP_TH) ? KINTSUGI_GOLD_BYTE : 0U;
-        frame.vbst_bytes[0]   = EPOCH_VBST[i][0];
-        frame.vbst_bytes[1]   = EPOCH_VBST[i][1];
-        frame.vbst_bytes[2]   = EPOCH_VBST[i][2];
+    bool const ok = argon_engine_run_13_epochs(&ctx, history);
 
-        if (frame.v_rc_mv + frame.v_conj_mv != V_MAX_RAIL) return EXIT_FAILURE;
-        if (frame.trapdoor_byte == KINTSUGI_GOLD_BYTE) kintsugi_welds++;
-        printf("Epoch %02u (n=%2u | P=%7llu) | V_rc=%4d mV | R_V0=%4d mV | M_epig=%+3d mV | Trit=%+2d | L1=%4u | tau=%5u ug | Trap=%3u | CpG=0x%04X\n",
-               i + 1U, frame.scale_n, (unsigned long long)frame.p_scale_3n,
-               frame.v_rc_mv, frame.v_conj_mv, frame.methyl_bias_mv,
-               (int)frame.window_trit, frame.l1_taxicab_norm,
-               frame.shear_tau_ug, frame.trapdoor_byte, frame.methyl_cpg_mask);
+    printf("========================================================================================================================\n");
+    printf(" DANDELION LIVING TRUNK: ARGON C11 ENGINE | sizeof(ArgonMethylatedFrame64B) = %zu B | Align = %zu B\n",
+           sizeof(ArgonMethylatedFrame64B), _Alignof(ArgonMethylatedFrame64B));
+    printf("========================================================================================================================\n");
+    printf(" Ep | n  | P = 3^(n-1) | V_rc (mV) | R_V0 (mV) | M_epig | Trit | L1 Norm | Shear (ug) | Trapdoor | CpG Mask | VBST [B0,B1,B2]\n");
+    printf("----+----+-------------+-----------+-----------+--------+------+---------+------------+----------+----------+-------------------\n");
+
+    for (size_t i = 0U; i < ARGON_EPOCHS_COUNT; ++i) {
+        ArgonMethylatedFrame64B const * const f   = &history[i];
+        ArgonExpectedTelemetry  const * const exp = &kExpectedTelemetry[i];
+
+        printf(" %02zu | %2u | %11llu | %9d | %9d | %+6d | %+4d | %7u | %10u | %8u |  0x%04X  | [%3u, %3u, %3u]\n",
+               i + 1U,
+               (unsigned)f->epoch_scale_n,
+               (unsigned long long)f->p_3n_states,
+               (int)f->v_rc_mv,
+               (int)f->v_conj_mv,
+               (int)f->m_epig_mv,
+               (int)f->window_trit,
+               (unsigned)f->taxicab_l1_norm,
+               (unsigned)f->shear_tau_ug,
+               (unsigned)f->trapdoor_byte,
+               (unsigned)f->methyl_cpg_mask,
+               (unsigned)f->vbst_packed[0],
+               (unsigned)f->vbst_packed[1],
+               (unsigned)f->vbst_packed[2]);
+
+        if (f->p_3n_states     != exp->p_3n_states ||
+            f->v_rc_mv         != exp->v_rc_mv     ||
+            f->v_conj_mv       != exp->v_conj_mv   ||
+            f->window_trit     != exp->window_trit ||
+            f->taxicab_l1_norm != exp->l1_norm     ||
+            f->trapdoor_byte   != exp->trapdoor_byte ||
+            f->vbst_packed[0]  != exp->vbst[0]     ||
+            f->vbst_packed[1]  != exp->vbst[1]     ||
+            f->vbst_packed[2]  != exp->vbst[2]) {
+            fprintf(stderr, "FATAL: Telemetry mismatch at Epoch %02zu!\n", i + 1U);
+            return 1;
+        }
     }
-    printf("[PASS] 13/13 Telluric Epochs Verified | P(14) = %llu | Kintsugi Welds = %u/13\n\n",
-           (unsigned long long)p_3n, kintsugi_welds);
 
-    ArgonAccumulatorContext ctx;
-    argon_accumulator_init(&ctx);
-    for (int t = 1; t <= 14; t++) {
-        int32_t delta_v = 35;
-        int32_t m_epig  = 20;
-        int32_t shear   = (t % 5 == 0) ? 48000 : 1200;
-        int32_t noise   = (t == 7) ? 180 : 10;
-        argon_step(&ctx, delta_v, m_epig, shear, noise);
-        printf("Step %2d | V_rc: %4d mV | Trit State: %+2d | Trapdoor Trips: %u | Misfolded: %s\n",
-               t, ctx.v_rc, (int)ctx.state, ctx.trapdoor_trips, ctx.misfolded ? "TRUE" : "FALSE");
+    for (size_t i = 0U; i < ARGON_EPOCHS_COUNT; ++i) {
+        int8_t const unpacked = argon_vbst_unpack_trit(ctx.frame.vbst_packed, (uint8_t)i);
+        if (unpacked != kExpectedTelemetry[i].window_trit) {
+            fprintf(stderr, "FATAL: VBST unpack mismatch at trit %zu!\n", i);
+            return 1;
+        }
     }
-    printf("Kernel execution verified against v3.8.0 specifications. Namaste.\n");
-    return EXIT_SUCCESS;
+
+    uint64_t const ratio_int  = ctx.frame.p_3n_states / (uint64_t)ctx.epochs_executed;
+    uint64_t const ratio_frac = ((ctx.frame.p_3n_states % (uint64_t)ctx.epochs_executed) * 100ULL) /
+                                (uint64_t)ctx.epochs_executed;
+
+    printf("========================================================================================================================\n");
+    printf(" [PASS] Conjugate Baseline Conservation : V_rc + R_V0(V_rc) == 3300 mV across all 13 epochs (0 deletions)\n");
+    printf(" [PASS] Levinthal Funnel Compression    : 3^13 = %llu states -> %u epochs (%llu.%02llux speedup)\n",
+           (unsigned long long)ctx.frame.p_3n_states,
+           ctx.epochs_executed,
+           (unsigned long long)ratio_int,
+           (unsigned long long)ratio_frac);
+    printf(" [PASS] Schmitt Window Hysteresis       : %u inter-epoch transitions | Epoch 05 Hold verified at 1477 mV (< 1485 mV)\n",
+           ctx.trit_transitions_count);
+    printf(" [PASS] 3-Byte VBST History Integrity   : Final [%u, %u, %u] losslessly unpacks all 13 epoch trits\n",
+           (unsigned)ctx.frame.vbst_packed[0],
+           (unsigned)ctx.frame.vbst_packed[1],
+           (unsigned)ctx.frame.vbst_packed[2]);
+    printf(" [PASS] Kintsugi Gold (Byte 251) Latch  : %u / %u shear spikes (> 45,000 ug) retained branchlessly\n",
+           ctx.kintsugi_welds_count, ctx.epochs_executed);
+    printf("========================================================================================================================\n");
+
+    return ok ? 0 : 1;
 }

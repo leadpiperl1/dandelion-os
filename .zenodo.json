@@ -1,23 +1,20 @@
 {
-  "title": "Dandelion OS v4.2.0: Zero-Copy DMA-BUF and io_uring Substrate Pipeline",
+  "title": "Dandelion OS: Sovereign Balanced Ternary Substrate & Argon Methylation Living Trunk",
   "upload_type": "software",
-  "description": "Dandelion OS v4.2.0 release introducing a high-performance, zero-allocation C99/Rust-compatible DMA-BUF and io_uring zero-copy pipeline with 64-byte L1 cache-line alignment, strict static assertions, and automated triad verification.",
+  "license": "MIT",
   "creators": [
     {
       "name": "Grimm, Justin D.",
+      "affiliation": "Independent Dandelion Substrate Research Group, Gurley, Alabama 35748, USA",
       "orcid": "0009-0000-5299-0243"
     }
   ],
-  "access_right": "open",
-  "license": "mit",
   "keywords": [
     "Dandelion OS",
-    "C99",
-    "Rust",
-    "DMA-BUF",
-    "io_uring",
-    "zero-allocation",
     "balanced ternary",
-    "L1 cache alignment"
+    "chiral code methylation",
+    "RC accumulator",
+    "Schmitt window comparator",
+    "Kintsugi Gold Byte 251"
   ]
 }

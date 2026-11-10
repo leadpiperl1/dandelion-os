@@ -1,0 +1,16 @@
+[package]
+name = "dandelion-net"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "dandelion_substrate"
+path = "src/lib.rs"
+crate-type = ["rlib", "cdylib"]
+
+[[bin]]
+name = "dandelion-net"
+path = "src/main.rs"
+
+[dependencies]
+libc = "0.2"

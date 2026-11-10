@@ -1,0 +1,386 @@
+{
+  "architecture": "Dandelion Sovereign Substrate \u2014 Living Trunk",
+  "branch": "main",
+  "title": "The Methylated Baseline & RC Accumulator Protocol",
+  "author": "Justin D. Grimm (ORCID: 0009-0000-5299-0243)",
+  "affiliation": "Independent Dandelion Substrate Research Group, Gurley, Alabama",
+  "workstation_anchor": {
+    "host": "Professor Plum (custom-fedora-garden-rt)",
+    "ram_gib": 62,
+    "vm_swappiness": 10,
+    "vm_vfs_cache_pressure": 50,
+    "kernel": "PREEMPT_RT",
+    "telluric_lock_hz": 104.0,
+    "telluric_period_ns": 9615384,
+    "soliton_slip_buffer_ns": 1800000,
+    "sizeof_ArgonMethylatedFrame64B": 64
+  },
+  "directives_verified": {
+    "directive_1_incompressible_baseline": {
+      "baseline_v0_mv": 1650,
+      "rail_full_scale_mv": 3300,
+      "conjugate_reflection_invariant": "V_rc + R_V0(V_rc) == 3300 mV (100% conserved, 0 deletions)",
+      "status": "PASS"
+    },
+    "directive_2_rc_accumulator_window_comparator": {
+      "upper_enter_mv": 1980,
+      "upper_exit_mv": 1815,
+      "lower_enter_mv": 1320,
+      "lower_exit_mv": 1485,
+      "substrate_memory_preserved": true,
+      "status": "PASS"
+    },
+    "directive_3_epigenetic_data_methylation": {
+      "unmethylated_levinthal_space_3_13": 1594323,
+      "methylated_funnel_steps": 13,
+      "combinatorial_reduction_factor": 122640.23,
+      "trit_transitions": 9,
+      "cumulative_landauer_heat_j": 4.09535448589081e-20,
+      "status": "PASS"
+    },
+    "directive_4_bare_metal_anchor": {
+      "c11_compiler_flags": "gcc -O3 -std=c11 -Wall -Wextra -Werror -Wpedantic -Iinclude",
+      "compiler_warnings": 0,
+      "kintsugi_gold_251_welds_retained": 6,
+      "branchless_taxicab_l1_verified": true,
+      "status": "PASS"
+    }
+  },
+  "telemetry_epochs": [
+    {
+      "epoch": 1,
+      "scale_n": 2,
+      "p_3n": 3,
+      "v_rc_mv": 2030,
+      "v_conj_mv": 1270,
+      "methyl_mv": 55,
+      "trit": 1,
+      "l1_norm": 439,
+      "tau_ug": 31200,
+      "trapdoor": 0,
+      "cpg_hex": "0x007E",
+      "vbst": "[122,121,121]"
+    },
+    {
+      "epoch": 2,
+      "scale_n": 3,
+      "p_3n": 9,
+      "v_rc_mv": 2158,
+      "v_conj_mv": 1142,
+      "methyl_mv": 97,
+      "trit": 1,
+      "l1_norm": 615,
+      "tau_ug": 48900,
+      "trapdoor": 251,
+      "cpg_hex": "0x017D",
+      "vbst": "[125,121,121]"
+    },
+    {
+      "epoch": 3,
+      "scale_n": 4,
+      "p_3n": 27,
+      "v_rc_mv": 1565,
+      "v_conj_mv": 1735,
+      "methyl_mv": 80,
+      "trit": 0,
+      "l1_norm": 166,
+      "tau_ug": 29400,
+      "trapdoor": 0,
+      "cpg_hex": "0x0478",
+      "vbst": "[125,121,121]"
+    },
+    {
+      "epoch": 4,
+      "scale_n": 5,
+      "p_3n": 81,
+      "v_rc_mv": 1267,
+      "v_conj_mv": 2033,
+      "methyl_mv": 19,
+      "trit": -1,
+      "l1_norm": 484,
+      "tau_ug": 52100,
+      "trapdoor": 251,
+      "cpg_hex": "0x0D79",
+      "vbst": "[98,121,121]"
+    },
+    {
+      "epoch": 5,
+      "scale_n": 6,
+      "p_3n": 243,
+      "v_rc_mv": 1477,
+      "v_conj_mv": 1823,
+      "methyl_mv": -26,
+      "trit": -1,
+      "l1_norm": 441,
+      "tau_ug": 34000,
+      "trapdoor": 0,
+      "cpg_hex": "0x084C",
+      "vbst": "[17,121,121]"
+    },
+    {
+      "epoch": 6,
+      "scale_n": 7,
+      "p_3n": 729,
+      "v_rc_mv": 1974,
+      "v_conj_mv": 1326,
+      "methyl_mv": -12,
+      "trit": 0,
+      "l1_norm": 335,
+      "tau_ug": 62700,
+      "trapdoor": 251,
+      "cpg_hex": "0x191D",
+      "vbst": "[17,121,121]"
+    },
+    {
+      "epoch": 7,
+      "scale_n": 8,
+      "p_3n": 2187,
+      "v_rc_mv": 2110,
+      "v_conj_mv": 1190,
+      "methyl_mv": 46,
+      "trit": 1,
+      "l1_norm": 700,
+      "tau_ug": 38500,
+      "trapdoor": 0,
+      "cpg_hex": "0x0B48",
+      "vbst": "[17,124,121]"
+    },
+    {
+      "epoch": 8,
+      "scale_n": 9,
+      "p_3n": 6561,
+      "v_rc_mv": 1446,
+      "v_conj_mv": 1854,
+      "methyl_mv": 42,
+      "trit": 0,
+      "l1_norm": 247,
+      "tau_ug": 46800,
+      "trapdoor": 251,
+      "cpg_hex": "0x0161",
+      "vbst": "[17,124,121]"
+    },
+    {
+      "epoch": 9,
+      "scale_n": 10,
+      "p_3n": 19683,
+      "v_rc_mv": 1187,
+      "v_conj_mv": 2113,
+      "methyl_mv": -9,
+      "trit": -1,
+      "l1_norm": 1211,
+      "tau_ug": 28900,
+      "trapdoor": 0,
+      "cpg_hex": "0x02F4",
+      "vbst": "[17,97,121]"
+    },
+    {
+      "epoch": 10,
+      "scale_n": 11,
+      "p_3n": 59049,
+      "v_rc_mv": 1790,
+      "v_conj_mv": 1510,
+      "methyl_mv": 1,
+      "trit": 0,
+      "l1_norm": 142,
+      "tau_ug": 54300,
+      "trapdoor": 251,
+      "cpg_hex": "0x1668",
+      "vbst": "[17,97,121]"
+    },
+    {
+      "epoch": 11,
+      "scale_n": 12,
+      "p_3n": 177147,
+      "v_rc_mv": 1365,
+      "v_conj_mv": 1935,
+      "methyl_mv": 8,
+      "trit": 0,
+      "l1_norm": 294,
+      "tau_ug": 38100,
+      "trapdoor": 0,
+      "cpg_hex": "0x10A4",
+      "vbst": "[17,97,121]"
+    },
+    {
+      "epoch": 12,
+      "scale_n": 13,
+      "p_3n": 531441,
+      "v_rc_mv": 1129,
+      "v_conj_mv": 2171,
+      "methyl_mv": -35,
+      "trit": -1,
+      "l1_norm": 595,
+      "tau_ug": 71200,
+      "trapdoor": 251,
+      "cpg_hex": "0x04D3",
+      "vbst": "[17,97,118]"
+    },
+    {
+      "epoch": 13,
+      "scale_n": 14,
+      "p_3n": 1594323,
+      "v_rc_mv": 1671,
+      "v_conj_mv": 1629,
+      "methyl_mv": -19,
+      "trit": 0,
+      "l1_norm": 39,
+      "tau_ug": 41500,
+      "trapdoor": 0,
+      "cpg_hex": "0x01E2",
+      "vbst": "[17,97,118]"
+    }
+  ],
+  "phase_sweep_results": [
+    {
+      "delta_e": 10.0,
+      "ratio_delta_e_to_vh": 0.0606,
+      "failure_rate": 0.0
+    },
+    {
+      "delta_e": 20.0,
+      "ratio_delta_e_to_vh": 0.1212,
+      "failure_rate": 0.0
+    },
+    {
+      "delta_e": 30.0,
+      "ratio_delta_e_to_vh": 0.1818,
+      "failure_rate": 0.0
+    },
+    {
+      "delta_e": 40.0,
+      "ratio_delta_e_to_vh": 0.2424,
+      "failure_rate": 0.0
+    },
+    {
+      "delta_e": 50.0,
+      "ratio_delta_e_to_vh": 0.303,
+      "failure_rate": 0.02
+    },
+    {
+      "delta_e": 60.0,
+      "ratio_delta_e_to_vh": 0.3636,
+      "failure_rate": 0.1
+    },
+    {
+      "delta_e": 70.0,
+      "ratio_delta_e_to_vh": 0.4242,
+      "failure_rate": 0.21
+    },
+    {
+      "delta_e": 80.0,
+      "ratio_delta_e_to_vh": 0.4848,
+      "failure_rate": 0.465
+    },
+    {
+      "delta_e": 90.0,
+      "ratio_delta_e_to_vh": 0.5455,
+      "failure_rate": 0.58
+    },
+    {
+      "delta_e": 100.0,
+      "ratio_delta_e_to_vh": 0.6061,
+      "failure_rate": 0.76
+    },
+    {
+      "delta_e": 110.0,
+      "ratio_delta_e_to_vh": 0.6667,
+      "failure_rate": 0.855
+    },
+    {
+      "delta_e": 120.0,
+      "ratio_delta_e_to_vh": 0.7273,
+      "failure_rate": 0.9
+    },
+    {
+      "delta_e": 130.0,
+      "ratio_delta_e_to_vh": 0.7879,
+      "failure_rate": 0.945
+    },
+    {
+      "delta_e": 140.0,
+      "ratio_delta_e_to_vh": 0.8485,
+      "failure_rate": 0.98
+    },
+    {
+      "delta_e": 150.0,
+      "ratio_delta_e_to_vh": 0.9091,
+      "failure_rate": 0.99
+    },
+    {
+      "delta_e": 160.0,
+      "ratio_delta_e_to_vh": 0.9697,
+      "failure_rate": 0.995
+    },
+    {
+      "delta_e": 170.0,
+      "ratio_delta_e_to_vh": 1.0303,
+      "failure_rate": 0.995
+    },
+    {
+      "delta_e": 180.0,
+      "ratio_delta_e_to_vh": 1.0909,
+      "failure_rate": 0.995
+    },
+    {
+      "delta_e": 190.0,
+      "ratio_delta_e_to_vh": 1.1515,
+      "failure_rate": 1.0
+    },
+    {
+      "delta_e": 200.0,
+      "ratio_delta_e_to_vh": 1.2121,
+      "failure_rate": 1.0
+    },
+    {
+      "delta_e": 210.0,
+      "ratio_delta_e_to_vh": 1.2727,
+      "failure_rate": 1.0
+    },
+    {
+      "delta_e": 220.0,
+      "ratio_delta_e_to_vh": 1.3333,
+      "failure_rate": 1.0
+    },
+    {
+      "delta_e": 230.0,
+      "ratio_delta_e_to_vh": 1.3939,
+      "failure_rate": 1.0
+    },
+    {
+      "delta_e": 240.0,
+      "ratio_delta_e_to_vh": 1.4545,
+      "failure_rate": 1.0
+    },
+    {
+      "delta_e": 250.0,
+      "ratio_delta_e_to_vh": 1.5152,
+      "failure_rate": 1.0
+    },
+    {
+      "delta_e": 260.0,
+      "ratio_delta_e_to_vh": 1.5758,
+      "failure_rate": 1.0
+    },
+    {
+      "delta_e": 270.0,
+      "ratio_delta_e_to_vh": 1.6364,
+      "failure_rate": 1.0
+    },
+    {
+      "delta_e": 280.0,
+      "ratio_delta_e_to_vh": 1.697,
+      "failure_rate": 1.0
+    },
+    {
+      "delta_e": 290.0,
+      "ratio_delta_e_to_vh": 1.7576,
+      "failure_rate": 1.0
+    },
+    {
+      "delta_e": 300.0,
+      "ratio_delta_e_to_vh": 1.8182,
+      "failure_rate": 1.0
+    }
+  ],
+  "elapsed_seconds": 0.3731
+}

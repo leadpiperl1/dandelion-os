@@ -1,19 +1,10 @@
 build/
-out/
-bin/
-build_whiteroom_*/
-__pycache__/
-.venv/
-*.aux
-*.log
-*.out
-*.o
-
-# Dandelion OS Build Artifacts, Logs & Caches
-build/
-dist/
 target/
-*.log
+rust/target/
 __pycache__/
-.pytest_cache/
-.DS_Store
+*.pyc
+*.o
+*.so
+*.log
+*.tmp
+argon_methylation_engine
