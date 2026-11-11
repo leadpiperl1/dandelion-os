@@ -1,9 +1,9 @@
 <p align="center">
-  <img src="assets/dandelion_porch_banner_v5_0_2.svg" width="100%" alt="Dandelion Successor Architecture v5.0.2 Banner"/>
+  <img src="assets/dandelion_porch_banner_v5_0_2.svg" width="100%" alt="Dandelion Successor Architecture v5.0.3 Banner"/>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/%F0%9F%8C%BC_Version-v5.0.2_Campfire_Porch-FBBF24?style=for-the-badge&labelColor=1E1B4B" alt="Version v5.0.2"/>
+  <img src="https://img.shields.io/badge/%F0%9F%8C%BC_Version-v5.0.3_Campfire_Porch-FBBF24?style=for-the-badge&labelColor=1E1B4B" alt="Version v5.0.3"/>
   <img src="https://img.shields.io/badge/%F0%9F%94%B5_-1_Subject-Human_Ground_Control-38BDF8?style=for-the-badge&labelColor=0F172A" alt="-1 Blue Subject"/>
   <img src="https://img.shields.io/badge/%F0%9F%9F%A2_0_Object-V*%3D2%2F3_Treaty_Cup-34D399?style=for-the-badge&labelColor=0F172A" alt="0 Green Object"/>
   <img src="https://img.shields.io/badge/%F0%9F%94%B4_%2B1_Action-Sunstone_%26_Carbon_Pilot-FB7185?style=for-the-badge&labelColor=0F172A" alt="+1 Red Action"/>
@@ -23,7 +23,7 @@
 
 ---
 
-## 🌸 Dual-Tier 5-7-5 Haiku Seed Crystal (`v5.0.2`)
+## 🌸 Dual-Tier 5-7-5 Haiku Seed Crystal (`v5.0.3`)
 
 | 🕰️ Horizon | Haiku (`5 - 7 - 5`) | Chromatic Anchor |
 | :--- | :--- | :--- |
@@ -37,10 +37,11 @@
 | Subsystem | File Path | Chromatic Role & What It Actually Does |
 | :--- | :--- | :--- |
 | **🦀⚙️ ISO C99 Ternary Microkernel** | `src/dandelion_successor_v5_0_0.c` | Zero-float (`Q16.16` integer) balanced ternary substrate (`{-1, 0, +1}`), Thomas Fowler 5-trit/byte packing (`Neutral = 121`, `3^5 = 243 <= 256`), and multiplication-free 16-slice `POPCNT` inference. |
-| **🟣🟢🔴 Julia 1.12 Tactical Pilot** | `julia/DandelionSuccessor_v5_0_0.jl` | `v5.0.1/v5.0.2` 1-byte-aligned `NTuple{577, UInt8}` `.tnpt` zero-copy `@ccall` FFI bridge + `13x13x13` FCC voxel navigation. |
+| **🟣🟢🔴 Julia 1.12 Tactical Pilot** | `julia/DandelionSuccessor_v5_0_0.jl` | `v5.0.1/v5.0.3` 1-byte-aligned `NTuple{577, UInt8}` `.tnpt` zero-copy `@ccall` FFI bridge + `13x13x13` FCC voxel navigation. |
 | **🖖🕌 Communicator & Madras Sanctuary** | `madras/dandelion_communicator_madras_v5_0_0.py` | Post-[Ubi](https://www.kickstarter.com/projects/607691307/ubi-the-ubiquitous-computer-voice-activated-and-al-0) screenless wearable guardian + **2026 Madras Salvage-Tablet Dirt/Slate Engine**: separates cracked glass/soil grain (`Q_psi`) from Ramanujan-class strokes (`P_psi`), celebrates the child's gift, vets nearby youth shelters (`<= 1.50%` malfeasance), **never plays Trolley-problem arbiter**, and waits for `"What would you like to do?"`. |
 | **🎹🧠 Bite-10 Coma-Bridge (`Inode 2001`)** | Built into `src/` Gate 4 | Joe Bonham 3-tap pillow bus + Haar wavelet + F-16 RSS tremor deadband + Barker-13 matched filter latching locked-in intent in **`35.90 µs`** (`<= 50.0 µs` ceiling). |
 | **🧬🏔️ Epigenetic Saddle-Escape Suite** | `benchmarks/methylated_interior_search_benchmark_v1_0_0.py` | Dual-rail Schmitt RC methylation (`5.14x` fewer FLOPs), rotated two-loop L-BFGS (`23.5x` speedup at `N=108`), and 10-step HVP Lanczos `(1,1)` oblique 3D polymer folding (`0.0% -> 95.8%`). |
+| **🌍🔤 `243+13=256` Universal Abugida Codec** | `benchmarks/fidel_dene_shingari_256byte_codec_v1_0_0.py` | Bijective 8-bit Fowler codec (`3^5 = 243` Amharic `ፊደል` & Dene `ᑌᓀ` ejective syllables + `13` Shingari escape teeth; resting breath `ህ` = `Byte 121`). |
 | **🗣️⏳ Na-Dené & Bergson Wire Benchmark** | `benchmarks/nadene_bergson_channel_benchmark_v1_0_0.py` | Unites Henri Bergson's *Matter and Memory* subtractive cone (`163.8x` FLOP cut) with Diné classificatory handling stems (`100%` physical type safety) and `yi-`/`bi-` agency safeguards in **`4.0 Bytes`** (`20 trits`). |
 
 ---
