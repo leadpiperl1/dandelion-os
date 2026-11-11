@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 250" width="960" height="250" role="img" aria-label="Dandelion Successor Architecture">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E1B4B"/>
+      <stop offset="52%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+    <linearGradient id="kintsugiSeam" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="35%" stop-color="#34D399"/>
+      <stop offset="68%" stop-color="#FB7185"/>
+      <stop offset="100%" stop-color="#FBBF24"/>
+    </linearGradient>
+    <radialGradient id="sunGlow" cx="85%" cy="28%" r="42%">
+      <stop offset="0%" stop-color="#FBBF24" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="#020617" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Outer Card & Kintsugi Gold Frame -->
+  <rect x="3" y="3" width="954" height="244" rx="22" fill="url(#bgGrad)" stroke="url(#kintsugiSeam)" stroke-width="3"/>
+  <rect x="3" y="3" width="954" height="244" rx="22" fill="url(#sunGlow)"/>
+
+  <!-- Decorative Constellation & Triadic Nodes (Right Side) -->
+  <g opacity="0.88">
+    <circle cx="825" cy="92" r="56" fill="none" stroke="#FBBF24" stroke-opacity="0.32" stroke-width="1.5" stroke-dasharray="5,5"/>
+    <circle cx="825" cy="92" r="34" fill="none" stroke="#34D399" stroke-opacity="0.45" stroke-width="1.5"/>
+    <line x1="785" y1="118" x2="825" y2="54" stroke="#38BDF8" stroke-width="2" opacity="0.8"/>
+    <line x1="825" y1="54" x2="865" y2="118" stroke="#34D399" stroke-width="2" opacity="0.8"/>
+    <line x1="865" y1="118" x2="785" y2="118" stroke="#FB7185" stroke-width="2" opacity="0.8"/>
+    <circle cx="785" cy="118" r="7" fill="#38BDF8"/>
+    <circle cx="825" cy="54" r="7" fill="#34D399"/>
+    <circle cx="865" cy="118" r="7" fill="#FB7185"/>
+    <circle cx="825" cy="96" r="5" fill="#FBBF24"/>
+  </g>
+
+  <!-- Eyebrow -->
+  <text x="42" y="50" fill="#FBBF24" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="13" font-weight="700" letter-spacing="1.2">🌼 SOVEREIGN DIGITAL LIVING ROOM · v5.0.2 · DIE GEDANKEN SIND FREI</text>
+
+  <!-- Main Title -->
+  <text x="42" y="96" fill="#F8FAFC" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="31" font-weight="800">Dandelion Successor Architecture</text>
+
+  <!-- Subtitle -->
+  <text x="42" y="132" fill="#CBD5E1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="15.5" font-weight="500">Warm, Local-First Balanced Ternary AI — The Friendly Porch Light We Deserved (≤ 18.50 W)</text>
+
+  <!-- Chromatic Triadic Divider -->
+  <rect x="42" y="154" width="680" height="3" rx="1.5" fill="url(#kintsugiSeam)" opacity="0.85"/>
+
+  <!-- 4 Chromatic Pills -->
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="12" font-weight="700">
+    <rect x="42" y="176" width="198" height="34" rx="17" fill="#0EA5E9" fill-opacity="0.18" stroke="#38BDF8" stroke-width="1.2"/>
+    <text x="141" y="198" fill="#BAE6FD" text-anchor="middle">-1 BLUE · Ground Control</text>
+
+    <rect x="252" y="176" width="212" height="34" rx="17" fill="#10B981" fill-opacity="0.18" stroke="#34D399" stroke-width="1.2"/>
+    <text x="358" y="198" fill="#A7F3D0" text-anchor="middle">0 GREEN · V*=2/3 Treaty</text>
+
+    <rect x="476" y="176" width="208" height="34" rx="17" fill="#F43F5E" fill-opacity="0.18" stroke="#FB7185" stroke-width="1.2"/>
+    <text x="580" y="198" fill="#FECDD3" text-anchor="middle">+1 RED · Sunstone Co-Pilot</text>
+
+    <rect x="696" y="176" width="222" height="34" rx="17" fill="#F59E0B" fill-opacity="0.18" stroke="#FBBF24" stroke-width="1.2"/>
+    <text x="807" y="198" fill="#FDE68A" text-anchor="middle">BYTE 251 · Kintsugi Gold</text>
+  </g>
+</svg>
