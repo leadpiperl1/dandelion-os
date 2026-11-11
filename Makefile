@@ -1,23 +1,22 @@
-CC      = gcc
-CFLAGS  = -O3 -std=c11 -Wall -Wextra -Werror -Wpedantic -Iinclude
+CC ?= gcc
+CFLAGS := -std=c99 -O3 -Wall -Wextra -Wconversion -Werror
 
-.PHONY: all c11_kernel verify rust_build julia_check clean
+.PHONY: all verify clean
 
-all: c11_kernel verify
+all: build/dandelion-v5 build/libdandelion_successor_v5_0_0.so
 
-c11_kernel:
+build/dandelion-v5: src/dandelion_successor_v5_0_0.c
 	@mkdir -p build
-	$(CC) $(CFLAGS) src/argon_methylation_engine.c -o build/argon_methylation_engine
-	./build/argon_methylation_engine
+	$(CC) $(CFLAGS) $< -o $@
 
-verify: c11_kernel
-	python3 tests/verify_argon_rc_methylation.py --seed 42 --out-dir telemetry
+build/libdandelion_successor_v5_0_0.so: src/dandelion_successor_v5_0_0.c
+	@mkdir -p build
+	$(CC) $(CFLAGS) -fPIC -shared $< -o $@
 
-rust_build:
-	cd rust && cargo build --release
-
-julia_check:
-	julia --project=julia -e 'include("julia/src/control_plane.jl"); println("[JULIA] DandelionRoute Control Plane verified.")'
+verify: all
+	./build/dandelion-v5
+	python3 madras/dandelion_communicator_madras_v5_0_0.py
+	python3 benchmarks/nadene_bergson_channel_benchmark_v1_0_0.py --seed 42 --trials 200
 
 clean:
-	rm -rf build rust/target julia/Manifest.toml
+	rm -rf build

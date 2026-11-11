@@ -1,28 +1,19 @@
-name: Dandelion Sovereign Substrate CI
-
+name: Dandelion 5-Point CI Contract
 on:
   push:
-    branches: [ "main" ]
+    branches: [ main ]
   pull_request:
-    branches: [ "main" ]
-
-permissions:
-  contents: read
-
+    branches: [ main ]
 jobs:
-  verify-living-trunk:
+  verify-c99-and-waveguides:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Living Trunk
-        uses: actions/checkout@v4
-
-      - name: Set up Python 3.11
+      - uses: actions/checkout@v4
+      - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
-
+          python-version: '3.11'
       - name: Install NumPy
-        run: python3 -m pip install --upgrade pip numpy
-
-      - name: Compile C11 Argon Methylation Kernel & Run Seed-42 Verification
-        run: make -f Makefile all
+        run: pip install numpy
+      - name: Run Zero-Warning C99 & Python Verification Gates
+        run: make verify
