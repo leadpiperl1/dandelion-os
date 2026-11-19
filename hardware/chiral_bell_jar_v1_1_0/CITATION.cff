@@ -1,0 +1,96 @@
+cff-version: 1.2.0
+message: "If you use this theoretical model, CAD geometry, PCB netlist generator, C99 firmware, or FPGA RTL in your research, please cite it using the metadata below."
+title: "Sub-Harmonic Injection Locking and Gyrotropic Parity Symmetry Breaking in a Low-Pressure Argon Standing-Wave RF Cavity Processor"
+type: software
+version: "1.1.0"
+date-released: "2026-11-17"
+license: CC-BY-4.0
+authors:
+  - family-names: "Grimm"
+    given-names: "Justin D."
+    orcid: "https://orcid.org/0009-0000-5299-0243"
+    affiliation: "Independent Dandelion Substrate Research Group, Gurley, Alabama 35748, USA"
+abstract: >-
+  Archival compuscript and closed-loop hardware-software specification (v1.1.0)
+  for a partial-vacuum Argon RF standing-wave balanced-ternary processor
+  operating on the spherical TM101 mode at 915.0 MHz with 2.745 GHz third-harmonic
+  injection locking, 104.0 Hz modulo-13 Am-241 Erlang timing, 28.0 mT Co-60
+  gyrotropic D3-to-C3 symmetry breaking, OpenSCAD-to-C99 Q2.14 phase-trim
+  tables, 13-channel homodyne KiCad netlist synthesis, and Lattice iCE40HX8K
+  single-cycle ternary arbitration.
+keywords:
+  - standing-wave computing
+  - balanced ternary logic
+  - sub-harmonic injection locking
+  - Kuramoto-Sakaguchi dynamics
+  - cold-plasma gyrotropy
+  - Ramsauer-Townsend minimum
+  - Lattice iCE40HX8K FPGA
+  - deterministic hardware verification
+references:
+  - type: article
+    title: "Irreversibility and Heat Generation in the Computing Process"
+    authors:
+      - family-names: "Landauer"
+        given-names: "Rolf"
+    journal: "IBM Journal of Research and Development"
+    volume: 5
+    issue: 3
+    start: 183
+    end: 191
+    year: 1961
+    doi: "10.1147/rd.53.0183"
+  - type: article
+    title: "Experimental Test of Parity Conservation in Beta Decay"
+    authors:
+      - family-names: "Wu"
+        given-names: "Chien-Shiung"
+      - family-names: "Ambler"
+        given-names: "Ernest"
+      - family-names: "Hayward"
+        given-names: "Raymond W."
+      - family-names: "Hoppes"
+        given-names: "Dale D."
+      - family-names: "Hudson"
+        given-names: "Ralph P."
+    journal: "Physical Review"
+    volume: 105
+    issue: 4
+    start: 1413
+    end: 1415
+    year: 1957
+    doi: "10.1103/PhysRev.105.1413"
+  - type: article
+    title: "A Soluble Active Rotater Model Showing Phase Transitions via Mutual Entrainment"
+    authors:
+      - family-names: "Sakaguchi"
+        given-names: "Hidetsugu"
+      - family-names: "Kuramoto"
+        given-names: "Yoshiki"
+    journal: "Progress of Theoretical Physics"
+    volume: 76
+    issue: 3
+    start: 576
+    end: 581
+    year: 1986
+    doi: "10.1143/PTP.76.576"
+  - type: article
+    title: "Precision measurements of the 60Co beta-asymmetry parameter in search for tensor currents in weak interactions"
+    authors:
+      - family-names: "Wauters"
+        given-names: "Frederik"
+      - family-names: "Severijns"
+        given-names: "Nathal"
+    journal: "Physical Review C"
+    volume: 82
+    issue: 5
+    start: 055502
+    year: 2010
+    doi: "10.1103/PhysRevC.82.055502"
+  - type: software
+    title: "Gemini-Carbon-Kembali 64-Byte Zero-Copy Triadic Microkernel"
+    authors:
+      - family-names: "Grimm"
+        given-names: "Justin D."
+    year: 2026
+    doi: "10.5281/zenodo.24288018"

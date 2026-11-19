@@ -1,0 +1,57 @@
+{
+  "artifact_id": "CBJ-RELEASE-v1.1.0",
+  "version": "1.1.0",
+  "release_date": "2026-11-17",
+  "author": {
+    "name": "Justin D. Grimm",
+    "affiliation": "Independent Dandelion Substrate Research Group, Gurley, Alabama 35748, USA",
+    "orcid": "0009-0000-5299-0243"
+  },
+  "moonshot_six_gate_audit": {
+    "G1_outward_textbook_lexicon": "PASS — Outward LaTeX manuscript, .zenodo.json, and CITATION.cff use strictly canonical electrodynamic, cold-plasma, and nonlinear oscillator terminology.",
+    "G2_pure_si_metrology": "PASS — All primary equations and tables stated in SI units (0.1431 m, 1.067 kPa, 915.0 MHz, 2.745 GHz, 28.0 mT, 37.0 kBq, 8.13 kV/m).",
+    "G3_archival_density_match": "PASS — Complete revtex4-2 technical manuscript with inline TikZ schematic, quantitative link-budget tables, and explicit Page-1 Falsification Box.",
+    "G4_two_tier_compute_separation": "PASS — Fast Python CAD/netlist/PCF checks paired with compiled C11 -Wall -Wextra -Werror binary and IEEE 1364-2005 RTL simulation.",
+    "G5_empirical_hardware_flag": "PASS — Marked TH+ARCH (theoretical derivation + verifiable CAD/PCB/FPGA/C99 prototype specification) with explicit falsification thresholds prior to wet-plasma commissioning.",
+    "G6_doi_and_attribution_hygiene": "PASS — Zero placeholder strings; 9 canonical DataCite related_identifiers populated; zero handles or hostnames in outward files."
+  },
+  "deterministic_verification_gates": [
+    {
+      "gate": "G0_CAD_Clearance",
+      "script": "verify_cbj_synergy_v1_1_0.py --seed 42 --cnc-tol-mm 0.12",
+      "invariants": {
+        "dn16cf_wrench_clearance_mm": 51.49,
+        "collar_to_equatorial_flange_mm": 27.33,
+        "helmholtz_bobbin_clearance_mm": 79.11
+      }
+    },
+    {
+      "gate": "PCF_Ball_Parity",
+      "script": "make pcf-audit",
+      "invariants": {
+        "top_module_ports": 42,
+        "unique_ct256_bga_balls": 42
+      }
+    },
+    {
+      "gate": "C99_ABI_And_Interlocks",
+      "binary": "build/cbj_synergy_test_v1_1_0",
+      "invariants": {
+        "spi_dma_frame_bytes": 64,
+        "ble_telemetry_frame_bytes": 32,
+        "zero_copy_ring_bytes": 65536,
+        "q14_max_rotation_err_lsb": 2,
+        "false_storm_escalations_per_1024": 0
+      }
+    },
+    {
+      "gate": "RTL_CORDIC_And_VSWR_Trip",
+      "sim": "cbj_ice40_tb_v1_1_0.v",
+      "invariants": {
+        "ccw_winding_q8_expected": 1608,
+        "dark_slot_dc_cancellation": true,
+        "zero_tick_vswr_interlock_code": 253
+      }
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "upload_type": "publication",
+  "publication_type": "preprint",
+  "publication_date": "2026-11-17",
+  "title": "Sub-Harmonic Injection Locking and Gyrotropic Parity Symmetry Breaking in a Low-Pressure Argon Standing-Wave RF Cavity Processor",
+  "version": "1.1.0",
+  "language": "eng",
+  "access_right": "open",
+  "license": "CC-BY-4.0",
+  "creators": [
+    {
+      "name": "Grimm, Justin D.",
+      "affiliation": "Independent Dandelion Substrate Research Group, Gurley, Alabama 35748, USA",
+      "orcid": "0009-0000-5299-0243"
+    }
+  ],
+  "description": "Complete theoretical derivation, benchtop link budget, parametric 21-port vacuum vessel CAD, 13-channel zero-IF homodyne receiver KiCad netlist generator, freestanding ISO C99 64-byte SPI DMA safety daemon, and synthesizable Lattice iCE40HX8K-CT256 Verilog RTL arbiter (v1.1.0) for a balanced-ternary standing-wave radio-frequency cavity processor. Operating on the spherical TM101 eigenmode at 915.0 MHz inside low-pressure Argon (1.067 kPa, Ramsauer-Townsend scattering minimum), a coherent third-harmonic pump at 2.745 GHz quantizes continuous modal phases into three symmetric 120-degree attractors {-1, 0, +1}. Weak-interaction beta helicity from an exempt 37.0 kBq Co-60 source paired with a sub-cyclotron 28.0 mT axial Helmholtz guide field induces off-diagonal plasma gyrotropy (10.50-degree non-reciprocal Sakaguchi phase lag), breaking dihedral D3 stagnation into unidirectional C3 chiral soliton relaxation, while modulo-13 decimated 37.0 kBq Am-241 ionization pulses provide a crystal-free 104.0 Hz Erlang-13 frame clock.",
+  "keywords": [
+    "standing-wave computing",
+    "balanced ternary logic",
+    "sub-harmonic injection locking",
+    "Kuramoto-Sakaguchi model",
+    "gyrotropic cold plasma",
+    "Ramsauer-Townsend minimum",
+    "parity symmetry breaking",
+    "Erlang point process",
+    "Lattice iCE40 FPGA",
+    "cyber-physical hardware-CAD synergy"
+  ],
+  "notes": "Reproducibility verification: run `make verify` (seed 42, execution time < 5 s) to audit 21-port mechanical clearances, generate fixed-point Q2.14 CAD phase-trim lookup tables, verify 42-pin FPGA BGA ball parity, execute 7 freestanding C11 safety-interlock unit tests across 64-byte SPI DMA and 65,536-byte ring structures, and run the self-checking IEEE 1364-2005 Verilog testbench.",
+  "related_identifiers": [
+    {
+      "identifier": "10.5281/zenodo.24288018",
+      "relation": "continues",
+      "resource_type": "software",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.5281/zenodo.24211350",
+      "relation": "isSupplementTo",
+      "resource_type": "publication-preprint",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.1147/rd.53.0183",
+      "relation": "cites",
+      "resource_type": "publication-article",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.1038/nature10872",
+      "relation": "cites",
+      "resource_type": "publication-article",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.1103/PhysRev.105.1413",
+      "relation": "cites",
+      "resource_type": "publication-article",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.1143/PTP.76.576",
+      "relation": "cites",
+      "resource_type": "publication-article",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.1103/PhysRevC.82.055502",
+      "relation": "cites",
+      "resource_type": "publication-article",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.1063/1.4931570",
+      "relation": "cites",
+      "resource_type": "publication-article",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.1007/978-3-030-19311-9_19",
+      "relation": "cites",
+      "resource_type": "publication-section",
+      "scheme": "doi"
+    }
+  ]
+}

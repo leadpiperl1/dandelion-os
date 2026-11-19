@@ -1,8 +1,9 @@
 cff-version: 1.2.0
-message: "If you use this software or specification, please cite it using the metadata below."
-title: "Dandelion Successor Architecture (v5.0.3): A Landauer-Bounded, Kronecker-Finite Balanced Ternary Substrate"
-version: 5.0.3
-date-released: 2026-11-11
+message: "If you use this software, hardware RTL, or verification suite, please cite it using the metadata below."
+title: "Dandelion Successor Architecture (v5.1.0): A Landauer-Bounded, Kronecker-Finite Balanced Ternary Substrate"
+version: 5.1.0
+date-released: 2026-11-19
+doi: 10.5281/zenodo.24374576
 license: MIT
 repository-code: "https://github.com/leadpiperl1/dandelion-os"
 authors:
@@ -10,3 +11,28 @@ authors:
     given-names: "Justin D."
     affiliation: "Independent Dandelion Substrate Research Group, Gurley, Alabama 35748, USA"
     orcid: "https://orcid.org/0009-0000-5299-0243"
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.21255229
+    description: "Foundational Dandelion Substrate & Metrological Calibration Preprint"
+  - type: doi
+    value: 10.5281/zenodo.24168491
+    description: "Dandelion OS Nootemporal Clock & Modified Rubik's Ternary Substrate (v4.2.0)"
+  - type: doi
+    value: 10.5281/zenodo.24211343
+    description: "Relational Beat Cancellation & Multiscale Waveguide Inharmonicity Bounds (v1.0.0)"
+  - type: doi
+    value: 10.5281/zenodo.24211348
+    description: "Simplicial Network Biogeography & Saturating Kintsugi Percolation (v1.0.0)"
+  - type: doi
+    value: 10.5281/zenodo.24211350
+    description: "Ergospheric Health-Check Superradiance & Ternary Keyhole Regularization (v3.5.0)"
+  - type: doi
+    value: 10.5281/zenodo.24288018
+    description: "Gemini-Carbon-Kembali 64-Byte Triadic Microkernel Specification (v1.2.1)"
+  - type: doi
+    value: 10.5281/zenodo.24346363
+    description: "Bounded Zero-Free Cosmology & Log-Occupancy Thermometry (v1.0.1)"
+  - type: doi
+    value: 10.5281/zenodo.24374576
+    description: "Discrete Simplicial Dirichlet Fence, Asymmetric Counting Ratchet & DND3 Transitions (v1.0.1)"

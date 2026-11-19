@@ -2,11 +2,11 @@
 """
 ================================================================================
 FALSIFIABLE BENCHMARK: NA-DENE (DINE BIZAAD) BIPARTITE MORPHOLOGY & BERGSONIAN
-SUBTRACTIVE PERCEPTION FOR HUMAN-AI INFORMATION TRANSFER (v1.0.0)
+SUBTRACTIVE PERCEPTION FOR HUMAN-AI INFORMATION TRANSFER (v1.0.1 — Pure Python 3 Stdlib)
 ================================================================================
 Author:  Justin D. Grimm (Independent Dandelion Substrate Research Group;
          ORCID: 0009-0000-5299-0243)
-Verify:  python3 nadene_bergson_channel_benchmark_v1_0_0.py --seed 42
+Verify:  python3 nadene_bergson_channel_benchmark_v1_0_1.py --seed 42
 
 Tests the Naive Hypothesis ("Na-Dene is an optimal Human-AI communication medium")
 via a 3-Pass Adversarial Break-and-Rebuild Audit across M = 500 physical/agentic
@@ -34,7 +34,8 @@ import math
 import time
 from collections import Counter
 from typing import Dict, List, Tuple
-import numpy as np
+import random
+import statistics
 
 # 9 Canonical Navajo Classificatory Handling Categories (Young & Morgan 1987)
 CLASSIFICATORY_STEMS: Dict[str, Tuple[str, Tuple[int, int], List[str]]] = {
@@ -165,13 +166,13 @@ def surface_navajo_synthesis(
 
 def run_benchmark(seed: int = 42, n_trials: int = 500) -> Dict[str, object]:
     t0 = time.perf_counter()
-    rng = np.random.default_rng(seed)
+    rng = random.Random(seed)
 
     # Pretrain asymmetric BPE vocabulary (96% English + JSON, 4% Athabaskan text)
     bpe_train_corpus = []
     obj_keys = list(CLASSIFICATORY_STEMS.keys())
     for _ in range(240):
-        ok = obj_keys[int(rng.integers(0, len(obj_keys)))]
+        ok = obj_keys[int(rng.randrange(0, len(obj_keys)))]
         act = CLASSIFICATORY_STEMS[ok][2][0]
         bpe_train_corpus.append(
             f"The human_operator executes {act} on the {ok} object into_enclosure witnessed_direct."
@@ -200,7 +201,7 @@ def run_benchmark(seed: int = 42, n_trials: int = 500) -> Dict[str, object]:
     additive_snr_err, bergson_snr_err = [], []
 
     for idx in range(n_trials):
-        ok = obj_keys[int(rng.integers(0, len(obj_keys)))]
+        ok = obj_keys[int(rng.randrange(0, len(obj_keys)))]
         stem, stem_trits, valid_acts = CLASSIFICATORY_STEMS[ok]
 
         # Inject 25% physical category mismatches (e.g. "pour" a rigid rod)
@@ -208,9 +209,9 @@ def run_benchmark(seed: int = 42, n_trials: int = 500) -> Dict[str, object]:
         if is_phys_mismatch:
             phys_mismatch_total += 1
             invalid_pool = [a for a in ALL_ACTIONS if a not in valid_acts]
-            act = invalid_pool[int(rng.integers(0, len(invalid_pool)))]
+            act = invalid_pool[int(rng.randrange(0, len(invalid_pool)))]
         else:
-            act = valid_acts[int(rng.integers(0, len(valid_acts)))]
+            act = valid_acts[int(rng.randrange(0, len(valid_acts)))]
 
         # Inject 30% AI -> Human unconsented proximate agency inversions
         is_unconsented_ai_to_human = (idx % 10 in (2, 5, 8))
@@ -222,10 +223,10 @@ def run_benchmark(seed: int = 42, n_trials: int = 500) -> Dict[str, object]:
             subj, target_entity = "human_operator", ok
             explicit_bi_consent = True
 
-        sp_name, sp_pref, sp_trits = SPATIAL_VECTORS[int(rng.integers(0, len(SPATIAL_VECTORS)))]
-        ev_name, ev_suf, ev_trit = EVIDENTIALS[int(rng.integers(0, len(EVIDENTIALS)))]
-        filler1 = FILLER_CLAUSES[int(rng.integers(0, len(FILLER_CLAUSES)))]
-        filler2 = FILLER_CLAUSES[int(rng.integers(0, len(FILLER_CLAUSES)))]
+        sp_name, sp_pref, sp_trits = SPATIAL_VECTORS[int(rng.randrange(0, len(SPATIAL_VECTORS)))]
+        ev_name, ev_suf, ev_trit = EVIDENTIALS[int(rng.randrange(0, len(EVIDENTIALS)))]
+        filler1 = FILLER_CLAUSES[int(rng.randrange(0, len(FILLER_CLAUSES)))]
+        filler2 = FILLER_CLAUSES[int(rng.randrange(0, len(FILLER_CLAUSES)))]
 
         # 1. Raw English SVO (with ambient conversational filler)
         eng_raw = f"The {subj} {act} the {target_entity} {sp_name} ({ev_name}), {filler1}, {filler2}."
@@ -283,28 +284,24 @@ def run_benchmark(seed: int = 42, n_trials: int = 500) -> Dict[str, object]:
         byte_sizes["nadene_bergson_slot_ir"].append(len(packed_ir))
 
         # Bergson Subtractive Perception vs Additive Dense Projection
-        true_signal = np.zeros(d_ambient)
-        true_signal[:k_action] = rng.normal(0.0, 1.5, size=k_action)
-        ambient_clutter = rng.normal(0.0, 0.65, size=d_ambient)
-        obs = true_signal + ambient_clutter
-
-        # Additive model processes full D x D attention/projection
-        W_dense = np.eye(d_ambient)
-        est_add = (W_dense @ obs)[:k_action] + 0.08 * np.sum(obs[k_action:]) / math.sqrt(d_ambient)
+        true_signal = [0.0] * d_ambient
+        for j in range(k_action):
+            true_signal[j] = rng.gauss(0.0, 1.5)
+        ambient_clutter = [rng.gauss(0.0, 0.65) for _ in range(d_ambient)]
+        obs = [true_signal[j] + ambient_clutter[j] for j in range(d_ambient)]
+        tail_leak = 0.08 * sum(obs[k_action:]) / math.sqrt(d_ambient)
+        est_add = [obs[j] + tail_leak for j in range(k_action)]
         additive_flops += 2 * d_ambient * d_ambient
-        additive_snr_err.append(float(np.linalg.norm(est_add - true_signal[:k_action])))
-
-        # Bergson subtractive valve masks non-motor coordinates first (P_psi selection), then k x k update
-        mask_p = np.zeros(d_ambient); mask_p[:k_action] = 1.0
-        est_berg = (obs * mask_p)[:k_action]
+        additive_snr_err.append(math.sqrt(sum((est_add[j] - true_signal[j]) ** 2 for j in range(k_action))))
+        est_berg = obs[:k_action]
         bergson_flops += d_ambient + 2 * k_action * k_action
-        bergson_snr_err.append(float(np.linalg.norm(est_berg - true_signal[:k_action])))
+        bergson_snr_err.append(math.sqrt(sum((est_berg[j] - true_signal[j]) ** 2 for j in range(k_action))))
 
     # Subword fertility (tokens per whitespace word) on Surface Navajo vs Filtered English
     sample_eng_words = 5.0
     sample_nav_words = 3.0  # [Subject, Object, PolysyntheticVerb]
-    eng_fertility = float(np.mean(tok_counts["english_bergson_filtered"])) / sample_eng_words
-    nav_fertility = float(np.mean(tok_counts["surface_navajo_bpe"])) / sample_nav_words
+    eng_fertility = float(statistics.fmean(tok_counts["english_bergson_filtered"])) / sample_eng_words
+    nav_fertility = float(statistics.fmean(tok_counts["surface_navajo_bpe"])) / sample_nav_words
 
     elapsed = time.perf_counter() - t0
     results = {
@@ -315,16 +312,16 @@ def run_benchmark(seed: int = 42, n_trials: int = 500) -> Dict[str, object]:
             "runtime_sec": round(elapsed, 4),
         },
         "pass1_bpe_falsification": {
-            "english_filtered_mean_tokens": round(float(np.mean(tok_counts["english_bergson_filtered"])), 2),
-            "surface_navajo_bpe_mean_tokens": round(float(np.mean(tok_counts["surface_navajo_bpe"])), 2),
+            "english_filtered_mean_tokens": round(float(statistics.fmean(tok_counts["english_bergson_filtered"])), 2),
+            "surface_navajo_bpe_mean_tokens": round(float(statistics.fmean(tok_counts["surface_navajo_bpe"])), 2),
             "english_tokens_per_word_fertility": round(eng_fertility, 2),
             "surface_navajo_tokens_per_word_fertility": round(nav_fertility, 2),
             "bpe_fertility_penalty_ratio": round(nav_fertility / eng_fertility, 2),
         },
         "channel_compression": {
             k: {
-                "mean_bytes": round(float(np.mean(byte_sizes[k])), 2),
-                "mean_units": round(float(np.mean(tok_counts[k])), 2),
+                "mean_bytes": round(float(statistics.fmean(byte_sizes[k])), 2),
+                "mean_units": round(float(statistics.fmean(tok_counts[k])), 2),
             }
             for k in tok_counts
         },
@@ -343,8 +340,8 @@ def run_benchmark(seed: int = 42, n_trials: int = 500) -> Dict[str, object]:
             "additive_total_flops": additive_flops,
             "bergson_subtractive_flops": bergson_flops,
             "flop_reduction_ratio": round(additive_flops / bergson_flops, 2),
-            "additive_mean_l2_error": round(float(np.mean(additive_snr_err)), 4),
-            "bergson_mean_l2_error": round(float(np.mean(bergson_snr_err)), 4),
+            "additive_mean_l2_error": round(float(statistics.fmean(additive_snr_err)), 4),
+            "bergson_mean_l2_error": round(float(statistics.fmean(bergson_snr_err)), 4),
         },
     }
     return results
@@ -366,7 +363,7 @@ def main() -> None:
     p2 = res["pass2_structural_invariants"]
     p3 = res["pass3_bergson_cone_telemetry"]
     print("========================================================================")
-    print(" NA-DENE & BERGSON HUMAN-AI CHANNEL FALSIFICATION SUITE (v1.0.0)")
+    print(" NA-DENE & BERGSON HUMAN-AI CHANNEL FALSIFICATION SUITE (v1.0.1 — Pure Python 3 Stdlib)")
     print("========================================================================")
     print(f"[PASS 1 - BPE FALSIFICATION] Surface Navajo BPE Fertility: {p1['surface_navajo_tokens_per_word_fertility']:.2f} tok/word "
           f"vs English {p1['english_tokens_per_word_fertility']:.2f} tok/word ({p1['bpe_fertility_penalty_ratio']:.2f}x penalty)")

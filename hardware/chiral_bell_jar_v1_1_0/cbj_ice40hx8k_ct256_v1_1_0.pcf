@@ -1,0 +1,57 @@
+# cbj_ice40hx8k_ct256_v1_1_0.pcf
+# Target: Lattice iCE40HX8K-CT256 (3.3 V LVCMOS Banks 0 & 3, Breakout-Compatible)
+# Author: Justin D. Grimm (ORCID: 0009-0000-5299-0243) | Version: v1.1.0
+
+# --- A. Clock, Reset & Nuclear Timing (3 pins) ---
+set_io clk_sys             J3
+set_io rst_n               C3
+set_io alpha_schmitt       G1
+
+# --- B. 32-Ch AD7606C-16 Mezzanine J_FPGA Bus (15 pins, Bank 0 J2) ---
+set_io adc_convst          B1
+set_io adc_sclk            C1
+set_io adc_reset           C2
+set_io adc_cs_n[0]         D1
+set_io adc_cs_n[1]         D2
+set_io adc_cs_n[2]         E2
+set_io adc_cs_n[3]         F2
+set_io adc_busy[0]         G2
+set_io adc_busy[1]         H1
+set_io adc_busy[2]         H2
+set_io adc_busy[3]         J1
+set_io adc_miso[0]         J2
+set_io adc_miso[1]         K1
+set_io adc_miso[2]         K3
+set_io adc_miso[3]         L1
+
+# --- C. Cavity RF/SHIL Gate & Fail-Closed Hardware Interlock (4 pins, Bank 0 J2) ---
+set_io shil_env_gate       L3
+set_io dark_cal_sw_ctl     M1
+set_io esp_fail_closed_n   M2
+set_io hw_rf_hv_en         N1
+
+# --- D. ESP32-C5 Node A (Leg 1) SPI Slave & Handshake (8 pins, Bank 3 J1) ---
+set_io spi1_sck            A5
+set_io spi1_cs_n           B6
+set_io spi1_mosi           A6
+set_io spi1_miso           B7
+set_io erlang_strobe_a     A7
+set_io leg1_start          B8
+set_io leg1_busy           A9
+set_io leg1_done           B9
+
+# --- E. ESP32-C5 Node C (Leg 2) SPI Slave & Handshake (8 pins, Bank 3 J1) ---
+set_io spi2_sck            C9
+set_io spi2_cs_n           A10
+set_io spi2_mosi           B10
+set_io spi2_miso           A11
+set_io erlang_strobe_c     B11
+set_io leg2_start          B12
+set_io leg2_busy           B13
+set_io leg2_done           B14
+
+# --- F. CCW 13-Lap Exciton Loop & Breakout Status LEDs (4 pins) ---
+set_io exciton_fpga_in     N2
+set_io ternary_exciton_out P1
+set_io led_erlang_hb       B5
+set_io led_fault_trip      B4

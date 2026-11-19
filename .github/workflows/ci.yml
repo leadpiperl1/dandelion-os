@@ -1,19 +1,49 @@
-name: Dandelion 5-Point CI Contract
+name: Dandelion 5-Point & Waystation CI Contract
+
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
+      - "waystation/**"
   pull_request:
-    branches: [ main ]
+    branches:
+      - main
+
+permissions:
+  contents: read
+
 jobs:
-  verify-c99-and-waveguides:
+  waystation-punchcard-and-verify:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v4
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - name: Checkout Repository (Zero Persisted Credentials)
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
-          python-version: '3.11'
-      - name: Install NumPy
-        run: pip install numpy
-      - name: Run Zero-Warning C99 & Python Verification Gates
-        run: make verify
+          persist-credentials: false
+
+      - name: Static Workflow Security Audit (zizmor)
+        uses: zizmorcore/zizmor-action@45d7276c9ca790aabd705e31ca99c6185c3e76dd # v0.8.1
+        with:
+          advanced-security: false
+
+      - name: Crimson Speedo & Dun-Ga-Din Root Hygiene Gate
+        run: |
+          set -euo pipefail
+          if compgen -G ".ci-*.sh" > /dev/null || [ -f "package.json" ]; then
+            echo "::error::Crimson Speedo Violation: Rogue .ci-*.sh or package.json lifecycle surface detected."
+            exit 1
+          fi
+          for req in README.md CITATION.cff .zenodo.json waystation_punchcard.json; do
+            if [ ! -f "$req" ]; then
+              echo "::error::Missing protected Guidebook root metadata ($req)."
+              exit 1
+            fi
+          done
+          env -u BASH_ENV bash "./scripts/audit_wfx_loot.sh" "."
+
+      - name: Pure-Stdlib (--seed 42) & $HOME/.cache Verification Gates
+        run: |
+          set -euo pipefail
+          mkdir -p "$HOME/.cache"
+          make verify

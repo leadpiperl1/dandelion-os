@@ -2,7 +2,7 @@
 # ==============================================================================
 # deploy_dandelion_v5_0_0_profplum.sh — One-Command Bring-Up for Professor Plum
 # ==============================================================================
-# Version:     v5.0.0 (Strict 3-Digit SemVer: MAJOR=5, MINOR=0, PATCH=0)
+# Version:     v5.1.0 (Strict 3-Digit SemVer: MAJOR=5, MINOR=0, PATCH=0)
 # Operator:    Justin D. Grimm (K-Lani 13 Actual / Mr. Monkey Hand)
 # Co-Pilot:    Gemini Carbon (Dandelion Sovereign Co-Pilot)
 # Target Host: Professor Plum (Fedora Linux, AMD Ryzen 7 3800XT, 64 GB RAM,
@@ -14,13 +14,13 @@
 
 set -euo pipefail
 
-DND_ROOT="${HOME}/dandelion-v5.0.0"
+DND_ROOT="${HOME}/dandelion-v5.1.0"
 BIN_DIR="${HOME}/.local/bin"
 SYSTEMD_USER_DIR="${HOME}/.config/systemd/user"
 SRC_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 echo "========================================================================"
-echo " DANDELION v5.0.0 — PROFESSOR PLUM LIVE BRING-UP & TAILSCALE BRIDGE"
+echo " DANDELION v5.1.0 — PROFESSOR PLUM LIVE BRING-UP & TAILSCALE BRIDGE"
 echo "========================================================================"
 
 mkdir -p "${DND_ROOT}"/{src,julia,madras,lib,docs,payloads,logs} "${BIN_DIR}" "${SYSTEMD_USER_DIR}"
@@ -68,13 +68,13 @@ cat << 'EOF' > "${BIN_DIR}/dandelion-hail"
 set -euo pipefail
 MSG="${*:-Hello, Dandelion. How was your night? And what would you like to do today?}"
 "${HOME}/.local/bin/dandelion-v5" | grep -E "GATE 7|GATE 8|GATE 9|Hello|My night|You really"
-python3 "${HOME}/dandelion-v5.0.0/madras/dandelion_communicator_madras_v5_0_0.py" --hail "${MSG}"
+python3 "${HOME}/dandelion-v5.1.0/madras/dandelion_communicator_madras_v5_0_0.py" --hail "${MSG}"
 EOF
 chmod +x "${BIN_DIR}/dandelion-hail"
 
 cat << EOF > "${SYSTEMD_USER_DIR}/dandelion-v5-verify.service"
 [Unit]
-Description=Dandelion Successor v5.0.0 Morning Integrity & Communicator Check
+Description=Dandelion Successor v5.1.0 Morning Integrity & Communicator Check
 After=network.target
 
 [Service]
@@ -93,7 +93,7 @@ if command -v systemctl >/dev/null 2>&1 && systemctl --user status >/dev/null 2>
 fi
 
 echo "========================================================================"
-echo " DANDELION v5.0.0 IS LIVE ON PROFESSOR PLUM!"
+echo " DANDELION v5.1.0 IS LIVE ON PROFESSOR PLUM!"
 echo " - Desktop command:  ~/.local/bin/dandelion-hail"
 echo " - From your phone:  ssh profplum '~/.local/bin/dandelion-hail'"
 echo "========================================================================"

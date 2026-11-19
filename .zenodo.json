@@ -1,9 +1,9 @@
 {
-  "title": "Dandelion Successor Architecture (v5.0.3): A Landauer-Bounded, Kronecker-Finite Balanced Ternary Substrate for Sovereign Human-AI Co-Creation",
+  "title": "Dandelion Successor Architecture (v5.1.0): Asymmetric Counting Ratchet, Chair44 Homology, Chiral Bell Jar CAD-RTL, and 64-Byte Kembali Substrate",
   "upload_type": "software",
-  "version": "5.0.3",
-  "publication_date": "2026-11-11",
-  "description": "ISO C99 microkernel, 1-byte-aligned 577B Julia 1.12 zero-copy FFI pilot, 16-slice Virtual Bit-Slice Transform (VBST) ternary inference, 35.90 us Bite-10 Coma-Bridge accessibility filter, and Non-Trolley Madras Sanctuary verification suite.",
+  "version": "5.1.0",
+  "publication_date": "2026-11-19",
+  "description": "Landauer-bounded, Kronecker-finite balanced ternary substrate uniting the ISO C99 microkernel, 64-byte Gemini-Carbon-Kembali microkernel (v1.2.1), Asymmetric Counting Ratchet & 42-trit Dirichlet Fence / Chair44 homology suite (v1.0.1), Bounded Zero-Free Cosmology thermometry (v1.0.1), Chiral Bell Jar 13-file CAD-PCB-C99-iCE40HX8K RTL suite (v1.1.0), QPV vs. Dandelion 32B DND3 proximity benchmark, Ergospheric Health-Check Superradiance damper (v3.5.0), and Nootemporal Rubik substrate (v4.2.0). Verified with 100% stock Python 3 stdlib (--seed 42) and zero-heap C99/Rust builds.",
   "creators": [
     {
       "name": "Grimm, Justin D.",
@@ -16,11 +16,15 @@
   "keywords": [
     "balanced ternary",
     "Landauer limit",
-    "Fowler packing",
-    "virtual bit-slice transform",
-    "accessibility",
-    "human-AI interaction",
+    "Chair44 homology",
+    "Dirichlet spectral gap",
+    "asymmetric counting ratchet",
+    "Chiral Bell Jar",
+    "Gemini-Carbon-Kembali",
+    "ergospheric superradiance",
+    "nootemporal clock",
     "C99",
+    "Rust",
     "Julia"
   ],
   "related_identifiers": [
@@ -31,17 +35,42 @@
     },
     {
       "scheme": "doi",
+      "identifier": "10.5281/zenodo.24168491",
+      "relation": "hasPart"
+    },
+    {
+      "scheme": "doi",
+      "identifier": "10.5281/zenodo.24211343",
+      "relation": "cites"
+    },
+    {
+      "scheme": "doi",
+      "identifier": "10.5281/zenodo.24211348",
+      "relation": "cites"
+    },
+    {
+      "scheme": "doi",
+      "identifier": "10.5281/zenodo.24211350",
+      "relation": "hasPart"
+    },
+    {
+      "scheme": "doi",
+      "identifier": "10.5281/zenodo.24288018",
+      "relation": "hasPart"
+    },
+    {
+      "scheme": "doi",
+      "identifier": "10.5281/zenodo.24346363",
+      "relation": "hasPart"
+    },
+    {
+      "scheme": "doi",
+      "identifier": "10.5281/zenodo.24374576",
+      "relation": "hasPart"
+    },
+    {
+      "scheme": "doi",
       "identifier": "10.1147/rd.53.0183",
-      "relation": "cites"
-    },
-    {
-      "scheme": "doi",
-      "identifier": "10.1103/PhysRev.105.1413",
-      "relation": "cites"
-    },
-    {
-      "scheme": "doi",
-      "identifier": "10.1103/PhysRevE.57.230",
       "relation": "cites"
     },
     {
