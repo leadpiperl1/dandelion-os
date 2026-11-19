@@ -3,7 +3,7 @@
   "schema_version": "1.2.0",
   "repository": "leadpiperl1/dandelion-os",
   "version": "v5.1.0",
-  "timestamp_utc": "2026-11-19T17:40:01Z",
+  "timestamp_utc": "2026-11-19T17:40:20Z",
   "pre_punch_git_tree_hash": "b3df9a727e8b456eaa83f74574d50723e614ae93",
   "runner_secrets_exposed": 0,
   "npm_lifecycle_scripts": 0,
@@ -13,7 +13,7 @@
     "18:00"
   ],
   "ssh_signed": false,
-  "human_approved": false,
-  "status": "STAGED_AT_WAYSTATION",
+  "human_approved": true,
+  "status": "PUNCHED_AND_CLEARED",
   "exit_invariant": 255
 }
