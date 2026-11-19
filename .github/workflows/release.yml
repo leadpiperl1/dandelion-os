@@ -1,0 +1,48 @@
+name: Dandelion Grounded ABM Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build-and-test:
+    name: Build and Verify on Linux
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Rust Stable Toolchain
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          toolchain: stable
+          profile: minimal
+
+      - name: Setup Julia
+        uses: julia-actions/setup-julia@v2
+        with:
+          version: '1.12'
+
+      - name: Build Rust Workspace (Release)
+        run: cargo build --release --workspace
+
+      - name: Run Julia FFI Verification Harness
+        run: julia verify_grounded_abm.jl
+
+      - name: Package Shared Library Artifact
+        run: |
+          tar -czvf dandelion_grounded_abm_linux_x86_64.tar.gz \
+            dandelion_grounded_abm/target/release/libdandelion_grounded_abm.so \
+            CITATION.cff \
+            .zenodo.json \
+            verify_grounded_abm.jl
+
+      - name: Create GitHub Release & Upload Artifacts
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dandelion_grounded_abm_linux_x86_64.tar.gz
+          generate_release_notes: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
