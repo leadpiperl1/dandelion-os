@@ -14,7 +14,7 @@ VVP          ?= vvp
 SEED         ?= 42
 CNC_TOL_MM   ?= 0.12
 FPGA_FREQ    ?= 40
-BUILD_DIR    ?= $(HOME)/.cache/dandelion_os_v5_1_0/cbj
+BUILD_DIR    ?= $(HOME)/.cache/dandelion_os_v5_1_1/cbj
 
 CFLAGS       := -std=c11 -O2 -Wall -Wextra -Werror -I$(BUILD_DIR) -I.
 LDFLAGS      := -lm

@@ -115,7 +115,9 @@ def run_verification():
     all_pass = all(g["pass"] for g in results["gates"].values())
     results["all_gates_passed"] = all_pass
     results["elapsed_seconds"] = round(elapsed, 5)
-    with open(__import__("os").path.expanduser("~/.cache/dandelion_os_v5_1_0/verification_receipt_v1_0_1.json"), "w", encoding="utf-8") as fh:
+    _cache_dir = __import__("os").environ.get("BUILD_DIR", __import__("os").path.expanduser("~/.cache/dandelion_os_v5_1_1"))
+    __import__("os").makedirs(_cache_dir, exist_ok=True)
+    with open(__import__("os").path.join(_cache_dir, "verification_receipt_v1_0_1.json"), "w", encoding="utf-8") as fh:
         json.dump(results, fh, indent=2)
     print(f"[GATE 0] Seed 42 Pure-Stdlib 5-Gate Verification (v1.0.1): {'PASSED' if all_pass else 'FAILED'} in {elapsed:.4f} s")
     if not all_pass:

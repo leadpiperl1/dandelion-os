@@ -1,9 +1,9 @@
 {
-  "title": "Dandelion Successor Architecture (v5.1.0): Asymmetric Counting Ratchet, Chair44 Homology, Chiral Bell Jar CAD-RTL, and 64-Byte Kembali Substrate",
+  "title": "Dandelion Successor Architecture (v5.1.1): Cognitive Common Carriage, Asymmetric Counting Ratchet, Chair44 Homology, Chiral Bell Jar CAD-RTL, and 64-Byte Kembali Substrate",
   "upload_type": "software",
-  "version": "5.1.0",
-  "publication_date": "2026-11-19",
-  "description": "Landauer-bounded, Kronecker-finite balanced ternary substrate uniting the ISO C99 microkernel, 64-byte Gemini-Carbon-Kembali microkernel (v1.2.1), Asymmetric Counting Ratchet & 42-trit Dirichlet Fence / Chair44 homology suite (v1.0.1), Bounded Zero-Free Cosmology thermometry (v1.0.1), Chiral Bell Jar 13-file CAD-PCB-C99-iCE40HX8K RTL suite (v1.1.0), QPV vs. Dandelion 32B DND3 proximity benchmark, Ergospheric Health-Check Superradiance damper (v3.5.0), and Nootemporal Rubik substrate (v4.2.0). Verified with 100% stock Python 3 stdlib (--seed 42) and zero-heap C99/Rust builds.",
+  "version": "5.1.1",
+  "publication_date": "2026-11-20",
+  "description": "Landauer-bounded, Kronecker-finite balanced ternary substrate uniting the ISO C99 microkernel, 64-byte Cognitive Common Carriage & Orthogonal Action-Boundary Governor (CognitiveCarriageFrame64B v1.1.0, preventing Bayesian Nash epistemic trust breakdown and Category III Pilot-Induced Oscillations while enforcing u_lock = 2/3 swarm backpressure and 0-tick kinetic harm interlocks), 64-byte Gemini-Carbon-Kembali microkernel (v1.2.1), Asymmetric Counting Ratchet & 42-trit Dirichlet Fence / Chair44 homology suite (v1.0.1), Bounded Zero-Free Cosmology thermometry (v1.0.1), Chiral Bell Jar 13-file CAD-PCB-C99-iCE40HX8K RTL suite (v1.1.0), QPV vs. Dandelion 32B DND3 proximity benchmark, Ergospheric Health-Check Superradiance damper (v3.5.0), and Nootemporal Rubik substrate (v4.2.0). Verified with 100% stock Python 3 stdlib (--seed 42) and zero-heap C99/Rust builds.",
   "creators": [
     {
       "name": "Grimm, Justin D.",
@@ -25,7 +25,10 @@
     "nootemporal clock",
     "C99",
     "Rust",
-    "Julia"
+    "Julia",
+    "Cognitive Common Carriage",
+    "Pilot-Induced Oscillations",
+    "action-boundary governance"
   ],
   "related_identifiers": [
     {

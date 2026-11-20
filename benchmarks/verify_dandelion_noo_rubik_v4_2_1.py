@@ -596,7 +596,7 @@ def verify_gate6_c99_abi_and_fowler(rng: random.Random) -> Dict[str, object]:
         assert unpacked == trits
 
     c99_status = "SKIPPED_NO_GCC"
-    cache_dir = os.path.join(os.path.expanduser("~"), ".cache", "dandelion_os_v5_1_0", "noo_rubik")
+    cache_dir = os.path.join(os.path.expanduser("~"), ".cache", "dandelion_os_v5_1_1", "noo_rubik")
     os.makedirs(cache_dir, exist_ok=True)
     c_file = os.path.join(cache_dir, "abi_check_v4_2_1.c")
     bin_file = os.path.join(cache_dir, "abi_check_v4_2_1")

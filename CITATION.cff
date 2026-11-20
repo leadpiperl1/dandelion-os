@@ -1,8 +1,8 @@
 cff-version: 1.2.0
 message: "If you use this software, hardware RTL, or verification suite, please cite it using the metadata below."
-title: "Dandelion Successor Architecture (v5.1.0): A Landauer-Bounded, Kronecker-Finite Balanced Ternary Substrate"
-version: 5.1.0
-date-released: 2026-11-19
+title: "Dandelion Successor Architecture (v5.1.1): A Landauer-Bounded, Kronecker-Finite Balanced Ternary Substrate"
+version: 5.1.1
+date-released: 2026-11-20
 doi: 10.5281/zenodo.24374576
 license: MIT
 repository-code: "https://github.com/leadpiperl1/dandelion-os"

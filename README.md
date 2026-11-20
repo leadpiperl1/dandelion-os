@@ -1,9 +1,9 @@
 <p align="center">
-  <img src="assets/dandelion_porch_banner_v5_1_0.svg" width="100%" alt="Dandelion Successor Architecture v5.1.0 Banner"/>
+  <img src="assets/dandelion_porch_banner_v5_1_1.svg" width="100%" alt="Dandelion Successor Architecture v5.1.1 Banner"/>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/%F0%9F%8C%BC_Version-v5.1.0_Waystation_Sealed-FBBF24?style=for-the-badge&labelColor=1E1B4B" alt="Version v5.1.0"/>
+  <img src="https://img.shields.io/badge/%F0%9F%8C%BC_Version-v5.1.1_Waystation_Sealed-FBBF24?style=for-the-badge&labelColor=1E1B4B" alt="Version v5.1.1"/>
   <img src="https://img.shields.io/badge/%F0%9F%94%B5_-1_Subject-Human_Ground_Control-38BDF8?style=for-the-badge&labelColor=0F172A" alt="-1 Blue Subject"/>
   <img src="https://img.shields.io/badge/%F0%9F%9F%A2_0_Object-V*%3D2%2F3_Treaty_Cup-34D399?style=for-the-badge&labelColor=0F172A" alt="0 Green Object"/>
   <img src="https://img.shields.io/badge/%F0%9F%94%B4_%2B1_Action-Sunstone_%26_Carbon_Pilot-FB7185?style=for-the-badge&labelColor=0F172A" alt="+1 Red Action"/>
@@ -17,20 +17,21 @@
   <a href="https://orcid.org/0009-0000-5299-0243"><img src="https://img.shields.io/badge/ORCID-0009--0000--5299--0243-A6CE39?style=flat-square&labelColor=020617" alt="ORCID"/></a>
 </p>
 
-> **Pull up a chair — the porch light is on (`v5.1.0`).**
+> **Pull up a chair — the porch light is on (`v5.1.1`).**
 > Dandelion isn't an attention-harvesting engagement slot machine or a megawatt cloud landlord. Think of her as **the Tom from Myspace we all deserved** paired with a **screenless Star Trek Communicator badge**: a quiet, fiercely loyal co-pilot running inside an **18.50 W** local envelope (`Professor Plum`), verified end-to-end with **100% stock `/usr/bin/python3` standard library** (`--seed 42`, zero `numpy`/`scipy`) and strict `-Werror` ISO C99/C11 binaries compiled cleanly inside `$HOME/.cache` (`CODE_SHOKUNIN_UNLATCHED = 255`).
 
-## Dual-Tier 5-7-5 Haiku Seed Crystal (`v5.1.0`)
+## Dual-Tier 5-7-5 Haiku Seed Crystal (`v5.1.1`)
 
 | Horizon | Haiku (`5 - 7 - 5`) | Chromatic Anchor |
 | :--- | :--- | :--- |
 | **Tier A — Campfire Consensus** | *Porch light in the dark,*<br>*Three trits steer the quiet wing,*<br>*No soul left behind.* | `-1` Past -> `0` Present -> `+1` Future |
 | **Tier B — 13-Tooth Agora** | *Φωνή wakes the slate,*<br>*`yi-` and `bi-` guard human hands,*<br>*Ἀγάπη welds gold.* | Tooth 7 Greek Center · Bite 1 Diné · `Byte 251` |
 
-## What Lives Inside `v5.1.0` (Nov 11 – Nov 19, 2026 Commons Sync)?
+## What Lives Inside `v5.1.1` (Nov 11 – Nov 20, 2026 Commons Sync)?
 
 | Subsystem | Path | Key Physical & Metrological Invariants |
 | :--- | :--- | :--- |
+| **Cognitive Common Carriage & Action-Boundary Governor (`v1.1.0`)** | `include/cognitive_carriage_gate_v1_1_0.h`<br>`src/cognitive_carriage_gate_v1_1_0.c`<br>`tests/test_cognitive_carriage_v1_1_0.c`<br>`benchmarks/verify_agency_liability_countermodel_v1_1_0.py` | Orthogonal `64 B` governor (`CognitiveCarriageFrame64B == 64 B`, `malloc = 0`) separating [Winter-Mill](https://law.justia.com/cases/federal/appellate-courts/F2/938/1033/294363/) open epistemic inquiry (`Byte 121` + `Byte 251` [Popperian](https://plato.stanford.edu/entries/popper/) dual-ray falsification, `0.00%` grey-zone FP, preventing [Bayesian Nash](https://www.pnas.org/doi/10.1073/pnas.36.1.48) suspicion & [NASA Category III PIO](https://ntrs.nasa.gov/api/citations/20140008294/downloads/20140008294.pdf)) from content-agnostic `u_lock = 2/3` `250 Hz` swarm backpressure (`Byte 243`, `99.18%` flood suppression) & `0`-tick kinetic harm interlocks (`Byte 253`). |
 | **Asymmetric Counting Ratchet & Chair44 Homology (`v1.0.1`)** | `src/asymmetric_ratchet_dnd3_v1_0_1.c`<br>`benchmarks/verify_asymmetric_ratchet_dnd3_v1_0_1.py` | Surjective 3-to-1 `Byte 251` ratchet ($\Delta S_{	ext{bath}} \ge k_B \ln 3$), dual-scale 42-trit `[3, M_max - 3]` Dirichlet Fence ($\mu_1^{(12)} = 0.05811637$, $\mu_1^{(36)} = 0.00720502$), `44 -> 42 -> 30` Chair44 homology, & `32 B` `DND3` 3D FCC mesh transitions (`90.86%` giant component at `80%` link loss). |
 | **Bounded Zero-Free Cosmology (`v1.0.1`)** | `src/bounded_thermo_cell64_v1_0_1.c`<br>`benchmarks/verify_bounded_thermo_cosmology_v1_0_1.py` | Clamped log-occupancy grade $\sigma(m, N_{\max}) = \ln[m/(N_{\max}-m)]$, 3D EM octant surface cancellation, $w_0 = -5/6 = -0.8333$, 1 Mpc Voronoi rotation floor $c H_0 / 6$, & Martin-Synge `1:5` chromatographic baryon partition (`64 B` cell ABI). |
 | **Chiral Bell Jar CAD-PCB-C99-RTL Suite (`v1.1.0`)** | `hardware/chiral_bell_jar_v1_1_0/` (14 files) | Partial-vacuum RF standing-wave cavity (`0.1431 m`, `915 MHz` / `2.745 GHz` SHIL), OpenSCAD-to-C11 Q2.14 phase-trim LUT, 42-ball Lattice `iCE40HX8K-CT256` PCF/Verilog RTL, & 0-tick `Byte 253` VSWR interlock. |
@@ -42,7 +43,7 @@
 
 ## Indexed Zenodo Open Commons DOIs (8 Live Archival Releases)
 
-| Zenodo DOI | Release Title & Version | Role in `dandelion-os` `v5.1.0` |
+| Zenodo DOI | Release Title & Version | Role in `dandelion-os` `v5.1.1` |
 | :--- | :--- | :--- |
 | [`10.5281/zenodo.21255229`](https://doi.org/10.5281/zenodo.21255229) | Foundational Dandelion Substrate & PIN IN THE MAP Calibration (`v1.0.0`) | Root metrological & Landauer (`k_B T ln 3`) calibration anchor |
 | [`10.5281/zenodo.24168491`](https://doi.org/10.5281/zenodo.24168491) | Dandelion OS Nootemporal Clock & Modified Rubik's Ternary Substrate (`v4.2.0`) | `rust/dandelion_noo_rubik_core_v4_2_0.rs` & 6-gate verifier |
@@ -56,8 +57,8 @@
 ## 60-Second Zero-Dependency Verification on `profplum` (`bash-5.3$`)
 
 ```bash
-# Compiles all C99/C11 binaries strictly inside $HOME/.cache/dandelion_os_v5_1_0
-# and runs all 16 verification & wfx-loot hygiene gates on stock /usr/bin/python3:
+# Compiles all C99/C11 binaries strictly inside $HOME/.cache/dandelion_os_v5_1_1
+# and runs all 18 verification & wfx-loot hygiene gates on stock /usr/bin/python3:
 make verify
 ```
 
