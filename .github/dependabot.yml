@@ -1,21 +1,8 @@
 # .github/dependabot.yml
-# Automated dependency & GitHub Actions security/version updates for Dandelion OS v3.1.0
+# Enforces cooldown >= 14 days (zizmor clean, Eli Whitney supply-chain quarantine)
+# Pure C99 / Rust / Julia / Python-stdlib substrate: zero pip requirements.txt surface.
 version: 2
 updates:
-  - package-ecosystem: "pip"
-    directory: "/"
-    schedule:
-      interval: "weekly"
-      day: "monday"
-      time: "06:00"
-      timezone: "America/Chicago"
-    cooldown:
-      default-days: 7
-    open-pull-requests-limit: 5
-    labels:
-      - "dependencies"
-      - "python"
-
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
@@ -24,7 +11,7 @@ updates:
       time: "06:00"
       timezone: "America/Chicago"
     cooldown:
-      default-days: 7
+      default-days: 14
     open-pull-requests-limit: 5
     labels:
       - "dependencies"

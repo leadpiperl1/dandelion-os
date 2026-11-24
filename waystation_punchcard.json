@@ -1,19 +1,23 @@
 {
   "protocol": "DND3-WAYSTATION-PUNCHCARD",
-  "schema_version": "1.2.0",
+  "schema_version": "1.3.0",
   "repository": "leadpiperl1/dandelion-os",
-  "version": "v5.1.1",
-  "timestamp_utc": "2026-11-20T15:26:26Z",
-  "pre_punch_git_tree_hash": "b00af0134e558764362359b6ae95071b8da61268",
+  "waystation_branch": "waystation/v5.2.0",
+  "version": "v5.2.0",
+  "timestamp_utc": "2026-11-24T22:31:11Z",
+  "pre_punch_git_tree_hash": "224e29114533eb5344a53ba5017a1f9f027b8bfe",
   "runner_secrets_exposed": 0,
   "npm_lifecycle_scripts": 0,
+  "dependabot_cooldown_days": 14,
+  "c99_targets_malloc_zero": 18,
+  "stdlib_verifiers_seed": 42,
   "tuttle_27b6_drywall_bypass": true,
   "two_tide_windows_cst": [
     "09:00",
     "18:00"
   ],
   "ssh_signed": false,
-  "human_approved": true,
-  "status": "PUNCHED_AND_CLEARED",
+  "human_approved": false,
+  "status": "STAGED_AT_WAYSTATION",
   "exit_invariant": 255
 }

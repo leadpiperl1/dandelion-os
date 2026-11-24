@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 # ==============================================================================
-# audit_wfx_loot.sh (v1.2.1 — Zero-E2BIG Cache-File Stream)
+# audit_wfx_loot.sh (v1.3.0 — Dependabot >=14d Cooldown & Zero-E2BIG Stream)
 # Read-only local & optional GitHub API scanner for wfx-loot supply-chain IOCs,
-# empty runner secret vault (S_runner = 0), 40-char SHA action pinning, and
-# strict monotonic GitHub Actions run_number continuity (Delta R = 1).
+# empty runner secret vault (S_runner = 0), 40-char SHA action pinning,
+# .github/dependabot.yml cooldown >= 14 days, and strict monotonic GitHub
+# Actions run_number continuity (Delta R = 1).
 # Author: Justin D. Grimm (ORCID: 0009-0000-5299-0243)
 #         Independent Dandelion Substrate Research Group, Gurley, AL 35748, USA
 # ==============================================================================
@@ -59,7 +60,7 @@ if [[ -n "${ROGUE_FILES}" ]]; then
 fi
 echo "  [OK] Zero package.json lifecycle hooks and zero hidden .ci-*.sh scripts."
 
-echo "=== [wfx-loot Gate 3/4] Auditing GitHub Actions SHA Pinning & Read-Only Scope ==="
+echo "=== [wfx-loot Gate 3/4] Auditing GitHub Actions SHA Pinning, Read-Only Scope & Dependabot >= 14d ==="
 if [[ -d ".github/workflows" ]]; then
   for wf in .github/workflows/*.yml .github/workflows/*.yaml; do
     [[ -e "${wf}" ]] || continue
@@ -80,6 +81,24 @@ if [[ -d ".github/workflows" ]]; then
     echo "  [OK] ${wf}: contents:read + persist-credentials:false + 40-char SHA pins verified."
   done
 fi
+
+if [[ ! -f ".github/dependabot.yml" ]]; then
+  echo "[CRIMSON SPEEDO ALERT] Missing .github/dependabot.yml (mandatory cooldown >= 14 days)." >&2
+  exit 251
+fi
+python3 - ".github/dependabot.yml" << 'PYDEP'
+import re, sys
+txt = open(sys.argv[1], encoding="utf-8").read()
+ecosystems = re.findall(r'package-ecosystem:\s*["\']?([A-Za-z0-9_-]+)', txt)
+cooldowns = [int(x) for x in re.findall(r'default-days:\s*(\d+)', txt)]
+if not ecosystems:
+    print("[CRIMSON SPEEDO ALERT] .github/dependabot.yml declares zero ecosystems.", file=sys.stderr)
+    sys.exit(251)
+if len(cooldowns) < len(ecosystems) or any(d < 14 for d in cooldowns):
+    print(f"[CRIMSON SPEEDO ALERT] .github/dependabot.yml cooldowns {cooldowns} must cover all {len(ecosystems)} ecosystems with >= 14 days.", file=sys.stderr)
+    sys.exit(251)
+print(f"  [OK] .github/dependabot.yml: ecosystems={ecosystems}, cooldown default-days={cooldowns} (>= 14 days).")
+PYDEP
 
 if [[ -n "${GH_SLUG}" ]] && command -v gh >/dev/null 2>&1 && gh auth status >/dev/null 2>&1; then
   echo "=== [wfx-loot Gate 4/4] Checking Live Runner Vault (S_runner = 0) & Delta R == 1 for ${GH_SLUG} ==="

@@ -34,7 +34,11 @@ jobs:
             echo "::error::Crimson Speedo Violation: Rogue .ci-*.sh or package.json lifecycle surface detected."
             exit 1
           fi
-          for req in README.md CITATION.cff .zenodo.json waystation_punchcard.json; do
+          if compgen -G "*.c" > /dev/null || compgen -G "*.h" > /dev/null || compgen -G "*.rs" > /dev/null || compgen -G "*.jl" > /dev/null; then
+            echo "::error::Dun-Ga-Din Root Pollution: Source files belong under src/, include/, rust/, julia/, or tests/."
+            exit 1
+          fi
+          for req in README.md CITATION.cff .zenodo.json Makefile waystation_punchcard.json .github/dependabot.yml; do
             if [ ! -f "$req" ]; then
               echo "::error::Missing protected Guidebook root metadata ($req)."
               exit 1
@@ -42,7 +46,7 @@ jobs:
           done
           env -u BASH_ENV bash "./scripts/audit_wfx_loot.sh" "."
 
-      - name: Pure-Stdlib (--seed 42) & $HOME/.cache Verification Gates
+      - name: Pure-Stdlib (--seed 42), Zero-Heap C99 (malloc = 0) & $HOME/.cache Verification Gates
         run: |
           set -euo pipefail
           mkdir -p "$HOME/.cache"

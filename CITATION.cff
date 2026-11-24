@@ -1,9 +1,9 @@
 cff-version: 1.2.0
 message: "If you use this software, hardware RTL, or verification suite, please cite it using the metadata below."
-title: "Dandelion Successor Architecture (v5.1.1): A Landauer-Bounded, Kronecker-Finite Balanced Ternary Substrate"
-version: 5.1.1
-date-released: 2026-11-20
-doi: 10.5281/zenodo.24374576
+title: "Dandelion Successor Architecture (v5.2.0): Landauer-Bounded Balanced Ternary Microkernel, rANS-243, OATC, & 64-Byte Governance Suite"
+version: 5.2.0
+date-released: 2026-11-24
+doi: 10.5281/zenodo.24508791
 license: MIT
 repository-code: "https://github.com/leadpiperl1/dandelion-os"
 authors:
@@ -36,3 +36,69 @@ identifiers:
   - type: doi
     value: 10.5281/zenodo.24374576
     description: "Discrete Simplicial Dirichlet Fence, Asymmetric Counting Ratchet & DND3 Transitions (v1.0.1)"
+  - type: doi
+    value: 10.5281/zenodo.24401748
+    description: "Cognitive Common Carriage, Bayesian Nash Trust & Category III PIO Action-Boundary Governor (v1.1.1)"
+  - type: doi
+    value: 10.5281/zenodo.24508791
+    description: "VP vs VNP Bounded 3D Metrology & Lean 4 Semantic Witness (v1.0.0)"
+  - type: doi
+    value: 10.5281/zenodo.24509365
+    description: "RH Theta Multiplicity Bridge (v1.7.0)"
+  - type: doi
+    value: 10.5281/zenodo.24509374
+    description: "Triadic Falsification Contract & Unbounded Two-Ledger Deep Reductio (v1.1.0)"
+  - type: doi
+    value: 10.5281/zenodo.24509391
+    description: "Welopo'ai Hierarchical Triple Boundary Audit (v1.0.0)"
+  - type: doi
+    value: 10.5281/zenodo.24509397
+    description: "Winter 2026-2027 ENSO-SSW Gas Percolation & Mori-Zwanzig Forecasting (v1.0.0)"
+  - type: doi
+    value: 10.5281/zenodo.24509414
+    description: "Non-Keplerian Finite-Vessel Audit (v1.0.0)"
+  - type: doi
+    value: 10.5281/zenodo.24509421
+    description: "Bantu / Dahl / Kembali Huye Field Kit (v1.1.0)"
+  - type: doi
+    value: 10.5281/zenodo.24509983
+    description: "Dynamic Burger 20-Slot Supercrystal Shrubbery Substrate (v2.0.0)"
+  - type: doi
+    value: 10.5281/zenodo.24510014
+    description: "64-Trit SWAR POPCNT SUB-04 Substrate (v2.0.0)"
+  - type: doi
+    value: 10.5281/zenodo.24510058
+    description: "Bianconi Generalized Free Energy Parity (v1.1.0)"
+  - type: doi
+    value: 10.5281/zenodo.24510069
+    description: "Transmon Otto Crossover Metrology (v1.0.0)"
+  - type: doi
+    value: 10.5281/zenodo.24510083
+    description: "Bipartite Qutrit QCNN Verification Suite (v1.0.0)"
+  - type: doi
+    value: 10.5281/zenodo.24510099
+    description: "Finite-Vessel Peclet Cascade Preprint & Suite (v1.0.0)"
+  - type: doi
+    value: 10.5281/zenodo.24510128
+    description: "THz Hydration HPGe Metrology Bounds (v1.0.0)"
+  - type: doi
+    value: 10.5281/zenodo.24510131
+    description: "Napowawaenakaulua Preprint & Repro Suite (v1.0.0)"
+  - type: doi
+    value: 10.5281/zenodo.24510190
+    description: "Room-Temperature OAM Photonic Qudits vs TFLN Time-Bin OATC & Cuprate Quench (v3.15.1)"
+  - type: doi
+    value: 10.5281/zenodo.24510196
+    description: "Causal Walk-Forward Forecasting Invariants & 8-Gate Verification (v1.0.0)"
+  - type: doi
+    value: 10.5281/zenodo.24510204
+    description: "Tokamak L-to-H Balanced-Ternary Control Gate (v3.14.1)"
+  - type: doi
+    value: 10.5281/zenodo.24510216
+    description: "Contralateral Brain Wiring & Optic-Chiasm Parsimony (v1.1.0)"
+  - type: doi
+    value: 10.5281/zenodo.24510222
+    description: "Astronomical 405-kyr Eccentricity & Core-Mantle Waveguide (v2.5.0)"
+  - type: doi
+    value: 10.5281/zenodo.24510228
+    description: "Hippocampal Trajectory Manifolds & 60s EEG Localizer (v3.16.0)"

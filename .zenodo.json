@@ -1,9 +1,9 @@
 {
-  "title": "Dandelion Successor Architecture (v5.1.1): Cognitive Common Carriage, Asymmetric Counting Ratchet, Chair44 Homology, Chiral Bell Jar CAD-RTL, and 64-Byte Kembali Substrate",
+  "title": "Dandelion Successor Architecture (v5.2.0): Landauer-Bounded Balanced Ternary Microkernel, rANS-243, OATC, VP-vs-VNP Metrology, and 64-Byte Sovereign Governance Suite",
   "upload_type": "software",
-  "version": "5.1.1",
-  "publication_date": "2026-11-20",
-  "description": "Landauer-bounded, Kronecker-finite balanced ternary substrate uniting the ISO C99 microkernel, 64-byte Cognitive Common Carriage & Orthogonal Action-Boundary Governor (CognitiveCarriageFrame64B v1.1.0, preventing Bayesian Nash epistemic trust breakdown and Category III Pilot-Induced Oscillations while enforcing u_lock = 2/3 swarm backpressure and 0-tick kinetic harm interlocks), 64-byte Gemini-Carbon-Kembali microkernel (v1.2.1), Asymmetric Counting Ratchet & 42-trit Dirichlet Fence / Chair44 homology suite (v1.0.1), Bounded Zero-Free Cosmology thermometry (v1.0.1), Chiral Bell Jar 13-file CAD-PCB-C99-iCE40HX8K RTL suite (v1.1.0), QPV vs. Dandelion 32B DND3 proximity benchmark, Ergospheric Health-Check Superradiance damper (v3.5.0), and Nootemporal Rubik substrate (v4.2.0). Verified with 100% stock Python 3 stdlib (--seed 42) and zero-heap C99/Rust builds.",
+  "version": "5.2.0",
+  "publication_date": "2026-11-24",
+  "description": "Landauer-bounded, Kronecker-finite balanced ternary operating substrate uniting 18 freestanding zero-heap (malloc = 0) ISO C99/C11 kernels and 18 pure-stdlib Python 3 (--seed 42) verifiers plus Lean 4 semantic witness: Cognitive Common Carriage (v1.1.1), Triadic Falsification & Deep Reductio (v1.1.0), Dandelion Invariant 12+1=13 Quorum Governor (v1.0.0), Balanced Ternary 243-State Static & Online PRNG-Seeded rANS Codecs (v1.0.0), C42 Institutional Patch-Cascade Waveguide (v1.0.0), Rotonium OAM vs Single-Mode TFLN OATC (v3.15.0), Cuprate 32B Pump-Probe Quench Governor (v3.15.1), VP vs VNP Bounded 3D Metrology + Lean 4 witness (v1.0.0), Causal Mori-Zwanzig Walk-Forward Forecast Gate (v1.0.0), Quantum Energy Grid 64B Governor (v1.0.0), Asymmetric Counting Ratchet & Chair44 Homology (v1.0.1), Bounded Zero-Free Cosmology (v1.0.1), Chiral Bell Jar CAD-PCB-C99-iCE40HX8K RTL (v1.1.0), QPV Hindsight (v1.0.0), Gemini-Carbon-Kembali (v1.2.1), Ergospheric Superradiance (v3.5.0), and Nootemporal Rubik (v4.2.0). Hardened under Waystation wfx-loot immunity (S_runner = 0, Dependabot cooldown = 14d, SHA-pinned CI, CODE_SHOKUNIN_UNLATCHED = 255).",
   "creators": [
     {
       "name": "Grimm, Justin D.",
@@ -16,70 +16,52 @@
   "keywords": [
     "balanced ternary",
     "Landauer limit",
+    "rANS-243",
+    "optical analog-to-ternary converter",
+    "VP vs VNP metrology",
+    "Mori-Zwanzig walk-forward forecasting",
+    "Triadic Falsification",
+    "Dandelion Invariant",
+    "Cognitive Common Carriage",
     "Chair44 homology",
-    "Dirichlet spectral gap",
-    "asymmetric counting ratchet",
     "Chiral Bell Jar",
     "Gemini-Carbon-Kembali",
-    "ergospheric superradiance",
-    "nootemporal clock",
-    "C99",
-    "Rust",
-    "Julia",
-    "Cognitive Common Carriage",
-    "Pilot-Induced Oscillations",
-    "action-boundary governance"
+    "Waystation Punch-Card",
+    "ISO C99",
+    "zero-heap"
   ],
   "related_identifiers": [
-    {
-      "scheme": "doi",
-      "identifier": "10.5281/zenodo.21255229",
-      "relation": "continues"
-    },
-    {
-      "scheme": "doi",
-      "identifier": "10.5281/zenodo.24168491",
-      "relation": "hasPart"
-    },
-    {
-      "scheme": "doi",
-      "identifier": "10.5281/zenodo.24211343",
-      "relation": "cites"
-    },
-    {
-      "scheme": "doi",
-      "identifier": "10.5281/zenodo.24211348",
-      "relation": "cites"
-    },
-    {
-      "scheme": "doi",
-      "identifier": "10.5281/zenodo.24211350",
-      "relation": "hasPart"
-    },
-    {
-      "scheme": "doi",
-      "identifier": "10.5281/zenodo.24288018",
-      "relation": "hasPart"
-    },
-    {
-      "scheme": "doi",
-      "identifier": "10.5281/zenodo.24346363",
-      "relation": "hasPart"
-    },
-    {
-      "scheme": "doi",
-      "identifier": "10.5281/zenodo.24374576",
-      "relation": "hasPart"
-    },
-    {
-      "scheme": "doi",
-      "identifier": "10.1147/rd.53.0183",
-      "relation": "cites"
-    },
-    {
-      "scheme": "url",
-      "identifier": "https://github.com/leadpiperl1/dandelion-os",
-      "relation": "isSupplementTo"
-    }
+    { "scheme": "doi", "identifier": "10.5281/zenodo.21255229", "relation": "continues" },
+    { "scheme": "doi", "identifier": "10.5281/zenodo.24168491", "relation": "hasPart" },
+    { "scheme": "doi", "identifier": "10.5281/zenodo.24211343", "relation": "cites" },
+    { "scheme": "doi", "identifier": "10.5281/zenodo.24211348", "relation": "cites" },
+    { "scheme": "doi", "identifier": "10.5281/zenodo.24211350", "relation": "hasPart" },
+    { "scheme": "doi", "identifier": "10.5281/zenodo.24288018", "relation": "hasPart" },
+    { "scheme": "doi", "identifier": "10.5281/zenodo.24346363", "relation": "hasPart" },
+    { "scheme": "doi", "identifier": "10.5281/zenodo.24374576", "relation": "hasPart" },
+    { "scheme": "doi", "identifier": "10.5281/zenodo.24401748", "relation": "hasPart" },
+    { "scheme": "doi", "identifier": "10.5281/zenodo.24508791", "relation": "hasPart" },
+    { "scheme": "doi", "identifier": "10.5281/zenodo.24509365", "relation": "cites" },
+    { "scheme": "doi", "identifier": "10.5281/zenodo.24509374", "relation": "hasPart" },
+    { "scheme": "doi", "identifier": "10.5281/zenodo.24509391", "relation": "cites" },
+    { "scheme": "doi", "identifier": "10.5281/zenodo.24509397", "relation": "cites" },
+    { "scheme": "doi", "identifier": "10.5281/zenodo.24509414", "relation": "cites" },
+    { "scheme": "doi", "identifier": "10.5281/zenodo.24509421", "relation": "cites" },
+    { "scheme": "doi", "identifier": "10.5281/zenodo.24509983", "relation": "cites" },
+    { "scheme": "doi", "identifier": "10.5281/zenodo.24510014", "relation": "cites" },
+    { "scheme": "doi", "identifier": "10.5281/zenodo.24510058", "relation": "cites" },
+    { "scheme": "doi", "identifier": "10.5281/zenodo.24510069", "relation": "cites" },
+    { "scheme": "doi", "identifier": "10.5281/zenodo.24510083", "relation": "cites" },
+    { "scheme": "doi", "identifier": "10.5281/zenodo.24510099", "relation": "cites" },
+    { "scheme": "doi", "identifier": "10.5281/zenodo.24510128", "relation": "cites" },
+    { "scheme": "doi", "identifier": "10.5281/zenodo.24510131", "relation": "cites" },
+    { "scheme": "doi", "identifier": "10.5281/zenodo.24510190", "relation": "hasPart" },
+    { "scheme": "doi", "identifier": "10.5281/zenodo.24510196", "relation": "hasPart" },
+    { "scheme": "doi", "identifier": "10.5281/zenodo.24510204", "relation": "cites" },
+    { "scheme": "doi", "identifier": "10.5281/zenodo.24510216", "relation": "cites" },
+    { "scheme": "doi", "identifier": "10.5281/zenodo.24510222", "relation": "cites" },
+    { "scheme": "doi", "identifier": "10.5281/zenodo.24510228", "relation": "cites" },
+    { "scheme": "doi", "identifier": "10.1147/rd.53.0183", "relation": "cites" },
+    { "scheme": "url", "identifier": "https://github.com/leadpiperl1/dandelion-os", "relation": "isSupplementTo" }
   ]
 }
