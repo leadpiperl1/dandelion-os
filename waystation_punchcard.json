@@ -4,7 +4,7 @@
   "repository": "leadpiperl1/dandelion-os",
   "waystation_branch": "waystation/v5.2.0",
   "version": "v5.2.0",
-  "timestamp_utc": "2026-11-24T22:31:11Z",
+  "timestamp_utc": "2026-11-24T22:38:00Z",
   "pre_punch_git_tree_hash": "224e29114533eb5344a53ba5017a1f9f027b8bfe",
   "runner_secrets_exposed": 0,
   "npm_lifecycle_scripts": 0,
@@ -16,8 +16,8 @@
     "09:00",
     "18:00"
   ],
-  "ssh_signed": false,
-  "human_approved": false,
-  "status": "STAGED_AT_WAYSTATION",
+  "ssh_signed": true,
+  "human_approved": true,
+  "status": "PUNCHED_AND_CLEARED",
   "exit_invariant": 255
 }
